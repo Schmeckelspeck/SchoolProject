@@ -1,0 +1,37 @@
+*** TODO ***
+* Kann kontinuierlich erweitert werden
+Software
+========
+
+Front-End
+=========
+- Mockups entwerfen
+	* Handgezeichnete Skizzen der Views.
+- Views entwerfen
+	* HTML entwerfen
+- Controller entwerfen
+	* <?php if(isset($_POST['buttonName'])) ... ?>
+	* z.B. $allComponents = GetComponents(); ...
+- Styles entwerfen (css)
+	* .example{...} ...
+- Dokus schreiben
+
+Back-End
+========
+- Zugriffs-SQL-Statements entwerfen, Beispiele
+	* SELECT komponenteninfo FROM tbl_komponenten ...
+	* UPDATE tbl_komponente SET raum_id = 12345;...
+	* INSERT ...
+	* DELETE ...
+	* .
+	* .
+	* .
+- SQL-Statements in php-Funktionen überführen
+- Datenbankzugriff.php implementieren
+	* query($connection) ...
+	* Vorschlag: ExecuteReader-Funktion, die die Daten als Array of Row-Arrays rausgibt.
+- Datenbank entwerfen
+	* CREATE TABLE ...
+- Dokus schreiben
+- Apache
+	* Root der Url auf den Ordner Views beschränken
