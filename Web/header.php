@@ -10,5 +10,5 @@
 </head>
 
 <body>
-as hier steht im Header, zum Beispiel mit Logo: <image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg">
+<image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg">
 <?php require_once("menu.php"); ?>
