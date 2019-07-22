@@ -10,5 +10,14 @@
 </head>
 
 <body>
-<image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg">
-<?php require_once("menu.php"); ?>
+<section id="header">
+<div class="container-fluid">
+<div class="row">
+<image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg"/>
+
+
+</div>
+</section>
+
+</div>
+
