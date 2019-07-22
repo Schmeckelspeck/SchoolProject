@@ -5,6 +5,8 @@ Model: MySQL 8.0
 Database: MySQL 8.0
 */
 
+
+
 -- Create tables section -------------------------------------------------
 
 -- Table component
@@ -24,13 +26,13 @@ CREATE TABLE `component`
 )
 ;
 
-CREATE INDEX `supl_comp_IX` ON `component` (`comp_supl_id`)
+CREATE INDEX `comp_supl_IX` ON `component` (`comp_supl_id`)
 ;
 
-CREATE INDEX `room_comp_IX` ON `component` (`comp_room_id`)
+CREATE INDEX `comp_room_IX` ON `component` (`comp_room_id`)
 ;
 
-CREATE INDEX `coty_comp_IX` ON `component` (`comp_coty_id`)
+CREATE INDEX `comp_coty_IX` ON `component` (`comp_coty_id`)
 ;
 
 -- Table supplier
@@ -52,7 +54,7 @@ CREATE TABLE `supplier`
 )
 ;
 
-CREATE INDEX `IX_Relationship5` ON `supplier` (`supl_city_id`)
+CREATE INDEX `supl_city_IX` ON `supplier` (`supl_city_id`)
 ;
 
 -- Table room
@@ -90,7 +92,7 @@ CREATE TABLE `city`
 )
 ;
 
-CREATE INDEX `cont_city_IX` ON `city` (`city_cont_id`)
+CREATE INDEX `city_cont_IX` ON `city` (`city_cont_id`)
 ;
 
 -- Table country
@@ -127,10 +129,10 @@ CREATE TABLE `coty_coat`
 )
 ;
 
-CREATE INDEX `IX_Relationship7` ON `coty_coat` (`coco_coat_id`)
+CREATE INDEX `coco_coat_IX` ON `coty_coat` (`coco_coat_id`)
 ;
 
-CREATE INDEX `IX_Relationship8` ON `coty_coat` (`coco_coty_id`)
+CREATE INDEX `coco_coty_IX` ON `coty_coat` (`coco_coty_id`)
 ;
 
 -- Table comp_coat
@@ -139,16 +141,16 @@ CREATE TABLE `comp_coat`
 (
   `coca_id` Int NOT NULL AUTO_INCREMENT,
   `coca_value` Varchar(255),
-  `comp_id` Int,
-  `coat_id` Int,
+  `coca_comp_id` Int,
+  `coca_coat_id` Int,
   PRIMARY KEY (`coca_id`)
 )
 ;
 
-CREATE INDEX `IX_Relationship10` ON `comp_coat` (`comp_id`)
+CREATE INDEX `coca_comp_IX` ON `comp_coat` (`coca_comp_id`)
 ;
 
-CREATE INDEX `IX_Relationship12` ON `comp_coat` (`coat_id`)
+CREATE INDEX `coca_coat_IX` ON `comp_coat` (`coca_coat_id`)
 ;
 
 -- Table comp_room_software
@@ -156,16 +158,16 @@ CREATE INDEX `IX_Relationship12` ON `comp_coat` (`coat_id`)
 CREATE TABLE `comp_room_software`
 (
   `crso_id` Int NOT NULL AUTO_INCREMENT,
-  `comp_id` Int,
-  `room_id` Int,
+  `crso_comp_id` Int,
+  `crso_room_id` Int,
   PRIMARY KEY (`crso_id`)
 )
 ;
 
-CREATE INDEX `IX_Relationship15` ON `comp_room_software` (`comp_id`)
+CREATE INDEX `IX_Relationship15` ON `comp_room_software` (`crso_comp_id`)
 ;
 
-CREATE INDEX `IX_Relationship16` ON `comp_room_software` (`room_id`)
+CREATE INDEX `IX_Relationship16` ON `comp_room_software` (`crso_room_id`)
 ;
 
 -- Table user
@@ -180,7 +182,7 @@ CREATE TABLE `user`
 )
 ;
 
-CREATE INDEX `IX_Relationship17` ON `user` (`user_usro_id`)
+CREATE INDEX `user_usro_id` ON `user` (`user_usro_id`)
 ;
 
 ALTER TABLE `user` ADD UNIQUE `user_name` (`user_name`)
@@ -211,16 +213,16 @@ CREATE TABLE `permission`
 CREATE TABLE `usro_perm`
 (
   `uspe_id` Int NOT NULL AUTO_INCREMENT,
-  `usro_id` Int,
-  `perm_id` Int,
+  `uspe_usro_id` Int,
+  `uspe_perm_id` Int,
   PRIMARY KEY (`uspe_id`)
 )
 ;
 
-CREATE INDEX `IX_Relationship18` ON `usro_perm` (`usro_id`)
+CREATE INDEX `upse_usro_IX` ON `usro_perm` (`uspe_usro_id`)
 ;
 
-CREATE INDEX `IX_Relationship19` ON `usro_perm` (`perm_id`)
+CREATE INDEX `uspe_perm_id` ON `usro_perm` (`uspe_perm_id`)
 ;
 
 -- Create foreign keys (relationships) section -------------------------------------------------
@@ -234,37 +236,39 @@ ALTER TABLE `component` ADD CONSTRAINT `room_comp` FOREIGN KEY (`comp_room_id`) 
 ALTER TABLE `city` ADD CONSTRAINT `cont_city` FOREIGN KEY (`city_cont_id`) REFERENCES `country` (`cont_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `supplier` ADD CONSTRAINT `Relationship5` FOREIGN KEY (`supl_city_id`) REFERENCES `city` (`city_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `supplier` ADD CONSTRAINT `city_supl` FOREIGN KEY (`supl_city_id`) REFERENCES `city` (`city_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `coty_coat` ADD CONSTRAINT `Relationship7` FOREIGN KEY (`coco_coat_id`) REFERENCES `component_attribute` (`coat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `coty_coat` ADD CONSTRAINT `coat_coco` FOREIGN KEY (`coco_coat_id`) REFERENCES `component_attribute` (`coat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `coty_coat` ADD CONSTRAINT `Relationship8` FOREIGN KEY (`coco_coty_id`) REFERENCES `component_type` (`coty_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `coty_coat` ADD CONSTRAINT `coty_coco` FOREIGN KEY (`coco_coty_id`) REFERENCES `component_type` (`coty_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `component` ADD CONSTRAINT `Relationship9` FOREIGN KEY (`comp_coty_id`) REFERENCES `component_type` (`coty_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `component` ADD CONSTRAINT `coty_comp` FOREIGN KEY (`comp_coty_id`) REFERENCES `component_type` (`coty_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `comp_coat` ADD CONSTRAINT `Relationship10` FOREIGN KEY (`comp_id`) REFERENCES `component` (`comp_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `comp_coat` ADD CONSTRAINT `comp_coca` FOREIGN KEY (`coca_comp_id`) REFERENCES `component` (`comp_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `comp_coat` ADD CONSTRAINT `Relationship12` FOREIGN KEY (`coat_id`) REFERENCES `component_attribute` (`coat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `comp_coat` ADD CONSTRAINT `coat_coca` FOREIGN KEY (`coca_coat_id`) REFERENCES `component_attribute` (`coat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `comp_room_software` ADD CONSTRAINT `Relationship15` FOREIGN KEY (`comp_id`) REFERENCES `component` (`comp_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `comp_room_software` ADD CONSTRAINT `comp_crso` FOREIGN KEY (`crso_comp_id`) REFERENCES `component` (`comp_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `comp_room_software` ADD CONSTRAINT `Relationship16` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `comp_room_software` ADD CONSTRAINT `room_crso` FOREIGN KEY (`crso_room_id`) REFERENCES `room` (`room_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `user` ADD CONSTRAINT `Relationship17` FOREIGN KEY (`user_usro_id`) REFERENCES `user_role` (`usro_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `user` ADD CONSTRAINT `usro_user` FOREIGN KEY (`user_usro_id`) REFERENCES `user_role` (`usro_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `usro_perm` ADD CONSTRAINT `Relationship18` FOREIGN KEY (`usro_id`) REFERENCES `user_role` (`usro_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `usro_perm` ADD CONSTRAINT `usro_uspe` FOREIGN KEY (`uspe_usro_id`) REFERENCES `user_role` (`usro_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
 
-ALTER TABLE `usro_perm` ADD CONSTRAINT `Relationship19` FOREIGN KEY (`perm_id`) REFERENCES `permission` (`perm_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `usro_perm` ADD CONSTRAINT `perm_uspe` FOREIGN KEY (`uspe_perm_id`) REFERENCES `permission` (`perm_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
+
+
 
 
