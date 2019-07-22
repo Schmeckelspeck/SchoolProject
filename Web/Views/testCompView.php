@@ -7,6 +7,7 @@
 ?>
 
 <?php echo $demoComp['comp_Id']." ";
+
     echo  $demoComp['comp_Designation']?>
 
 <?php
