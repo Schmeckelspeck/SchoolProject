@@ -11,6 +11,7 @@
 			echo"<table>
 			<thead>
 				<tr>
+					<td>Id</td>
 					<td>Bezeichnung</td>
 					<td>Gewährleistungsdauer</td>
 					<td>Typ</td>
@@ -20,6 +21,7 @@
 			foreach($allComponents as $component)
 			{
 					echo "<tr>";
+						echo "<td>".$component['comp_id']."</td>";
 						echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
 						echo "<td>".$component['comp_warranty_end']."</td>";
 						echo "<td>".$component['coty_name']."</td>";

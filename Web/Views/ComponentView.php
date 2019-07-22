@@ -6,15 +6,15 @@
 	require_once("../Controllers/ComponentController.php");
 ?>
 
-Bezeichnung <input type="text" /><br>
-Hersteller <input type="text" /><br>
-Typ <input type="text" /><br>
-Attribute <input type="text" /><br>
-Gewährleistungsdauer <input type="text" /><br>
-Notiz <input type="text" /><br>
-Lieferant <input type="text" /><br>
-In Raum <input type="text" /><br>
-Erstellt am <input type="text" /><br>
+Bezeichnung <input type="text" value="<?php echo($componentData['comp_description']) ?>" /><br>
+Hersteller <input type="text" value="<?php echo($componentData['comp_manufacturer']) ?>" /><br>
+Typ <input type="text" value="<?php echo($componentData['coty_name']) ?>"/><br>
+Attribute <input type="text" value="<?php echo(null);  ?>" /><br>
+Gewährleistungsdauer <input type="text" value="<?php echo($componentData['comp_warranty_end']) ?>" /><br>
+Notiz <input type="text" value="<?php echo($componentData['comp_note']) ?>" /><br>
+Lieferant <input type="text" value="<?php echo($componentData['supl_name']) ?>" /><br>
+In Raum <input type="text" value="<?php echo($componentData['room_description']." (Raum-Nummer ".$componentData['room_number'].")")?>" /><br>
+Erstellt am <input type="text" value="<?php echo($componentData['comp_created']) ?>" /><br>
 <input type="submit" value="Speichern" />
 
 <?php

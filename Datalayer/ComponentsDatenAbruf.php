@@ -46,6 +46,33 @@
 				'coty_name'=>'CPU',
 				'room_description'=>'Computer-Raum C',
 				'room_number'=>'6'
+			),
+			array
+			(
+				'comp_id'=>'890',
+				'comp_description'=>'Live Blaster Sound LBS-09',
+				'comp_warranty_end'=>'2020-11-12',
+				'coty_name'=>'Soundkarte',
+				'room_description'=>'Computer-Raum E',
+				'room_number'=>'9'
+			),
+			array
+			(
+				'comp_id'=>'669',
+				'comp_description'=>'i7-6600K',
+				'comp_warranty_end'=>'2020-11-12',
+				'coty_name'=>'CPU',
+				'room_description'=>'Computer-Raum C',
+				'room_number'=>'6'
+			),
+			array
+			(
+				'comp_id'=>'838',
+				'comp_description'=>'Lenovo ThinkPad T410',
+				'comp_warranty_end'=>'2020-11-12',
+				'coty_name'=>'Laptop',
+				'room_description'=>'Lehrerzimmer',
+				'room_number'=>'1'
 			)
 		);
 		return $result;
