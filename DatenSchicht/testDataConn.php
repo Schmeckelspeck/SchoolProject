@@ -11,7 +11,14 @@
     
     function getComponent()
     {
-        $comp1=array('comp_Id'=>'1','comp_Designation'=>'Grafikkarte','comp_Room_Id'=>'1','comp_Supplier_Id'=>'1','comp_PurchaseDate'=>'28.09.1869','comp_WarrantyLengthInY'=>'2','comp_Notes'=>'Nichts','comp_Manufacturer'=>'HasiAG','comp_Type'=>'1');
+        $comp1=array('comp_Id'=>'1',
+                    'comp_Designation'=>'Grafikkarte',
+                    'comp_Room_Id'=>'1','comp_Supplier_Id'=>'1',
+                    'comp_PurchaseDate'=>'28.09.1869',
+                    'comp_WarrantyLengthInY'=>'2',
+                    'comp_Notes'=>'Nichts',
+                    'comp_Manufacturer'=>'HasiAG',
+                    'comp_Type'=>'1');
         return $comp1;
     }
 ?>
