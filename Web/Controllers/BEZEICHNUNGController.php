@@ -10,4 +10,5 @@
 
 	// Man kann hier Variablen benennen und auf diese dann in der jeweiligen View zugreifen.
 	$data = "Nochmal, aber als Variable: ".GetSpecificData();
+
 ?>

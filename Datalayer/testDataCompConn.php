@@ -1,5 +1,5 @@
 <?php
-    require_once("Allgemeines/DatabaseConnection.php");
+    require_once("DatabaseConnection/DatabaseConnection.php");
 ?>
 
 <?php
@@ -24,7 +24,7 @@
 
     function insertComponent($comp)
     {
-        /* $sqlInsert="INSERT INTO  componenten (comp_id,comp_description,comp_note,comp_manufacturer,comp_warranty_end,comp_created,comp_supl_id,comp_room_id)
-                                      Values ('1','NVIDIA Geforce GTX 2500i','-','NVIDIA','22.07.2021','22.07.2018','1','1') ";*/
+        $sqlInsert="INSERT INTO  componenten (comp_id,comp_description,comp_note,comp_manufacturer,comp_warranty_end,comp_created,comp_supl_id,comp_room_id)
+                                      Values ('1','NVIDIA Geforce GTX 2500i','-','NVIDIA','22.07.2021','22.07.2018','1','1') ";
     }
 ?>
