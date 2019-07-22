@@ -1,5 +1,5 @@
 <?php
-	require_once("../../DatenSchicht/BEZEICHNUNGDatenAbruf.php");
+	require_once("../../Datalayer/BEZEICHNUNGDatenAbruf.php");
 ?>
 
 <?php
