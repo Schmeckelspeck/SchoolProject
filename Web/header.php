@@ -10,5 +10,14 @@
 </head>
 
 <body>
-as hier steht im Header, zum Beispiel mit Logo: <image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg">
-<?php require_once("menu.php"); ?>
+<section id="header">
+<div class="container-fluid">
+<div class="row">
+<image style="width:10%; height:10%" src="../Ressources/img/Logo.jpg"/>
+
+
+</div>
+</section>
+
+</div>
+
