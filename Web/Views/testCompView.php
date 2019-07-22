@@ -3,7 +3,7 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/testController.php");
+	require_once("../Controllers/testCompController.php");
 ?>
 
 <<<<<<< HEAD:Web/Views/testView.php
