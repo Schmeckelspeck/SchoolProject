@@ -20,10 +20,10 @@
 			foreach($allComponents as $component)
 			{
 					echo "<tr>";
-						echo "<td><a href='/views/ComponentView?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
+						echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
 						echo "<td>".$component['comp_warranty_end']."</td>";
 						echo "<td>".$component['coty_name']."</td>";
-						echo "<td>".$component['room_description']."(Raum-Nr.: ".$component['room_number'].")</td>";
+						echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
 					echo "</tr>";
 			}
 			echo "</table>";
