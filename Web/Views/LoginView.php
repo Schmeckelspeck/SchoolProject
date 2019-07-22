@@ -8,8 +8,8 @@
 
 <form method="POST">
 	<div>
-		Benutzername: <input type="text" name="txtUsername" value="" /><br>
-		Passwort: <input  type="text" name="txtPassword" value="" />
+		Benutzername: <input type="text" name="txtUsername" /><br>
+		Passwort: <input  type="text" name="txtPassword" />
 		<input type="submit" name="btnCredentialsSubmit" value="Absenden"/>
 	</div>
 </form>

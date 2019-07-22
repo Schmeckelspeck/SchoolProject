@@ -11,10 +11,6 @@
 			{
 				$_SESSION['role'] = GetRoleOfUser($_POST['txtUsername']);
 			}
-			else
-			{
-				
-			}
 		}
 	}
 ?>

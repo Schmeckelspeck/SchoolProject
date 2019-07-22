@@ -2,9 +2,9 @@
 	require_once("../../config.php");
 	$conn=mysqli_connect('192.168.4.14','hasi','1234')or die ("could not connect to mysql");
 	mysqli_select_db($conn,'test_Component');
-	$result=mysqli_query($conn,'Select * from component');
+	/*$result=mysqli_query($conn,'Select * from component');
 	mysqli_fetch_array($result);
-	var_dump($result);
+	var_dump($result);*/
 	//$Data=mysqli_fetch_array($Result);
 ?>
 
@@ -29,10 +29,10 @@
 
 	// Beispiele mit mysqli aus AWP
 	//
-	/*
+	
 	function ExecuteReader($sqlStatement, $dbName)
 	{
-		$connection = mysqli_connect($CONFIG_mysqlIp, $CONFIG_userName, $CONFIG_passWord);
+		$connection = mysqli_connect('192.168.4.14','hasi', '1234');
 		mysqli_select_db($connection, $dbName);
 
 		$dataRows = [];
@@ -49,7 +49,7 @@
 
 	function ExecuteReaderAssoc($sqlStatement, $dbName)
 	{
-		$connection = mysqli_connect($CONFIG_mysqlIp, $CONFIG_userName, $CONFIG_passWord);
+		$connection = mysqli_connect('192.168.4.14','hasi', '1234');
 		mysqli_select_db($connection, $dbName);
 
 		$dataRows = [];
@@ -63,7 +63,7 @@
 		mysqli_close($connection);
 		return $dataRows;
 	}
-
+/*
 	function ExecuteWriter($sqlStatement, $dbName)
 	{
 		$connection = mysqli_connect($CONFIG_mysqlIp, $CONFIG_userName, $CONFIG_passWord);
