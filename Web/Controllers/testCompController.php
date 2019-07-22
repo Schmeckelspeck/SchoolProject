@@ -1,5 +1,5 @@
 <?php
-	require_once("../../Datalayer/testDataConn.php");
+	require_once("../../Datalayer/testDataCompConn.php");
 ?>
 
 <?php
