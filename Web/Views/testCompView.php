@@ -6,9 +6,11 @@
 	require_once("../Controllers/testCompController.php");
 ?>
 
-<?php echo $demoComp['comp_Id']." ";
-
-    echo  $demoComp['comp_Designation']?>
+<?php var_dump(selectComponent());
+		echo "<br/>";
+		echo "<br/>";
+	  var_dump(selectComponentAssoc());
+?>
 
 <?php
 	// Das hier muss in jeder View eingetragen werden.
