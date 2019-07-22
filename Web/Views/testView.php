@@ -6,7 +6,7 @@
 	require_once("../Controllers/testController.php");
 ?>
 
-<?php echo $demoComp; ?>
+<?php var_dump($demoComp); echo $demoComp['comp_Designation']; ?>
 
 <?php
 	// Das hier muss in jeder View eingetragen werden.

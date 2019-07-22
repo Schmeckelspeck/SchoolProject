@@ -9,5 +9,6 @@
 	}
 
 	// Man kann hier Variablen benennen und auf diese dann in der jeweiligen View zugreifen.
-	$demoComp = getComponent()['id'];
+	$demoComp = getComponent();
+	var_dump($demoComp);
 ?>
