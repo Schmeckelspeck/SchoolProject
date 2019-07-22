@@ -9,11 +9,12 @@
 <section>
 	<div class="container-fluid">
 		<div class="row">
-            <div class="col-3">
+            <div class="col-2">
                 <?php require_once("../menu.php"); ?>
             </div>
+           
             <div class="col-9">
-		        <h1>Das hier ist ein Beispiel einer View. Hei�t derzeit BEZEICHNUNGView.php</h1>
+		        
             </div>
 
         </div>
