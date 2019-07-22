@@ -21,4 +21,9 @@
                     'comp_Type'=>'1');
         return $comp1;
     }
+
+    function insertComponent($comp)
+    {
+       // $sqlInsert="INSERT INTO "
+    }
 ?>
