@@ -1,5 +1,5 @@
 <?php
-	require_once("Allgemeines/DatenbankZugriff.php");
+	require_once("DatabaseConnection/DatabaseConnection.php");
 ?>
 
 <?php

@@ -1,5 +1,5 @@
 <?php
-	require_once("../../Datalayer/BEZEICHNUNGDatenAbruf.php");
+	require_once("../../Datalayer/testDataCompConn.php");
 ?>
 
 <?php
@@ -9,5 +9,6 @@
 	}
 
 	// Man kann hier Variablen benennen und auf diese dann in der jeweiligen View zugreifen.
-	$data = "Nochmal, aber als Variable: ".GetSpecificData();
+	$demoComp = getComponent();
+	
 ?>
