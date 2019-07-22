@@ -7,10 +7,8 @@
 ?>
 
 <?php echo $demoComp['comp_Id']." ";
-	echo  $demoComp['comp_Designation']
-	
-	
-	?>
+
+    echo  $demoComp['comp_Designation']?>
 
 <?php
 	// Das hier muss in jeder View eingetragen werden.
