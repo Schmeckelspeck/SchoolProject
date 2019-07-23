@@ -8,6 +8,7 @@
 		echo "<br/>";
 		echo "<br/>"; */
 	  var_dump(selectComponentAssoc());
+	  insertComponent();
 ?>
 <section>
 	<div class="container">
