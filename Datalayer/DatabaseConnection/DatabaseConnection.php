@@ -56,7 +56,6 @@
 		mysqli_query($connection, $sqlStatement);
 		$last_ID=mysqli_insert_id($connection);
 		mysqli_close($connection);
-
 		return $last_ID;
 	}
 	
