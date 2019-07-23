@@ -8,26 +8,30 @@
 	<?php 
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
 		{
-			echo"<table>
+			echo "<table class='table'>
 			<thead>
 				<tr>
-					<td>Id</td>
-					<td>Bezeichnung</td>
-					<td>Gewährleistungsdauer</td>
-					<td>Typ</td>
-					<td>Raum</td>
+				<th scope='col'>#</th>
+				<th scope='col'>Bezeichnung</th>
+				<th scope='col'>Gewährleistungsdauer</th>
+				<th scope='col'>Typ</th>
+				<th scope='col'>Raum</th>
 				</tr>
 			</thead>";
+			echo "<tbody>";
+
 			foreach($allComponents as $component)
 			{
-					echo "<tr>";
-						echo "<td>".$component['comp_id']."</td>";
-						echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-						echo "<td>".$component['comp_warranty_end']."</td>";
-						echo "<td>".$component['coty_name']."</td>";
-						echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
-					echo "</tr>";
+				echo "<tr>";
+				echo "<th scope='row'>".$component['comp_id']."</th>";
+				echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
+				echo "<td>".$component['comp_warranty_end']."</td>";
+				echo "<td>".$component['coty_name']."</td>";
+				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
+				echo "</tr>";
+				
 			}
+			echo "</tbody>";
 			echo "</table>";
 		}
 		else
