@@ -13,7 +13,8 @@
             </div>
            
             <div class="col-9">
-		        
+
+		        <?php require_once("ComponentsView.php"); ?>
             </div>
 
         </div>
