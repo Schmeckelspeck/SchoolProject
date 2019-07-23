@@ -26,11 +26,44 @@
 
     function insertComponent()
     {
-        /* $sqlInsertComp="Insert into `component` (`comp_id`, `comp_description`, `comp_note`, `comp_manufacturer`, `comp_warranty_length`, `comp_purchase_date`, `comp_supl_id`, `comp_room_id`, `comp_coty_id`)
+        $sqlInsertComp="Insert into `component` (`comp_id` okpowekrp, `comp_description`, `comp_note`, `comp_manufacturer`, `comp_warranty_length`, `comp_purchase_date`, `comp_supl_id`, `comp_room_id`, `comp_coty_id`)
                                         VALUES (NULL, 'ACER Laptop', 'krasser PC NR 2', 'HasiAG', '2', '2019-07-31 00:00:00', NULL, NULL, NULL)";
         $array=ExecuteWriter($sqlInsertComp);
     
-        return $array;*/
+        return $array;
+    }
+
+    function insertSupplier()
+    {
+        $sqlInsertCont='INSERT INTO country(
+                        cont_name
+                        )
+                        VALUES
+                        ("Deutschland")';
+        $getIDCont=ExecuteWriter($sqlInsertCont);
+            
+        $sqlInsertCity='INSERT INTO city	(
+                        city_name,
+                        city_cont_id
+                        )
+                        VALUES
+                        ("Berlin",'$getIDCont')';
+        $getIDCity=ExecuteWriter($sqlInsertCity);
+                        
+        $sqlInsertSupl='INSERT INTO supplier(
+                        supl_name,
+                        supl_mail,
+                        supl_phone,
+                        supl_note,
+                        supl_street,
+                        supl_city_code,
+                        supl_mobile,
+                        supl_fax,
+                        supl_state,
+                        supl_city_id
+                        )
+                        VALUES
+                        ("Siemens","Siemens@gmx.de","017612345678","Wichtig!","Sigmundstraße 200","90449","",?,,'$getIDCity')';
     }
     
 ?>
