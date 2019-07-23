@@ -23,7 +23,7 @@
 	{
 		$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		mysqli_select_db($connection, 'testDatabase');
-
+		var_dump($connection);
 		$dataRows = [];
 		
 		$result = mysqli_query($connection, $sqlStatement);
@@ -40,12 +40,11 @@
 	{
 		$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		mysqli_select_db($connection, 'testDatabase');
-
-		$wasSuccessful = mysqli_query($connection, $sqlStatement);
-		var_dump($wasSuccessful);
+		mysqli_query($connection, $sqlStatement);
+		$last_ID=mysqli_insert_id($connection);
 		mysqli_close($connection);
 
-		return $wasSuccessful;
+		return $last_ID;
 	}
 	
 ?>

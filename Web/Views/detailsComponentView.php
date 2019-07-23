@@ -7,8 +7,7 @@
 /* var_dump(selectComponent());
 		echo "<br/>";
 		echo "<br/>"; */
-	  var_dump(selectComponentAssoc());
-	  insertComponent();
+	insertComponent();
 ?>
 <section>
 	<div class="container">

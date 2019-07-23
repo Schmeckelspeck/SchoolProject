@@ -30,3 +30,33 @@ FROM component
 LEFT JOIN comp_coat ON coca_comp_id = comp_id
 LEFT JOIN component_attribute ON coat_id = coca_coat_id
 WHERE comp_id = ?;
+
+INSERT INTO country(
+					cont_name
+					)
+					VALUES
+					(?);
+					
+INSERT INTO city	(
+					city_name,
+					city_cont_id
+					)
+					VALUES
+					(?,?);
+					
+INSERT INTO supplier(
+					supl_name,
+					supl_mail,
+					supl_phone,
+					supl_note,
+					supl_street,
+					supl_city_code,
+					supl_mobile,
+					supl_fax,
+					supl_state,
+					supl_city_id
+					)
+					VALUES
+					(?,?,?,?,?,?,?,?,?,?);
+
+
