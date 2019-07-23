@@ -10,7 +10,7 @@
 			'comp_description',
 			'comp_note',
 			'comp_manufacturer',
-			'comp_warranty_end',
+			'comp_warranty_length',
 			'comp_created',
 			'supl_name',
 			'room_description',
@@ -25,18 +25,6 @@
 			comp_id = ".$id;
 
 		$result = ExecuteReaderAssoc($sqlStatement);
-		$result = array
-		(
-			'comp_description'=>'i5-6500U',
-			'comp_note'=>'Das ist eine CPU.',
-			'comp_manufacturer'=>'Intel',
-			'comp_warranty_end'=>'2018-01-20',
-			'comp_created'=>'2016-02-02',
-			'supl_name'=>'MindFactory',
-			'room_description'=>'Computer-Raum',
-			'room_number'=>'1234',
-			'coty_name'=>'CPU'
-		);
 		return $result;
 	}
 
@@ -51,13 +39,6 @@
 		WHERE component.comp_id = ".$id.";";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
-		$result = array(
-			array('coat_name'=>'Ein Attribut1'),
-			array('coat_name'=>'Ein Attribut2'),
-			array('coat_name'=>'Ein Attribut3'),
-			array('coat_name'=>'Ein Attribut4'),
-			array('coat_name'=>'Ein Attribut5'),
-		);
 		return $result;
 	}
 

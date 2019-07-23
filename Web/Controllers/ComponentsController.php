@@ -3,7 +3,7 @@
 ?>
 
 <?php
-	// filterText, filterArt
+	// filterText, filterArt, hier die Filtersuche reingeben
 	$allComponents = GetComponents("","");
 	$allComponentsFilterOptions = GetFilterOptions();
 ?>

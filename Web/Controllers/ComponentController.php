@@ -8,9 +8,5 @@
 		$componentData = GetSpecificComponent($id);
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
 	}
-	else
-	{
-		header('Location: /Web/Views/ComponentsView.php');
-	}
 
 ?>

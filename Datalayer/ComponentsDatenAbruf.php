@@ -8,7 +8,7 @@
 	{
 		$filterOptions = array(
 			'comp_description',
-			'comp_warranty_end',
+			'comp_warranty_length',
 			'coty_name',
 			'room_description',
 			'room_number'

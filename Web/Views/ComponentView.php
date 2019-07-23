@@ -18,7 +18,7 @@ Attribute
 	}
 ?>
 </textarea><br>
-Gewährleistungsdauer <input type="text" value="<?php echo($componentData['comp_warranty_end']) ?>" /><br>
+Gewährleistungsdauer <input type="text" value="<?php echo($componentData['comp_warranty_length']) ?>" /><br>
 Notiz <textarea> <?php echo($componentData['comp_note']) ?> </textarea><br>
 Lieferant <input type="text" value="<?php echo($componentData['supl_name']) ?>" /><br>
 In Raum <input type="text" style="width: 18rem;" value="<?php echo($componentData['room_description']." (Raum-Nummer ".$componentData['room_number'].")")?>" /><br>

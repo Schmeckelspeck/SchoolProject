@@ -10,12 +10,18 @@
 		$dataRows = array();
 
 		$result = mysqli_query($connection, $sqlStatement);
-
+		if($result)
+		{
 		while($data = mysqli_fetch_row($result))
 		{
 			array_push($dataRows, $data);
 		}
 		mysqli_close($connection);
+		}
+		else 
+		{
+			$dataRows = array();
+		}
 		return $dataRows;
 	}
 
@@ -26,12 +32,20 @@
 
 		$dataRows = array();
 		$result = mysqli_query($connection, $sqlStatement);
-		
-		while($data = mysqli_fetch_assoc($result))
+	
+		var_dump($result);
+		if($result)
 		{
-			array_push($dataRows, $data);
+			while($data = mysqli_fetch_assoc($result))
+			{
+				array_push($dataRows, $data);
+			}
+			mysqli_close($connection);
 		}
-		mysqli_close($connection);
+		else
+		{
+			$dataRows = array();
+		}
 		return $dataRows;
 	}
 
@@ -39,10 +53,11 @@
 	{
 		$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		mysqli_select_db($connection, 'testDatabase');
-		$wasSuccessful = mysqli_query($connection, $sqlStatement);
+		mysqli_query($connection, $sqlStatement);
+		$last_ID=mysqli_insert_id($connection);
 		mysqli_close($connection);
 
-		return $wasSuccessful;
+		return $last_ID;
 	}
 	
 ?>
