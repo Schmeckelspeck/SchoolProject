@@ -23,5 +23,13 @@
         $array=ExecuteReaderAssoc($sqlSelectComp);
         return $array;
     }
+
+    function insertComponent()
+    {
+        $sqlInsertComp="Insert into `component` (`comp_id`, `comp_description`, `comp_note`, `comp_manufacturer`, `comp_warranty_length`, `comp_purchase_date`, `comp_supl_id`, `comp_room_id`, `comp_coty_id`)
+                                        VALUES (NULL, 'ACER Standpc', 'krasser PC NR 2', 'HasiAG', '2', '2019-07-31 00:00:00', NULL, NULL, NULL)";
+        $array=ExecuteWriter($sqlInsertComp);
+        return $array;
+    }
     
 ?>

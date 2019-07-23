@@ -7,7 +7,7 @@
 /* var_dump(selectComponent());
 		echo "<br/>";
 		echo "<br/>"; */
-	  var_dump(selectComponentAssoc());
+
 ?>
 <section>
 	<div class="container">
@@ -94,7 +94,7 @@
 
 					<br><br>
 					<div class="row">
-						<div class="col">
+						<div class="col" >
 							<button type="button" class="btn btn-dark">Speichern</button>
 						</div>
 						<div class="col">

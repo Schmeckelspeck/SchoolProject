@@ -9,6 +9,5 @@
 	}
 
 	// Man kann hier Variablen benennen und auf diese dann in der jeweiligen View zugreifen.
-	$demoComp = selectComponent();
-	$demoCompAssoc= selectComponentAssoc();
+	
 ?>
