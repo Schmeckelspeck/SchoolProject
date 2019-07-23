@@ -14,14 +14,14 @@ Database: MySQL 8.0
 CREATE TABLE `component`
 (
   `comp_id` Int NOT NULL AUTO_INCREMENT,
-  `comp_description` Varchar(255),
+  `comp_description` Varchar(255) NOT NULL,
   `comp_note` Varchar(1024),
-  `comp_manufacturer` Varchar(45),
-  `comp_warranty_length` Int,
-  `comp_purchase_date` Datetime,
-  `comp_supl_id` Int,
-  `comp_room_id` Int,
-  `comp_coty_id` Int,
+  `comp_manufacturer` Varchar(45) NOT NULL,
+  `comp_warranty_length` Int NOT NULL,
+  `comp_purchase_date` Datetime NOT NULL,
+  `comp_supl_id` Int NOT NULL,
+  `comp_room_id` Int NOT NULL,
+  `comp_coty_id` Int NOT NULL,
   PRIMARY KEY (`comp_id`)
 )
 ;
@@ -40,14 +40,14 @@ CREATE INDEX `comp_coty_IX` ON `component` (`comp_coty_id`)
 CREATE TABLE `supplier`
 (
   `supl_id` Int NOT NULL AUTO_INCREMENT,
-  `supl_name` Varchar(45),
+  `supl_name` Varchar(45) NOT NULL,
+  `supl_mail` Varchar(45) NOT NULL,
+  `supl_phone` Varchar(20) NOT NULL,
   `supl_note` Varchar(1024),
   `supl_street` Varchar(45),
   `supl_city_code` Varchar(10),
-  `supl_phone` Varchar(20),
   `supl_mobile` Varchar(20),
   `supl_fax` Varchar(20),
-  `supl_mail` Varchar(45),
   `supl_state` Varchar(1),
   `supl_city_id` Int,
   PRIMARY KEY (`supl_id`)
@@ -62,7 +62,7 @@ CREATE INDEX `supl_city_IX` ON `supplier` (`supl_city_id`)
 CREATE TABLE `room`
 (
   `room_id` Int NOT NULL AUTO_INCREMENT,
-  `room_number` Varchar(5),
+  `room_number` Varchar(5) NOT NULL,
   `room_description` Varchar(45),
   `room_note` Varchar(1024),
   `room_state` Varchar(1),
@@ -75,7 +75,7 @@ CREATE TABLE `room`
 CREATE TABLE `component_type`
 (
   `coty_id` Int NOT NULL AUTO_INCREMENT,
-  `coty_name` Varchar(45),
+  `coty_name` Varchar(45) NOT NULL,
   PRIMARY KEY (`coty_id`)
 )
 ;
@@ -85,8 +85,8 @@ CREATE TABLE `component_type`
 CREATE TABLE `city`
 (
   `city_id` Int NOT NULL AUTO_INCREMENT,
-  `city_name` Varchar(45),
-  `city_cont_id` Int,
+  `city_name` Varchar(45) NOT NULL,
+  `city_cont_id` Int NOT NULL,
   PRIMARY KEY (`city_id`)
 )
 ;
@@ -99,7 +99,7 @@ CREATE INDEX `city_cont_IX` ON `city` (`city_cont_id`)
 CREATE TABLE `country`
 (
   `cont_id` Int NOT NULL AUTO_INCREMENT,
-  `cont_name` Varchar(45),
+  `cont_name` Varchar(45) NOT NULL,
   PRIMARY KEY (`cont_id`)
 )
 ;
@@ -109,7 +109,7 @@ CREATE TABLE `country`
 CREATE TABLE `component_attribute`
 (
   `coat_id` Int NOT NULL AUTO_INCREMENT,
-  `coat_name` Varchar(45),
+  `coat_name` Varchar(45) NOT NULL,
   `coat_state` Varchar(1),
   PRIMARY KEY (`coat_id`)
 )
@@ -120,8 +120,8 @@ CREATE TABLE `component_attribute`
 CREATE TABLE `coty_coat`
 (
   `coco_id` Int NOT NULL AUTO_INCREMENT,
-  `coco_coat_id` Int,
-  `coco_coty_id` Int,
+  `coco_coat_id` Int NOT NULL,
+  `coco_coty_id` Int NOT NULL,
   PRIMARY KEY (`coco_id`)
 )
 ;
@@ -137,9 +137,9 @@ CREATE INDEX `coco_coty_IX` ON `coty_coat` (`coco_coty_id`)
 CREATE TABLE `comp_coat`
 (
   `coca_id` Int NOT NULL AUTO_INCREMENT,
-  `coca_value` Varchar(255),
-  `coca_comp_id` Int,
-  `coca_coat_id` Int,
+  `coca_value` Varchar(255) NOT NULL,
+  `coca_comp_id` Int NOT NULL,
+  `coca_coat_id` Int NOT NULL,
   PRIMARY KEY (`coca_id`)
 )
 ;
@@ -155,8 +155,8 @@ CREATE INDEX `coca_coat_IX` ON `comp_coat` (`coca_coat_id`)
 CREATE TABLE `comp_room_software`
 (
   `crso_id` Int NOT NULL AUTO_INCREMENT,
-  `crso_comp_id` Int,
-  `crso_room_id` Int,
+  `crso_comp_id` Int NOT NULL,
+  `crso_room_id` Int NOT NULL,
   PRIMARY KEY (`crso_id`)
 )
 ;
@@ -190,7 +190,7 @@ ALTER TABLE `user` ADD UNIQUE `user_name` (`user_name`)
 CREATE TABLE `user_role`
 (
   `usro_id` Int NOT NULL AUTO_INCREMENT,
-  `usro_name` Varchar(45),
+  `usro_name` Varchar(45) NOT NULL,
   PRIMARY KEY (`usro_id`)
 )
 ;
@@ -200,7 +200,7 @@ CREATE TABLE `user_role`
 CREATE TABLE `permission`
 (
   `perm_id` Int NOT NULL AUTO_INCREMENT,
-  `perm_name` Varchar(45),
+  `perm_name` Varchar(45) NOT NULL,
   PRIMARY KEY (`perm_id`)
 )
 ;
@@ -210,8 +210,8 @@ CREATE TABLE `permission`
 CREATE TABLE `usro_perm`
 (
   `uspe_id` Int NOT NULL AUTO_INCREMENT,
-  `uspe_usro_id` Int,
-  `uspe_perm_id` Int,
+  `uspe_usro_id` Int NOT NULL,
+  `uspe_perm_id` Int NOT NULL,
   PRIMARY KEY (`uspe_id`)
 )
 ;
