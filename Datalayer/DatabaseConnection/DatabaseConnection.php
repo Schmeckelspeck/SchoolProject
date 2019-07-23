@@ -7,7 +7,7 @@
 		$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		mysqli_select_db($connection, 'testDatabase');
 
-		$dataRows = [];
+		$dataRows = array();
 
 		$result = mysqli_query($connection, $sqlStatement);
 
@@ -24,8 +24,7 @@
 		$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		mysqli_select_db($connection, 'testDatabase');
 
-		$dataRows = [];
-		
+		$dataRows = array();
 		$result = mysqli_query($connection, $sqlStatement);
 		
 		while($data = mysqli_fetch_assoc($result))
