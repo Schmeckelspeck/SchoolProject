@@ -3,8 +3,24 @@
 ?>
 
 <?php
-	function GetComponents()
+
+	function GetFilterOptions()
 	{
+		$filterOptions = array(
+			'comp_description',
+			'comp_warranty_end',
+			'coty_name',
+			'room_description',
+			'room_number'
+		);
+		return $filterOptions;
+	}
+	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
+	{
+		// Test
+		$filterText = "AM";
+		$filterArt = "comp_warranty_end";
+
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
@@ -15,7 +31,16 @@
 			room_number
 		FROM component
 		INNER JOIN room ON room.room_id = component.room_id
-		INNER JOIN component_type ON component_type.coty_id = component.comp_coty_id;";
+		INNER JOIN component_type ON component_type.coty_id = component.comp_coty_id";
+
+		if($filterArt !== null) // ($filterText !== null || $filterArt !== null)
+		{
+			$sqlStatement = $sqlStatement." WHERE ".$filterArt." LIKE '%".$filterText."%'";
+		}
+		
+		$sqlStatement = $sqlStatement.";";
+		var_dump($sqlStatement);
+		
 
 		$result = ExecuteReaderAssoc($sqlStatement, "testdb");
 		$result = array

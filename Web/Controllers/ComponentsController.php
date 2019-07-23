@@ -3,5 +3,5 @@
 ?>
 
 <?php
-	$allComponents = GetComponents();
+	$allComponents = GetComponents("","");
 ?>
