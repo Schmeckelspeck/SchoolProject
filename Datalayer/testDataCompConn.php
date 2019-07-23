@@ -39,16 +39,14 @@
                         cont_name
                         )
                         VALUES
-                        ("Deutschland")';
-        $getIDCont=ExecuteWriter($sqlInsertCont);
+                        (?)';
             
         $sqlInsertCity='INSERT INTO city	(
                         city_name,
                         city_cont_id
                         )
                         VALUES
-                        ("Berlin",'$getIDCont')';
-        $getIDCity=ExecuteWriter($sqlInsertCity);
+                        (?,?)';
                         
         $sqlInsertSupl='INSERT INTO supplier(
                         supl_name,
@@ -63,7 +61,7 @@
                         supl_city_id
                         )
                         VALUES
-                        ("Siemens","Siemens@gmx.de","017612345678","Wichtig!","Sigmundstraße 200","90449","",?,,'$getIDCity')';
+                        (?,?,?,?,?,?,?,?,?,?)';
     }
     
 ?>
