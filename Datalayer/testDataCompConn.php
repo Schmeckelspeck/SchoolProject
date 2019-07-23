@@ -33,13 +33,21 @@
         return $array;
     }
 
-    function insertSupplier()
+    function insertSupplier($cont_name,$city_name)
     {
-        $sqlInsertCont='INSERT INTO country(
-                        cont_name
-                        )
-                        VALUES
-                        (?)';
+
+        $sqlInsertCont=$connection ->prepare('INSERT INTO country(cont_name) VALUES(?)');
+        $sqlInsertCont ->bind_param("s",$countryName);
+        $countryName=$cont_name;
+        $sqlInsertCont->execute();
+        $getLastContID=mysqli_insert_id($sqlInsertCont);
+            
+
+        $sqlInsertCity=$connection ->prepare('INSERT INTO city (city_name,city_cont_id)VALUES (?,?)');
+        $sqlInsertCity ->bind_param("si",$cityName,$getLastContID);
+        $cityName=$city_name;
+        $sqlInsertCity->execute();
+        $getLastCityID=mysqli_insert_id($sqlInsertCity);
             
         $sqlInsertCity='INSERT INTO city	(
                         city_name,
