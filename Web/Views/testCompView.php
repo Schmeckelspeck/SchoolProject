@@ -4,9 +4,9 @@
 
 	// Das hier muss jeweils bei der View angepasst werden.
 	require_once("../Controllers/testCompController.php");
-var_dump(selectComponent());
+/* var_dump(selectComponent());
 		echo "<br/>";
-		echo "<br/>";
+		echo "<br/>"; */
 	  var_dump(selectComponentAssoc());
 ?>
 <section>

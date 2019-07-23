@@ -24,7 +24,7 @@
 		WHERE
 			comp_id = ".$id;
 
-		$result = ExecuteReaderAssoc($sqlStatement, "testdb");
+		$result = ExecuteReaderAssoc($sqlStatement);
 		$result = array
 		(
 			'comp_description'=>'i5-6500U',
@@ -50,7 +50,7 @@
 		INNER JOIN component ON component.comp_id = coca_comp_id
 		WHERE component.comp_id = ".$id.";";
 
-		$result = ExecuteReaderAssoc($sqlStatement, 'testDb');
+		$result = ExecuteReaderAssoc($sqlStatement);
 		$result = array(
 			array('coat_name'=>'Ein Attribut1'),
 			array('coat_name'=>'Ein Attribut2'),
