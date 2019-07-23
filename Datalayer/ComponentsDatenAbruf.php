@@ -19,11 +19,6 @@
 	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
-		// TestData
-		$filterText = "";
-		$filterArt = "";
-		// TestData Ende
-
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
