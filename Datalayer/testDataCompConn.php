@@ -12,7 +12,7 @@
     function selectComponent()
     {
         $sqlSelectComp="Select * from component";
-        $array=ExecuteReader($sqlSelectComp,'testDatabase');
+        $array=ExecuteReader($sqlSelectComp);
         return $array;
                             
     }
@@ -20,7 +20,7 @@
     function selectComponentAssoc()
     {
         $sqlSelectComp="Select * from component";
-        $array=ExecuteReaderAssoc($sqlSelectComp,'testDatabase');
+        $array=ExecuteReaderAssoc($sqlSelectComp);
         return $array;
     }
     
