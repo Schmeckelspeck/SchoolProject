@@ -1,6 +1,6 @@
 ﻿/*
 Created: 22/07/2019
-Modified: 22/07/2019
+Modified: 23/07/2019
 Model: MySQL 8.0
 Database: MySQL 8.0
 */
@@ -17,8 +17,8 @@ CREATE TABLE `component`
   `comp_description` Varchar(255),
   `comp_note` Varchar(1024),
   `comp_manufacturer` Varchar(45),
-  `comp_warranty_end` Datetime,
-  `comp_created` Datetime,
+  `comp_warranty_length` Int,
+  `comp_purchase_date` Datetime,
   `comp_supl_id` Int,
   `comp_room_id` Int,
   `comp_coty_id` Int,
@@ -86,7 +86,6 @@ CREATE TABLE `city`
 (
   `city_id` Int NOT NULL AUTO_INCREMENT,
   `city_name` Varchar(45),
-  `city_created` Char(20),
   `city_cont_id` Int,
   PRIMARY KEY (`city_id`)
 )
@@ -101,8 +100,6 @@ CREATE TABLE `country`
 (
   `cont_id` Int NOT NULL AUTO_INCREMENT,
   `cont_name` Varchar(45),
-  `cont_created` Datetime
- COMMENT 'admin field',
   PRIMARY KEY (`cont_id`)
 )
 ;
