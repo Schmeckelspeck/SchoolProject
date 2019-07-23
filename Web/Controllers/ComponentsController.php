@@ -4,4 +4,5 @@
 
 <?php
 	$allComponents = GetComponents("","");
+	$allComponentsFilterOptions = GetFilterOptions();
 ?>

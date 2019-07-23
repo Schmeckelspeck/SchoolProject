@@ -15,11 +15,14 @@
 		);
 		return $filterOptions;
 	}
+
+	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
-		// Test
+		// TestData
 		$filterText = "AM";
 		$filterArt = "comp_warranty_end";
+		// TestData Ende
 
 		$sqlStatement = 
 		"SELECT 
@@ -42,8 +45,8 @@
 		var_dump($sqlStatement);
 		
 
-		$result = ExecuteReaderAssoc($sqlStatement, "testdb");
-		$result = array
+		$result = ExecuteReaderAssoc($sqlStatement);
+		/*$result = array
 		(
 			array
 			(
@@ -99,7 +102,7 @@
 				'room_description'=>'Lehrerzimmer',
 				'room_number'=>'1'
 			)
-		);
+		);*/
 		return $result;
 	}
 ?>
