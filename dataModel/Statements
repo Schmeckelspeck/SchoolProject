@@ -1,0 +1,32 @@
+Selects:
+1 - list all suppliers:
+SELECT 	supl_id, supl_name, supl_note, 
+		supl_street, supl_city_code, supl_phone, 
+		supl_mobile, supl_fax, supl_mail,
+		supl_state, city_name, cont_name
+FROM supplier
+LEFT JOIN city on supl_city_id = city_id
+LEFT JOIN country on city_cont_id = cont_id;
+
+2 - list all componenents:
+SELECT 	comp_id, comp_description, comp_note,
+		comp_manufacturer, comp_warranty_length, comp_purchase_date,
+		room_number, coty_name
+FROM component
+LEFT JOIN room ON room_id = comp_room_id
+LEFT JOIN component_type ON coty_id = comp_coty_id;
+
+4 - select components by room
+SELECT 	comp_id, comp_description, comp_note,
+		comp_manufacturer, comp_warranty_length, comp_purchase_date, coty_name
+FROM component
+LEFT JOIN room ON room_id = comp_room_id
+LEFT JOIN component_type ON coty_id = comp_coty_id;
+WHERE room_id = ?;
+
+3 - list component attributes by component id
+SELECT 	comp_description, coca_id, coca_value, coat_name
+FROM component
+LEFT JOIN comp_coat ON coca_comp_id = comp_id
+LEFT JOIN component_attribute ON coat_id = coca_coat_id
+WHERE comp_id = ?;
