@@ -3,13 +3,14 @@
 ?>
 
 <?php
-if(isset($_GET['idComponent']))
-{
-	$componentData = GetSpecificComponent($id);
-}
-else
-{
-	header('Location: /Web/Views/ComponentsView.php');
-}
+	if(isset($_GET['idComponent']))
+	{
+		$componentData = GetSpecificComponent($id);
+		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
+	}
+	else
+	{
+		header('Location: /Web/Views/ComponentsView.php');
+	}
 
 ?>

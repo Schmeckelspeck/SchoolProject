@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<?php var_dump(selectComponent());
+<?php 
+	require_once("../header.php");
+
+	// Das hier muss jeweils bei der View angepasst werden.
+	require_once("../Controllers/testCompController.php");
+/* var_dump(selectComponent());
 		echo "<br/>";
-		echo "<br/>";
+		echo "<br/>"; */
 	  var_dump(selectComponentAssoc());
 ?>
 <section>

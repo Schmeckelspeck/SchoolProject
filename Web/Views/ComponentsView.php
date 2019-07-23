@@ -34,8 +34,8 @@
 		{
 			echo "Es konnten keine Daten ermittelt werden.";
 		}
-		
 	?>
+	<input type="submit" name="btnCreateNewComponent" value="Neue Komponente anlegen" />
 
 
 <?php
