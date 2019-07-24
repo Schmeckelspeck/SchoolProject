@@ -1,0 +1,88 @@
+﻿Nutzerhandbuch
+
+
+1.	Willkommen
+
+Sie befinden sich nun auf unserer Übersichtsseite.
+Im Menü links können Sie in die einzelnen Teilbereiche dieser Webanwendung springen:
+	- Komponenten: Hier können Sie Ihre einzelnen Hard- und Softwarekomponenten verwalten.
+	- Räume: Die Verwaltung der Räume findet hier statt.
+	- Lieferanten: Hier können Lieferanten hinzugefügt und geändert werden.
+
+
+2.	Komponenten
+
+2.1	Komponenten - Übersicht
+
+Sie erhalten eine Übersicht über sämtliche Komponenten in Ihrem Bestand.
+Durch das klicken auf den entsprechenden Namen einer Komponente gelangen Sie auf die Detailseite dieser Komponente.
+Auf dieser Detailseite ist auch eine Änderung der Eigenschaften möglich.
+Durch eingeben eines Namens und auswählen einer Eigenschaft im Drop-Down ist ein Filtern der Liste nach dem eingegebenen Namen möglich.
+Zum Einfügen einer neuen Komponente klicken Sie auf "neue Komponente hinzufügen".
+
+2.2	Komponenten - Bearbeiten
+
+Auf dieser Seite können Sie die einzelnen Details und Attribute der Komponenten ändern bzw. neue Komponenten hinzufügen.
+Sollte zum Bearbeiten eine bestimmte Komponente ausgewöhlt worden sein, sind die Felder der Details mit den entsprechenden Daten aufgefüllt.
+Diese Daten können durch ändern der Textfeldeinträge geändert und durch drücken der Speichern-Taste in der Datenbank gespeichert werden.
+Ein Klick auf Ausmustern verschiebt die Komponente in den Raum "Ausgemustert".
+Löschen entfernt die Komponente aus der Datenbank und sollte nur mit Vorsicht genutzt werden.
+
+Sollte die Seite über "neue Komponente hinzufügen" aufgerufen worden sein, werden lediglich manche (wichtigen) Feldern mit Standartwerten vorbelegt.
+
+Eine Übersicht über die einzelnen Details:
+	- Bezeichnung	  	  required	kein Defaultwert	Die (interne) Bezeichnung der Komponente
+	- Komponentenart  	  required	kein Defaultwert	Die Art der Komponente (z.B.: PC, Beamer, ...)
+	- Hersteller	  	  required	kein Defaultwert	Der Name des Herstellers der Komponente (z.B.: Acer, DELL, ...)
+	- Lieferant	  		  required 	kein Defaultwert	Der Name des Lieferanten. Hier kann ein Lieferant aus einem Dropdown mit allen vorhandenen Lieferanten wählen.
+	- Raum		  		  required	Lagerraum			Durch ein Dropdown kann ein Raum zugewiesen werden. Die Räume "Lager" und "Ausmustern" sind hier ebenfalls enthalten. 
+	- Gewährleitungsdauer required	12					Die Gewährleistungsdauer in Monaten.
+	- Attribute 		  optional						Weitere Eigenschaften und die dazugehörigen Werte können hier angelegt werden.
+	- Notiz				  optional						Zusätzliche Informationen und BEschreibungen zu der Komponente.
+	
+	
+3.	Räume
+
+3.1	Räume - Übersicht
+
+Hier können Sie sämtliche angelegten Räume und ihre Details einsehen.
+Durch einen Klick auf den jeweiligen Raum landen Sie auf der Detailseite des Raumes.
+Mit "neuen Raum hinzufügen" können Sie einen neuen Raum erstellen.
+
+3.2	Räume - Bearbeiten
+
+Auf dieser Seite können die einzelnen Details eines Raumes bearbeitet oder ein neuer Raum angelegt werden.
+Daten werden durch klicken auf "Speichern" geändert. Ein Klick auf "Löschen" entfernt den Raum.
+
+Eine Übersicht über die einzelnen Details:
+	- Raumnummer		required	kein Defaultwert	gibt die (eindeutige) Nummer des Raumes an (z.B.: R215)
+	- Raumbezeichnung	required	kein Defaultwert	gibt eine Bezeichnung des Raumes an (z.B. Lehrerzimmer)
+	- Bemerkung			optional						Zusätzliche Bemerkungen zum entsprechenden Raum
+
+
+4.	Lieferanten
+
+4.1	Lieferanten - Übersicht
+
+Hier werde alle Lieferanten und deren Details angezeigt.
+Ein Klick auf den entsprechenden Lieferanten führt zur "Bearbeiten"-Seite des entsprechenden Lieferanten.
+Durch einen Klick auf "neuen Lieferanten hinzufügen" können Sie einen neuen Lieferanten erstellen.
+
+4.2	Lieferanten - Bearbeiten
+
+Hier sehen Sie alle Details des ausgewählten Lieferanten oder können die Details eines neuen Lieferanten anlegen.
+Ein Klick auf "Speichern" fügt den neuen Lieferanten hinzu oder speichert die getätigten änderungen.
+
+Eine Übersicht über die Details:
+	- Firmenname	required	kein Defaultwert	Der Firmenname des Lieferanten	
+	- Straße		optional						Der Straßenname und die Hausnummer des Lieferanten.
+	- Postleitzahl	optional						Die Postleitzahl des Lieferanten.
+	- Stadt			optional						Die Stadt des Lieferanten.
+	- Telefon		required	kein Defaultwert	Die Telefonnummer des Lieferanten.
+	- Mobil			optional						Die Handynummer des Lieferanten.
+	- Fax			optional						Die Faxnummer des Lieferanten.
+	- Mail			required	kein Defaultwert	Die E-Mail des Lieferanten.
+	- Land			optional						Das Land des Lieferanten.
+
+
+5. Mögliche Erweierungen
