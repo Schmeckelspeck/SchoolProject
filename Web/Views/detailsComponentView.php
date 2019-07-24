@@ -11,6 +11,7 @@
 				<div class="row" >
 
 				<?php 
+					$componentData['comp_description']
 					foreach($componentAttributes as $attribute)
 					{
 							echo($attribute['coat_name']."\n");
