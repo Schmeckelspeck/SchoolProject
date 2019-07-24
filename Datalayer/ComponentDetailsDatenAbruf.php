@@ -61,7 +61,7 @@
 	function GetAllComponentTypes ()
 	{
 		
-		$sqlStatement = "SELECT coty_id, coty_name FROM component_type;"
+		$sqlStatement = "SELECT coty_id, coty_name FROM component_type;";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
@@ -80,7 +80,7 @@
 			FROM component_attribute
 			INNER JOIN coty_coat ON coat_id = coco_coat_id
 			INNER JOIN component_type ON coco_coty_id = coty_id
-			WHERE coty_id = $coty_id;"
+			WHERE coty_id = $coty_id;";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
