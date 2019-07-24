@@ -3,7 +3,11 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
+<<<<<<< HEAD
 	require_once("../Controllers/ComponentsController.php");
+=======
+	require_once("../Controllers/ComponentDetailsController.php");
+>>>>>>> master
 ?>
 <section>
 	<div class="container">
