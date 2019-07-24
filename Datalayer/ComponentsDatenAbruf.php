@@ -19,8 +19,8 @@
 	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
-		$connection = mysqli_connect("127.0.0.1", "root", ""); // nur für einen lokalen Test
-		mysqli_select_db($connection, 'testDatabase');
+		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
+		mysqli_select_db($connection, $GLOBALS['testDb']);
 
 		$sqlStatement = 
 		"SELECT 
