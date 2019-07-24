@@ -58,4 +58,47 @@
 		}
 		return $dataRows;
 	}
+
+/***
+ * ------------------------------------------
+--GET data
+SELECT supl_id, supl_name
+FROM supplier;
+
+SELECT room_id, room_number
+FROM room;
+
+SELECT coty_id, coty_name
+FROM component_type;
+
+--provides all component attributes for component type
+SELECT coat_id, coat_name
+FROM component_attribute
+INNER JOIN coty_coat ON coat_id = coco_coat_id
+INNER JOIN component_type ON coco_coty_id = coty_id
+WHERE coty_id = ?;
+
+--PUT data
+INSERT INTO component(	comp_description,
+						comp_manufacturer,
+						comp_warranty_length,
+						comp_purchase_date,
+						comp_note,
+						comp_supl_id,
+						comp_room_id,
+						comp_coty_id,
+					)
+					VALUES
+					(?,?,?,?,?,?,?,?,?);
+
+INSERT INTO comp_coat	(
+						coca_value,
+						coca_comp_id,
+						coca_coat_id
+						)
+						VALUES
+						(?,?,?);
+--------------------------------------------
+ * 
+ */
 ?>
