@@ -1,8 +1,5 @@
 <?php
-    if(session_id() == '')
-    {
-        session_start();
-    }
+    session_start();
     require_once("../../Datalayer/LoginDatenAbruf.php");
 
     if(isset($_POST['btnLogin']))
@@ -14,6 +11,6 @@
                 $_SESSION['user_role'] = GetUserRole(GetUserId($_POST['txtUsername']));
             }
         }
-        
     }
+    echo $_SESSION['user_role'];
 ?>
