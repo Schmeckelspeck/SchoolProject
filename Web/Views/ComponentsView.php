@@ -5,19 +5,19 @@
 	// Das hier muss jeweils bei der View angepasst werden.
 	require_once("../Controllers/ComponentsController.php");
 ?>
+
+
 	<?php 
 
-		echo "<div class='input-group mb-3'>
-		<div class='input-group-prepend'>
-		  <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Dropdown</button>
-		  <div class='dropdown-menu'>
-			<a class='dropdown-item' href='#'>Attribute 1</a>
-			<a class='dropdown-item' href='#'>Attribute 2</a>
-			<a class='dropdown-item' href='#'>Attribute 3</a>
-		  </div>
-		</div>
+		echo "<div class='input-group-append style='float: right;'>
+		<select>
+			<option value='att1'>Attribut 1</option>
+			<option value='att2'>Attribut 2</option>
+			<option value='att3'>Attribut 3</option>
+			<option value='att4'>Attribut 4</option>
+		</select>
 		<input type='text' class='form-control' aria-label='Text input with dropdown button'>
-	  </div>";
+	  	</div>";
 
 		echo "<div class='row'>";
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
@@ -38,11 +38,7 @@
 			{
 				echo "<tr>";
 				echo "<th scope='row'>".$component['comp_id']."</th>";
-<<<<<<< HEAD
-				echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-=======
 				echo "<td><a href='Layout.php?view=1&idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
->>>>>>> c9154f5edfa46c12721146916a403c1f92863403
 				echo "<td>".$component['comp_warranty_end']."</td>";
 				echo "<td>".$component['coty_name']."</td>";
 				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
