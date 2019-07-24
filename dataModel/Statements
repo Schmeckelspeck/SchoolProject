@@ -1,4 +1,5 @@
 Selects:
+
 1 - list all suppliers:
 SELECT 	supl_id, supl_name, supl_note, 
 		supl_street, supl_city_code, supl_phone, 
@@ -31,3 +32,33 @@ FROM	room;
 SELECT	supl_id, supl_name
 FROM	supplier;
 
+--------------------------------------------------------------------------------
+Inserts:
+
+INSERT INTO country(
+					cont_name
+					)
+					VALUES
+					(?);
+
+INSERT INTO city	(
+					city_name,
+					city_cont_id
+					)
+					VALUES
+					(?,?);
+
+INSERT INTO supplier(
+					supl_name,
+					supl_mail,
+					supl_phone,
+					supl_note,
+					supl_street,
+					supl_city_code,
+					supl_mobile,
+					supl_fax,
+					supl_state,
+					supl_city_id
+					)
+					VALUES
+					(?,?,?,?,?,?,?,?,?,?);
