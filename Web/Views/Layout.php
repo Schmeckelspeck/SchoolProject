@@ -34,7 +34,7 @@
 						require_once("supplierView.php");
 						break;
 					case 4:
-						require_once("ComponentView.php"); 
+						require_once("ComponentDetailsView.php"); 
 						break;
 					default:
 						require_once("ComponentsView.php");
