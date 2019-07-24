@@ -3,12 +3,7 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-<<<<<<< HEAD
-	require_once("../Controllers/ComponentsController.php");
-	
-=======
 	require_once("../Controllers/ComponentDetailsController.php");
->>>>>>> 3e10727e8073aeef8323c67ab85dbad830ac5eb2
 ?>
 
 
