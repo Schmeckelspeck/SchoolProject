@@ -64,6 +64,7 @@
 						
 						<tbody>
 						<?php
+							// var_dump($allComponents);
 							$attributeOne = "fisch";
 							$attributeTwo = "blubb";
 							// foreach($allComponents as $attribute){
