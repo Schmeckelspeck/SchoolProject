@@ -24,8 +24,6 @@
 		WHERE
 			comp_id = ".DefuseInputs($id);
 
-		var_dump($sqlStatement);
-
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
