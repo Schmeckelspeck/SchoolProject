@@ -6,6 +6,20 @@
 	require_once("../Controllers/ComponentsController.php");
 ?>
 	<?php 
+
+		echo "<div class='input-group mb-3'>
+		<div class='input-group-prepend'>
+		  <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Dropdown</button>
+		  <div class='dropdown-menu'>
+			<a class='dropdown-item' href='#'>Attribute 1</a>
+			<a class='dropdown-item' href='#'>Attribute 2</a>
+			<a class='dropdown-item' href='#'>Attribute 3</a>
+		  </div>
+		</div>
+		<input type='text' class='form-control' aria-label='Text input with dropdown button'>
+	  </div>";
+
+		echo "<div class='row'>";
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
 		{
 			echo "<table class='table'>
@@ -25,7 +39,7 @@
 				echo "<tr>";
 				echo "<th scope='row'>".$component['comp_id']."</th>";
 				echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-				echo "<td>".$component['comp_warranty_length']."</td>";
+				echo "<td>".$component['comp_warranty_end']."</td>";
 				echo "<td>".$component['coty_name']."</td>";
 				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
 				echo "</tr>";
@@ -38,6 +52,8 @@
 		{
 			echo "Es konnten keine Daten ermittelt werden.";
 		}
+		echo "</div>";
+		
 	?>
 	<input type="submit" name="btnCreateNewComponent" value="Neue Komponente anlegen" />
 
