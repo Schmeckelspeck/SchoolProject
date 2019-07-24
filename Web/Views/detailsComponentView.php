@@ -1,14 +1,4 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<?php 
-	require_once("../header.php");
 
-	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/testCompController.php");
-/* var_dump(selectComponent());
-		echo "<br/>";
-		echo "<br/>"; */
-	insertComponent();
-?>
 <section>
 	<div class="container">
 	
@@ -19,10 +9,17 @@
 		<div class="row">
 			<form>
 				<div class="row" >
+
+				<?php 
+					foreach($componentAttributes as $attribute)
+					{
+							echo($attribute['coat_name']."\n");
+					}
+				?>
 					<div class="col">
-						<label>last name:</label><br>
-						<label>Last name:</label><br>
-						<label>Last name:</label><br>	
+						<label>Bezeichnung :</label><br>
+						<label>Komponenten :</label><br>
+						<label>Hersteller :</label><br>	
 					</div>
 
 					<div class="col">
@@ -32,9 +29,9 @@
 					</div>
 
 					<div class="col">
-						<label>last name:</label><br>
-						<label>Last name:</label><br>
-						<label>Last name:</label><br>
+						<label>Lieferant :</label><br>
+						<label>Raum :</label><br>
+						<label>Gewähreistungsdauer :</label><br>
 					</div>
 					
 					<div class="col">
