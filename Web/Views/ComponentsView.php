@@ -80,7 +80,9 @@
 			echo"<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />";
 		}
 	}
+	
 	?>
+	<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
 
 
 <?php
