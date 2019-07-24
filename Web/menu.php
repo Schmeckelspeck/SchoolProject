@@ -1,9 +1,8 @@
 
 <div class="container">
 	<ul class="list-group">
-		<li class="list-group-item">Komponenten</li>
-		<li class="list-group-item">Räume</li>
-		<li class="list-group-item">Lieferanten</li>
-		<li class="list-group-item">Benutzer</li>
+		<a href="/SchoolProject/Web/Views/Layout.php?view=0"><li class="list-group-item">Komponenten</li></a>
+		<a href="/SchoolProject/Web/Views/Layout.php?view=2"><li class="list-group-item">Räume</li></a>
+		<a href="/SchoolProject/Web/Views/Layout.php?view=3"><li class="list-group-item">Lieferanten</li></a>
 	</ul>
 </div>

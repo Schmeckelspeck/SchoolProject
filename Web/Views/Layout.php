@@ -20,8 +20,6 @@
 
 				<?php 
 				
-
-				
 				switch ($_GET["view"]) {
 					case 0:
 						require_once("ComponentsView.php"); 

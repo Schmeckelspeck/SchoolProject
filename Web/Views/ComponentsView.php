@@ -36,7 +36,17 @@
 		}
 		else
 		{
-			echo "Es konnten keine Daten ermittelt werden.";
+			echo "<table class='table'>
+			<thead>
+				<tr>
+				<th scope='col'>#</th>
+				<th scope='col'>Bezeichnung</th>
+				<th scope='col'>Gewährleistungsdauer</th>
+				<th scope='col'>Typ</th>
+				<th scope='col'>Raum</th>
+				</tr>
+			</thead>";
+			echo "<tbody>";
 		}
 	?>
 	<input type="submit" name="btnCreateNewComponent" value="Neue Komponente anlegen" />
