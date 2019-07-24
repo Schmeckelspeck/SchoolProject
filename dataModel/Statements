@@ -1,4 +1,5 @@
 Selects:
+
 1 - list all suppliers:
 SELECT 	supl_id, supl_name, supl_note, 
 		supl_street, supl_city_code, supl_phone, 
@@ -16,14 +17,6 @@ FROM component
 LEFT JOIN room ON room_id = comp_room_id
 LEFT JOIN component_type ON coty_id = comp_coty_id;
 
-4 - select components by room
-SELECT 	comp_id, comp_description, comp_note,
-		comp_manufacturer, comp_warranty_length, comp_purchase_date, coty_name
-FROM component
-LEFT JOIN room ON room_id = comp_room_id
-LEFT JOIN component_type ON coty_id = comp_coty_id;
-WHERE room_id = ?;
-
 3 - list component attributes by component id
 SELECT 	comp_description, coca_id, coca_value, coat_name
 FROM component
@@ -31,19 +24,30 @@ LEFT JOIN comp_coat ON coca_comp_id = comp_id
 LEFT JOIN component_attribute ON coat_id = coca_coat_id
 WHERE comp_id = ?;
 
+4 - list all rooms:
+SELECT	room_id, room_number, room_description, room_note, room_state
+FROM	room;
+
+5 - list all supplier names
+SELECT	supl_id, supl_name
+FROM	supplier;
+
+--------------------------------------------------------------------------------
+Inserts:
+
 INSERT INTO country(
 					cont_name
 					)
 					VALUES
 					(?);
-					
+
 INSERT INTO city	(
 					city_name,
 					city_cont_id
 					)
 					VALUES
 					(?,?);
-					
+
 INSERT INTO supplier(
 					supl_name,
 					supl_mail,
@@ -58,5 +62,3 @@ INSERT INTO supplier(
 					)
 					VALUES
 					(?,?,?,?,?,?,?,?,?,?);
-
-
