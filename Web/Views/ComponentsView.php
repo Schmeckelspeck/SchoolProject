@@ -4,6 +4,7 @@
 
 	// Das hier muss jeweils bei der View angepasst werden.
 	require_once("../Controllers/ComponentsController.php");
+	
 ?>
 	<?php 
 
