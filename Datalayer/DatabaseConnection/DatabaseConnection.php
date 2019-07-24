@@ -7,9 +7,7 @@
 	$password = $GLOBALS['CONFIG_PASSWORD'];
 	$testDb = $GLOBALS['CONFIG_DATABASENAME'];
 
-	echo $testIp;
-
-	// Since some parts of the code builds sql-strings on the fly, this function is necessary to prevent SQL-injection
+	// Since some parts of the code build sql-strings on the fly, this function is necessary to prevent SQL-injection
 	// Using this function is necessary since a user with bad intentions could try to manipulate the database.
 	// The function establishes a data base connection and returns an escaped transformation of the input string.
 	function DefuseInputs($inputString)
@@ -24,7 +22,6 @@
 	// This function returns an array-result which can be processed through iteration.
 	function ExecuteReader($sqlStatement)
 	{
-		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
 		mysqli_select_db($connection, $GLOBALS['testDb']);
 
@@ -49,7 +46,6 @@
 	// This function delivers associative arrays. Developers can access the values with the right key, for instance result['columnName'].
 	function ExecuteReaderAssoc($sqlStatement)
 	{
-		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
 		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
 		mysqli_select_db($connection, $GLOBALS['testDb']);
 

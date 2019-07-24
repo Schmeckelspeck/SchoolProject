@@ -1,7 +1,7 @@
 <?php
 	// Das hier muss in jeder View eingetragen werden.
 	require_once("../header.php");
-
+	echo($_SESSION['user_role']);
 	// Das hier muss jeweils bei der View angepasst werden.
 	// require_once("../Controllers/BEZEICHNUNGController.php");
 ?>
