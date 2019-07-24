@@ -3,39 +3,10 @@
 ?>
 
 <?php
-	function GetSpecificData()
-	{
-		$sqlStatement = "SELECT SQLSTATEMENT FROM DATABASE";
-		return "<br>Das hier kommt aus BEZEICHNUNGDatenAbruf.php, und greift auf DatenbankZugriff.php".BeispielAusDbZugriffReader($sqlStatement);
-    }
-    
-    function selectComponent()
-    {
-        $sqlSelectComp="Select * from component";
-        $array=ExecuteReader($sqlSelectComp);
-        return $array;
-                            
-    }
-
-    function selectComponentAssoc()
-    {
-        $sqlSelectComp="Select * from component";
-        $array=ExecuteReaderAssoc($sqlSelectComp);
-        return $array;
-    }
-
-    function insertComponent()
-    {
-        $sqlInsertComp="Insert into `component` (`comp_id` okpowekrp, `comp_description`, `comp_note`, `comp_manufacturer`, `comp_warranty_length`, `comp_purchase_date`, `comp_supl_id`, `comp_room_id`, `comp_coty_id`)
-                                        VALUES (NULL, 'ACER Laptop', 'krasser PC NR 2', 'HasiAG', '2', '2019-07-31 00:00:00', NULL, NULL, NULL)";
-        $array=ExecuteWriter($sqlInsertComp);
-    
-        return $array;
-    }
-
     function insertCountry($cont_name)
     {
-
+        $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
+		mysqli_select_db($connection, $GLOBALS['testDb']);
         $sqlInsertCont=$connection ->prepare('INSERT INTO country(
             cont_name
             )
@@ -44,8 +15,8 @@
         $sqlInsertCont ->bind_param("s",$countryName);
         $countryName=$cont_name;
         $sqlInsertCont->execute();
-        $getLastContID=mysqli_insert_id($sqlInsertCont);
-    
+        $getLastContID=mysqli_insert_id($connection);
+        mysqli_close($connection);
         return $getLastContID;
     }
 
