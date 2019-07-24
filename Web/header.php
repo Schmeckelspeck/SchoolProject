@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['user_role'])) {
-    echo "zurück zu Login";
+    echo "Der Nutzer ist nicht eingeloggt!";
 }
 ?>
 

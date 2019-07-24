@@ -10,6 +10,14 @@
             {
                 $_SESSION['user_role'] = GetUserRole(GetUserId($_POST['txtUsername']));
             }
+            else
+            {
+                unset($_SESSION['user_role']);
+            }
+        }
+        else
+        {
+            unset($_SESSION['user_role']);
         }
     }
     echo $_SESSION['user_role'];

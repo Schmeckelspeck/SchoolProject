@@ -37,9 +37,9 @@
 		FROM component_attribute
 		LEFT JOIN comp_coat ON comp_coat.coca_id = component_attribute.coca_coat_id
 		LEFT JOIN component ON component.comp_id = coca_comp_id
-		WHERE component.comp_id = ".DefuseInputs($id).";"; // Hier den Platzhalter;
+		WHERE component.comp_id = ".DefuseInputs($id).";";
 
-		$result = ExecuteReaderAssoc($sqlStatement); // Hier die Parameter reinsetzen;
+		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
 

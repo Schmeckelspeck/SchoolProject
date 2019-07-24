@@ -1,7 +1,8 @@
 <?php
 	require_once("../../config.php");
 
-	// Please change connection configs in the file config.php
+	// Please change connection configs in the file config.php.
+	// You'll find this file in the root directory of this application.
 	$testIp = $GLOBALS['CONFIG_APACHEIP'];
 	$username = $GLOBALS['CONFIG_USERNAME'];
 	$password = $GLOBALS['CONFIG_PASSWORD'];
@@ -43,7 +44,7 @@
 		return $dataRows;
 	}
 
-	// This function delivers associative arrays. Developers can access the values with the right key, for instance result['columnName'].
+	// This function delivers an associative array. Developers can access the values with the right key, for instance result['columnName'].
 	function ExecuteReaderAssoc($sqlStatement)
 	{
 		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);

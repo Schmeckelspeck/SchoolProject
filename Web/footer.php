@@ -3,9 +3,6 @@
 ?>
 
 <footer>
-    <form method="POST">
-        <input type="submit" name="btnLogout" value="Abmelden" />
-    </form>
 </footer>
 </body>
 </html>
