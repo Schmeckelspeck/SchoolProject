@@ -6,9 +6,6 @@
 	require_once("../Controllers/ComponentsController.php");
 ?>
 	<?php 
-<<<<<<< HEAD
-		echo $allComponents;
-=======
 
 		echo "<div class='input-group mb-3'>
 		<div class='input-group-prepend'>
@@ -23,7 +20,6 @@
 	  </div>";
 
 		echo "<div class='row'>";
->>>>>>> f34d33e94deccaae16106f3ead505f2ce117b089
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
 		{
 			echo "<table class='table'>
