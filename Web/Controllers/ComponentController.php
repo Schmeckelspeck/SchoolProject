@@ -9,5 +9,4 @@
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
 		$allComponentAttributesOptions = GetAllComponentAttributes();
 	}
-
 ?>
