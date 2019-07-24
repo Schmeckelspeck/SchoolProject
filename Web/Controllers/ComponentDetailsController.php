@@ -1,5 +1,5 @@
 <?php
-	require_once("../../Datalayer/ComponentDatenAbruf.php");
+	require_once("../../Datalayer/ComponentDetailsDatenAbruf.php");
 ?>
 
 <?php
@@ -9,5 +9,4 @@
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
 		$allComponentAttributesOptions = GetAllComponentAttributes();
 	}
-
 ?>

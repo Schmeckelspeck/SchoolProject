@@ -3,10 +3,7 @@
 ?>
 
 <?php
-$testIp = "192.100.100.12";
-$username = "hasi";
-$password = "1234";
-$testDb = "testDatabase";
+
 	function GetSpecificComponent($id)
 	{
 		$sqlStatement = 
@@ -58,5 +55,37 @@ $testDb = "testDatabase";
 	function UpdateComponentDataChanges($id, $description, $type, $attribut, $warranty_end, $note, $supplier, $room_id)
 	{
 		$sqlStatement = "";
+	}
+
+	/**
+	 * @returns an array of the types which can be chosen
+	 */
+	function GetAllComponentTypes ()
+	{
+		
+		$sqlStatement = "SELECT coty_id, coty_name FROM component_type;"
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+
+	/**
+	 * when choosing a Type get the attributes for it an return them as an array
+	 * 
+	 * @returns an array of attributes for the given type
+	 */
+	function getAttributesForType ($coty_id)
+	{
+
+		$sqlStatement =	"SELECT coat_id, coat_name
+			FROM component_attribute
+			INNER JOIN coty_coat ON coat_id = coco_coat_id
+			INNER JOIN component_type ON coco_coty_id = coty_id
+			WHERE coty_id = $coty_id;"
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
 	}
 ?>

@@ -61,16 +61,32 @@
 				<div class="row" >
 					
 					<div class="col-6">
-						
 						<table class="table">
 						<thead>
 							<tr>
-							<th scope="col">#</th>
-							<th scope="col">First</th>
-							<th scope="col">Last</th>
-							<th scope="col">Handle</th>
+								<th scope="col">Attribute</th>
+								<th scope="col">Wert</th>
 							</tr>
 						</thead>
+						
+						<tbody>
+						<?php
+							$attributeOne = "fisch";
+							$attributeTwo = "blubb";
+							// foreach($allComponents as $attribute){
+								// echo "<tr>";
+								// echo "<td>";
+								// echo $attributeOne;
+								// echo "</td>"
+								// echo "<td>";
+								// echo $attributeTwo;
+								// echo "</td>"
+								// echo "</tr>";
+							// }
+						?>
+						</tbody>
+						
+						
 						<tbody>
 							<tr>
 							<th scope="row">1</th>

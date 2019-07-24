@@ -3,19 +3,20 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/ComponentsController.php");
+	require_once("../Controllers/ComponentDetailsController.php");
 ?>
 
 
 	<?php 
 
 		echo "<div class='input-group-append style='float: right;'>
-		<select>
-			<option value='att1'>Attribut 1</option>
-			<option value='att2'>Attribut 2</option>
-			<option value='att3'>Attribut 3</option>
-			<option value='att4'>Attribut 4</option>
-		</select>
+		<select>";
+
+		foreach($allComponentsFilterOptions as $attribute)
+		{
+			echo "<option value='att'> $attribute</option>";
+		}
+		echo "</select>
 		<input type='text' class='form-control' aria-label='Text input with dropdown button'>
 	  	</div>";
 
@@ -39,7 +40,7 @@
 				echo "<tr>";
 				echo "<th scope='row'>".$component['comp_id']."</th>";
 				echo "<td><a href='Layout.php?view=1&idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-				echo "<td>".$component['comp_warranty_end']."</td>";
+				echo "<td>".$component['comp_warranty_length']."</td>";
 				echo "<td>".$component['coty_name']."</td>";
 				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
 				echo "</tr>";
