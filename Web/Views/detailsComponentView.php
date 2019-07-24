@@ -7,7 +7,7 @@
 /* var_dump(selectComponent());
 		echo "<br/>";
 		echo "<br/>"; */
-	insertComponent();
+	//insertCountry('Deutschland');
 ?>
 <section>
 	<div class="container">
@@ -16,7 +16,7 @@
 		<h2>Komponenten - Details</h2><br><br><br>
 	</div>
 	
-		<div class="row">
+		<div class="row">    
 			<form>
 				<div class="row" >
 					<div class="col">
