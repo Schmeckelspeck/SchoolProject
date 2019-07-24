@@ -6,6 +6,7 @@
 	require_once("../Controllers/ComponentsController.php");
 ?>
 	<?php 
+		echo $allComponents;
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
 		{
 			echo "<table class='table'>

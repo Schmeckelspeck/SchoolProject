@@ -28,7 +28,6 @@
 						require_once("detailsComponentView.php"); 
 						break;
 					case 2:
-						// require_once();
 						require_once("rooms.php");
 						break;
 					case 3:
