@@ -33,22 +33,40 @@
         return $array;
     }
 
-    function insertSupplier($cont_name,$city_name)
+    function insertCountry($cont_name)
     {
 
-        $sqlInsertCont=$connection ->prepare('INSERT INTO country(cont_name) VALUES(?)');
+        $sqlInsertCont=$connection ->prepare('INSERT INTO country(
+            cont_name
+            )
+            VALUES
+            (?)');
         $sqlInsertCont ->bind_param("s",$countryName);
         $countryName=$cont_name;
         $sqlInsertCont->execute();
         $getLastContID=mysqli_insert_id($sqlInsertCont);
-            
+    
+        return $getLastContID;
+    }
 
-        $sqlInsertCity=$connection ->prepare('INSERT INTO city (city_name,city_cont_id)VALUES (?,?)');
-        $sqlInsertCity ->bind_param("si",$cityName,$getLastContID);
+    function insertCity($city_name,$lastContID)
+    {
+        $sqlInsertCity=$connection ->prepare('INSERT INTO city (
+            city_name,
+            city_cont_id
+            )
+            VALUES 
+            (?,?)');
+        $sqlInsertCity ->bind_param("si",$cityName,$lastContID);
         $cityName=$city_name;
         $sqlInsertCity->execute();
         $getLastCityID=mysqli_insert_id($sqlInsertCity);
-            
+
+        return $getLastCityID;
+    }
+        
+    function insertSupl($supl_name,$supl_mail,$supl_phone,$supl_note,$supl_street,$supl_city_code,$supl_mobile,$supl_fax,$supl_State,$lastCityID)
+    {
         $sqlInsertSupl=$connection ->prepare('INSERT INTO supplier(
             supl_name,
             supl_mail,
@@ -63,6 +81,23 @@
             )
             VALUES
             (?,?,?,?,?,?,?,?,?,?)');
+            $sqlInsertSupl ->bind_parm("c,c,c,c,c,c,c,c,c,i",$suplName,$suplMail,$suplPhone,$suplNote,$suplStreet,$suplCityCode,$suplMobile,$suplFax,$suplState,$getLastCityID);
+            $suplName=$supl_name;
+            $suplMail=$supl_mail;
+            $suplPhone=$supl_phone;
+            $suplStreet=$supl_street;
+            $suplCityCode=$supl_city_code;
+            $suplMobile=$supl_mobile;
+            $suplFax=$supl_fax;
+            $suplState=$supl_street;
+            $getLastCityID=$lastCityID;
+            $sqlInsertSupl->execute();
+            $getLastSuplID=mysqli_insert_id($sqlInsertSupl);
+
+            return $getLastSuplID;
     }
+            
+            
+
     
 ?>
