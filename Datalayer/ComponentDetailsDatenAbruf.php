@@ -14,8 +14,10 @@
 			comp_manufacturer,
 			comp_warranty_length,
 			supl_name,
+			room_id,
 			room_description,
 			room_number,
+			comp_coty_id,
 			coty_name,
 			comp_id
 		FROM component
@@ -32,7 +34,8 @@
 	function GetComponentAttributes($id)
 	{
 		$sqlStatement = 
-		"SELECT  
+		"SELECT
+			coat_id, 
 			coat_name 
 		FROM component_attribute
 		LEFT JOIN comp_coat ON comp_coat.coca_id = component_attribute.coca_coat_id
@@ -46,7 +49,7 @@
 	function GetAllComponentAttributes()
 	{
 		$sqlStatement = 
-		"SELECT coat_name FROM component_attribute;";
+		"SELECT coat_id, coat_name FROM component_attribute;";
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
