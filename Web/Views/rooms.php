@@ -9,33 +9,29 @@
 ?>
 
 <?php 
-		if(sizeof($allComponents > 0) && $allComponents != NULL)
+		
+		if(sizeof($allRooms > 0) && $allRooms != NULL)
 		{
 			echo "<table class='table'>
 			<thead>
 				<tr>
-				<th scope='col'>Firma</th>
-				<th scope='col'>Strasse</th>
-				<th scope='col'>Ort</th>
-				<th scope='col'>PLZ</th>
-				<th scope='col'>Tel</th>
-				<th scope='col'>E-mail</th>
+				<th scope='col'>Raumname</th>
+				<th scope='col'>Raumbezeichnung</th>
+				<th scope='col'>Bemerkung</th>
 				</tr>
 			</thead>";
 			echo "<tbody>";
 
-			foreach($allComponents as $component)
+			foreach($allRooms as $room)
 			{
 
 				//
 				//Hier müssen noch die Attribute angepasst werden
 
 				echo "<tr>";
-				echo "<th scope='row'>".$component['comp_id']."</th>";
-				echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-				echo "<td>".$component['comp_warranty_end']."</td>";
-				echo "<td>".$component['coty_name']."</td>";
-				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
+				echo "<td> R.".$room['room_number']."</td>";
+				echo "<td>".$room['room_description']." (Raum-Nr.: ".$room['room_number'].")</td>";
+				echo "<td>".$room['room_note']."</td>";
 				echo "</tr>";
 				
 			}
