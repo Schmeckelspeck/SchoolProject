@@ -1,6 +1,6 @@
 <?php
 
-	$testIp = "192.100.100.12";
+	$testIp = "192.168.20.5";
 	$username = "hasi";
 	$password = "1234";
 	$testDb = "testDatabase";

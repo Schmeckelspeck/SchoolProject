@@ -3,6 +3,10 @@
 ?>
 
 <?php
+$testIp = "192.100.100.12";
+$username = "hasi";
+$password = "1234";
+$testDb = "testDatabase";
 	function GetSpecificComponent($id)
 	{
 		$sqlStatement = 
@@ -22,6 +26,8 @@
 		LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
 		WHERE
 			comp_id = ".DefuseInputs($id);
+
+		var_dump($sqlStatement);
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;

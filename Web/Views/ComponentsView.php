@@ -6,6 +6,20 @@
 	require_once("../Controllers/ComponentsController.php");
 ?>
 	<?php 
+
+		echo "<div class='input-group mb-3'>
+		<div class='input-group-prepend'>
+		  <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Dropdown</button>
+		  <div class='dropdown-menu'>
+			<a class='dropdown-item' href='#'>Attribute 1</a>
+			<a class='dropdown-item' href='#'>Attribute 2</a>
+			<a class='dropdown-item' href='#'>Attribute 3</a>
+		  </div>
+		</div>
+		<input type='text' class='form-control' aria-label='Text input with dropdown button'>
+	  </div>";
+
+		echo "<div class='row'>";
 		if(sizeof($allComponents > 0) && $allComponents != NULL)
 		{
 			echo "<table class='table'>
@@ -36,8 +50,20 @@
 		}
 		else
 		{
-			echo "Es konnten keine Daten ermittelt werden.";
+			echo "<table class='table'>
+			<thead>
+				<tr>
+				<th scope='col'>#</th>
+				<th scope='col'>Bezeichnung</th>
+				<th scope='col'>Gewährleistungsdauer</th>
+				<th scope='col'>Typ</th>
+				<th scope='col'>Raum</th>
+				</tr>
+			</thead>";
+			echo "<tbody>";
 		}
+		echo "</div>";
+		
 	?>
 	<input type="submit" name="btnCreateNewComponent" value="Neue Komponente anlegen" />
 

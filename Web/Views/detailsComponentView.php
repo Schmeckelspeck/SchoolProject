@@ -23,12 +23,7 @@
 			<form>
 				<div class="row" >
 
-				<?php 
-					foreach($componentAttributes as $attribute)
-					{
-							echo($attribute['coat_name']."\n");
-					}
-				?>
+				
 					<div class="col">
 						<label>Bezeichnung :</label><br>
 						<label>Komponenten :</label><br>
@@ -36,9 +31,9 @@
 					</div>
 
 					<div class="col">
-						<input type="text" name="firstname">
-						<input type="text" name="lastname">
-						<input type="text" name="lastname">
+						<input type="text" value="<?php echo($componentData['comp_description']) ?>">
+						<input type="text" value="<?php echo($componentData['coty_name']) ?>">
+						<input type="text"  value="<?php echo($componentData['comp_manufacturer']) ?>" >
 					</div>
 
 					<div class="col">
