@@ -21,7 +21,7 @@ Attribute
 Gewährleistungsdauer <input type="text" value="<?php echo($componentData['comp_warranty_length']) ?>" /><br>
 Notiz <textarea> <?php echo($componentData['comp_note']) ?> </textarea><br>
 Lieferant <input type="text" value="<?php echo($componentData['supl_name']) ?>" /><br>
-In Raum <input type="text" style="width: 18rem;" value="<?php echo($componentData['room_description']." (Raum-Nummer ".$componentData['room_number'].")")?>" /><br>
+In Raum <input type="text" style="width: 18rem;" value="<?php echo($componentData['room_description']." ".$componentData['room_number'])?>" /><br>
 Erstellt am <input type="text" value="<?php echo($componentData['comp_created']) ?>" /><br>
 <input type="submit" name="btnSaveComponentChanges" value="Speichern" />
 

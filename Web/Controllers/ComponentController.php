@@ -5,8 +5,9 @@
 <?php
 	if(isset($_GET['idComponent']))
 	{
-		$componentData = GetSpecificComponent($id);
+		$componentData = GetSpecificComponent($_GET['idComponent']);
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
+		$allComponentAttributesOptions = GetAllComponentAttributes();
 	}
 
 ?>

@@ -19,6 +19,9 @@
 	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
+		$connection = mysqli_connect("127.0.0.1", "root", ""); // nur für einen lokalen Test
+		mysqli_select_db($connection, 'testDatabase');
+
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
@@ -33,14 +36,27 @@
 
 		if($filterArt !== null && $filterArt !== "")
 		{
-			$sqlStatement = $sqlStatement." WHERE ".$filterArt." LIKE '%".$filterText."%'";
+			$sqlStatement = $sqlStatement." WHERE ".DefuseInputs($filterArt)." LIKE '%".DefuseInputs($filterText)."%'";
 		}
-		
-		$sqlStatement = $sqlStatement.";";
 
-		var_dump($sqlStatement);
+		$sqlStatement = $sqlStatement.";";
 		
-		$result = ExecuteReaderAssoc($sqlStatement);
-		return $result;
+		$dataRows = array();
+
+		$result = mysqli_query($connection, $sqlStatement);
+
+		if($result)
+		{
+			while($data = mysqli_fetch_assoc($result))
+			{
+				array_push($dataRows, $data);
+			}
+			mysqli_close($connection);
+		}
+		else
+		{
+			$dataRows = array();
+		}
+		return $dataRows;
 	}
 ?>
