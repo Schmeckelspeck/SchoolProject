@@ -5,6 +5,7 @@
 <?php
 	// filterText, filterArt, hier die Filtersuche reingeben
 	$allComponents = GetComponents("","");
-	var_dump($allComponents);
 	$allComponentsFilterOptions = GetFilterOptions();
+	var_dump($allComponents);
+	var_dump($allComponentsFilterOptions);
 ?>

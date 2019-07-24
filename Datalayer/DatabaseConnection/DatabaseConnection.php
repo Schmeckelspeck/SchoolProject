@@ -1,14 +1,14 @@
 <?php
 
-	/*$testIp = "192.168.20.5";
+	$testIp = "192.168.20.5";
 	$username = "hasi";
 	$password = "1234";
-	$testDb = "testDatabase";*/
+	$testDb = "testDatabase";
 
-	$testIp = "127.0.0.1";
+	/*$testIp = "127.0.0.1";
 	$username = "root";
 	$password = "";
-	$testDb = "testDatabase";
+	$testDb = "testDatabase";*/
 
 	echo $testIp;
 
