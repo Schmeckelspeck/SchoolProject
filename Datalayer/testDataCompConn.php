@@ -49,27 +49,20 @@
         $sqlInsertCity->execute();
         $getLastCityID=mysqli_insert_id($sqlInsertCity);
             
-        $sqlInsertCity='INSERT INTO city	(
-                        city_name,
-                        city_cont_id
-                        )
-                        VALUES
-                        (?,?)';
-                        
-        $sqlInsertSupl='INSERT INTO supplier(
-                        supl_name,
-                        supl_mail,
-                        supl_phone,
-                        supl_note,
-                        supl_street,
-                        supl_city_code,
-                        supl_mobile,
-                        supl_fax,
-                        supl_state,
-                        supl_city_id
-                        )
-                        VALUES
-                        (?,?,?,?,?,?,?,?,?,?)';
+        $sqlInsertSupl=$connection ->prepare('INSERT INTO supplier(
+            supl_name,
+            supl_mail,
+            supl_phone,
+            supl_note,
+            supl_street,
+            supl_city_code,
+            supl_mobile,
+            supl_fax,
+            supl_state,
+            supl_city_id
+            )
+            VALUES
+            (?,?,?,?,?,?,?,?,?,?)');
     }
     
 ?>
