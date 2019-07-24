@@ -1,12 +1,21 @@
 <?php
-	$ipDataBase = "192.100.100.12";
-	$userName = "hasi";
+
+	$testIp = "192.100.100.12";
+	$username = "hasi";
 	$password = "1234";
-	$db = "testDatabase";
+	$testDb = "testDatabase";
+
+	/*$testIp = "127.0.0.1";
+	$username = "root";
+	$password = "";
+	$testDb = "testDatabase";*/
+
+	echo $testIp;
 
 	function DefuseInputs($inputString)
 	{
-		$connection = mysqli_connect($ipDataBase, $userName, $password);
+		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
+		mysqli_select_db($connection, $GLOBALS['testDb']);
 		$unescaped = mysqli_real_escape_string($connection, $inputString);
 
 		return $unescaped;
@@ -15,8 +24,8 @@
 	function ExecuteReader($sqlStatement)
 	{
 		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
-		$connection = mysqli_connect($ipDataBase, $userName, $password); // nur für einen lokalen Test
-		mysqli_select_db($connection, $db);
+		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
+		mysqli_select_db($connection, $GLOBALS['testDb']);
 
 		$dataRows = array();
 
@@ -39,8 +48,8 @@
 	function ExecuteReaderAssoc($sqlStatement)
 	{
 		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
-		$connection = mysqli_connect($ipDataBase, $userName, $password); // nur für einen lokalen Test
-		mysqli_select_db($connection, $db);
+		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
+		mysqli_select_db($connection, $GLOBALS['testDb']);
 
 		$dataRows = array();
 
@@ -64,7 +73,7 @@
 	function ExecuteWriter($sqlStatement)
 	{
 		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
-		$connection = mysqli_connect($ipDataBase, $userName, $password);
+		$connection = mysqli_connect($testIp, $username, $password);
 		mysqli_select_db($connection, $db);
 		mysqli_query($connection, $sqlStatement);
 		$last_ID=mysqli_insert_id($connection);
