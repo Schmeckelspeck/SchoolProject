@@ -18,9 +18,6 @@
 	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
-		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
-		mysqli_select_db($connection, $GLOBALS['testDb']);
-
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
@@ -40,22 +37,8 @@
 
 		$sqlStatement = $sqlStatement.";";
 		
-		$dataRows = array();
+		$dataRows = ExecuteReaderAssoc($sqlStatement);
 
-		$result = mysqli_query($connection, $sqlStatement);
-
-		if($result)
-		{
-			while($data = mysqli_fetch_assoc($result))
-			{
-				array_push($dataRows, $data);
-			}
-			mysqli_close($connection);
-		}
-		else
-		{
-			$dataRows = array();
-		}
 		return $dataRows;
 	}
 

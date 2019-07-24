@@ -3,9 +3,6 @@
 
     function GetSpecificSupplier($id)
     {
-        $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
-        mysqli_select_db($connection, $GLOBALS['testDb']);
-        
         $sqlStatement = 
         "SELECT supl_city_code,
             supl_fax,
@@ -22,24 +19,8 @@
         WHERE supl_id = ".DefuseInputs($id);
         $sqlStatement = $sqlStatement.";";
 
-        $dataRows = array();
+        $dataRows = ExecuteReaderAssoc($sqlStatement);
 
-        $result = mysqli_query($connection, $sqlStatement);
-        
-        if($result)
-        {
-            while($data = mysqli_fetch_assoc($result))
-            {
-                array_push($dataRows, $data);
-            }
-            mysqli_close($connection);
-        }
-        else
-        {
-            $dataRows = array();
-        }
-        
-        var_dump($dataRows);
         return $dataRows;
     }
 ?>

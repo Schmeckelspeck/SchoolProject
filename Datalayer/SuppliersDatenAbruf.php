@@ -17,9 +17,6 @@
 
     function GetSuppliers()
     {
-        $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
-        mysqli_select_db($connection, $GLOBALS['testDb']);
-
         $sqlStatement = 
         "SELECT 
             supl_city_code,
@@ -43,22 +40,7 @@
         $sqlStatement = $sqlStatement.";";
         
 
-    $dataRows = array();
-
-    $result = mysqli_query($connection, $sqlStatement);
-    
-    if($result)
-    {
-        while($data = mysqli_fetch_assoc($result))
-        {
-            array_push($dataRows, $data);
-        }
-        mysqli_close($connection);
-    }
-    else
-    {
-        $dataRows = array();
-    }
+    $dataRows = ExecuteReaderAssoc($sqlStatement);
     
     return $dataRows;
     }
