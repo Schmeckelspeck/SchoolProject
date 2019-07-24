@@ -7,9 +7,9 @@
 function GetRoomsFilterOptions()
 {
     return array(
-        'room_desc',
-        'room_number',
-        'room_note'
+        'room_desc'=>'Bezeichnung',
+        'room_number'=>'Raumnummer',
+        'room_note'=>'Beschreibung'
     );
 }
 

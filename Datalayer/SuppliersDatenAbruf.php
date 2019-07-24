@@ -7,10 +7,11 @@
             'supl_city_code'=>'Postleitzahl',
             'supl_fax'=>'Fax',
             'supl_mail'=>'Mail',
-            'supl_mobile'=>'Mobile',
+            'supl_mobile'=>'Mobil',
             'supl_name'=>'Bezeichnung',
-            'supl_phone'=>'Telefon',
-            'supl_street'=>'Straße'
+            'supl_phone'=>'Festnetz',
+            'supl_street'=>'Straße',
+            'cont_name'=>'Land'
         );
     }
 

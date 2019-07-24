@@ -8,5 +8,6 @@
 		$componentData = GetSpecificComponent($_GET['idComponent']);
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
 		$allComponentAttributesOptions = GetAllComponentAttributes();
+		var_dump($componentData);
 	}
 ?>

@@ -6,11 +6,11 @@
 	function GetFilterOptions()
 	{
 		$filterOptions = array(
-			'comp_description',
-			'comp_warranty_length',
-			'coty_name',
-			'room_description',
-			'room_number'
+			'comp_description'=>'Beschreibung',
+			'comp_warranty_length'=>'Gewährleistungsdauer (in Monaten)',
+			'coty_name'=>'Typ',
+			'room_description'=>'Raum',
+			'room_number'=>'Raumnummer'
 		);
 		return $filterOptions;
 	}
