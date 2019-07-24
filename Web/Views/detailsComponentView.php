@@ -3,7 +3,7 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/ComponentController.php");
+	require_once("../Controllers/ComponentsController.php");
 ?>
 <section>
 	<div class="container">
@@ -64,6 +64,7 @@
 						
 						<tbody>
 						<?php
+							// var_dump($allComponents);
 							$attributeOne = "fisch";
 							$attributeTwo = "blubb";
 							// foreach($allComponents as $attribute){
