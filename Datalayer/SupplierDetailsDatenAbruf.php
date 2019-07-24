@@ -1,6 +1,7 @@
 <?php
     require_once("DatabaseConnection/DatabaseConnection.php");
 
+    // This function delivers a specific supplier entry.
     function GetSpecificSupplier($id)
     {
         $sqlStatement = 

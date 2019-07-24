@@ -3,6 +3,8 @@
 ?>
 
 <?php
+	// On the view for components, the user can limit the search result based on filtering options.
+	// This function returns the filtering options for the dropdown-menu.
 	function GetFilterOptions()
 	{
 		$filterOptions = array(
@@ -16,7 +18,7 @@
 	}
 
 	// Pass filter parameters to this function. It will return the filtered selection.
-	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
+	function GetComponents($filterArt, $filterText) // $filterText, $filterArt
 	{
 		$sqlStatement = 
 		"SELECT 

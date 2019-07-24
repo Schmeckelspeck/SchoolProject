@@ -1,6 +1,7 @@
 <?php
     require_once("DatabaseConnection/DatabaseConnection.php");
 
+    // This function returns the options for the filter dropdown.
     function GetSupplierFilterOptions()
     {
         return array(
@@ -15,7 +16,8 @@
         );
     }
 
-    function GetSuppliers()
+    // This function returns all suppliers in the database, based on filtering configuration the user set.
+    function GetSuppliers($filterArt, $filterText)
     {
         $sqlStatement = 
         "SELECT 

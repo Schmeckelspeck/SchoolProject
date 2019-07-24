@@ -13,7 +13,8 @@ function GetRoomsFilterOptions()
     );
 }
 
-function GetRooms($filterText, $filterArt) // $filterText, $filterArt
+// This function returns all rooms and takes the two parameters filterText and filterArt.
+function GetRooms($filterArt, $filterText) // $filterText, $filterArt
 {
     $sqlStatement = 
     "SELECT 
