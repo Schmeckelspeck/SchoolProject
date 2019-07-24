@@ -38,11 +38,7 @@
 			{
 				echo "<tr>";
 				echo "<th scope='row'>".$component['comp_id']."</th>";
-<<<<<<< HEAD
-				echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-=======
 				echo "<td><a href='Layout.php?view=1&idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
->>>>>>> c9154f5edfa46c12721146916a403c1f92863403
 				echo "<td>".$component['comp_warranty_end']."</td>";
 				echo "<td>".$component['coty_name']."</td>";
 				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
