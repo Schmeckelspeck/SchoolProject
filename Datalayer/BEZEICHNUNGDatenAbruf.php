@@ -3,6 +3,15 @@
 ?>
 
 <?php
+
+	function DisarmInputs($inputString)
+	{
+		$connection = mysqli_connect("127.0.0.1", "root", "");
+		$unescaped = mysqli_real_escape($connection, $inputString);
+
+		return $unescaped;
+	}
+
 	function GetSpecificData()
 	{
 		$sqlStatement = "SELECT SQLSTATEMENT FROM DATABASE";

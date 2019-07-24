@@ -8,7 +8,7 @@
 	{
 		$filterOptions = array(
 			'comp_description',
-			'comp_warranty_end',
+			'comp_warranty_length',
 			'coty_name',
 			'room_description',
 			'room_number'
@@ -19,90 +19,44 @@
 	// Pass filter parameters to this function. It will return the filtered selection.
 	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
 	{
-		// TestData
-		$filterText = "AM";
-		$filterArt = "comp_warranty_end";
-		// TestData Ende
+		$connection = mysqli_connect("127.0.0.1", "root", ""); // nur für einen lokalen Test
+		mysqli_select_db($connection, 'testDatabase');
 
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
 			comp_description,
-			comp_warranty_end,
+			comp_warranty_length,
 			coty_name,
 			room_description,
 			room_number
 		FROM component
-		INNER JOIN room ON room.room_id = component.room_id
-		INNER JOIN component_type ON component_type.coty_id = component.comp_coty_id";
+		LEFT JOIN room ON room.room_id = component.comp_room_id 
+		LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id";
 
-		if($filterArt !== null) // ($filterText !== null || $filterArt !== null)
+		if($filterArt !== null && $filterArt !== "")
 		{
-			$sqlStatement = $sqlStatement." WHERE ".$filterArt." LIKE '%".$filterText."%'";
+			$sqlStatement = $sqlStatement." WHERE ".DefuseInputs($filterArt)." LIKE '%".DefuseInputs($filterText)."%'";
 		}
-		
-		$sqlStatement = $sqlStatement.";";
-		var_dump($sqlStatement);
-		
 
-		$result = ExecuteReaderAssoc($sqlStatement);
-		/*$result = array
-		(
-			array
-			(
-				'comp_id'=>'666',
-				'comp_description'=>'AMD Radeon RX 590 8Gb',
-				'comp_warranty_end'=>'2019-10-02',
-				'coty_name'=>'Grafikkarte',
-				'room_description'=>'Computer-Raum C',
-				'room_number'=>'6'
-			),
-			array
-			(
-				'comp_id'=>'668',
-				'comp_description'=>'AMD Radeon RX 580 4Gb',
-				'comp_warranty_end'=>'2020-10-02',
-				'coty_name'=>'Grafikkarte',
-				'room_description'=>'Computer-Raum D',
-				'room_number'=>'7'
-			),
-			array
-			(
-				'comp_id'=>'669',
-				'comp_description'=>'i7-6600K',
-				'comp_warranty_end'=>'2020-11-12',
-				'coty_name'=>'CPU',
-				'room_description'=>'Computer-Raum C',
-				'room_number'=>'6'
-			),
-			array
-			(
-				'comp_id'=>'890',
-				'comp_description'=>'Live Blaster Sound LBS-09',
-				'comp_warranty_end'=>'2020-11-12',
-				'coty_name'=>'Soundkarte',
-				'room_description'=>'Computer-Raum E',
-				'room_number'=>'9'
-			),
-			array
-			(
-				'comp_id'=>'669',
-				'comp_description'=>'i7-6600K',
-				'comp_warranty_end'=>'2020-11-12',
-				'coty_name'=>'CPU',
-				'room_description'=>'Computer-Raum C',
-				'room_number'=>'6'
-			),
-			array
-			(
-				'comp_id'=>'838',
-				'comp_description'=>'Lenovo ThinkPad T410',
-				'comp_warranty_end'=>'2020-11-12',
-				'coty_name'=>'Laptop',
-				'room_description'=>'Lehrerzimmer',
-				'room_number'=>'1'
-			)
-		);*/
-		return $result;
+		$sqlStatement = $sqlStatement.";";
+		
+		$dataRows = array();
+
+		$result = mysqli_query($connection, $sqlStatement);
+
+		if($result)
+		{
+			while($data = mysqli_fetch_assoc($result))
+			{
+				array_push($dataRows, $data);
+			}
+			mysqli_close($connection);
+		}
+		else
+		{
+			$dataRows = array();
+		}
+		return $dataRows;
 	}
 ?>
