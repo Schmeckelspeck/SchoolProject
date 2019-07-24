@@ -1,17 +1,16 @@
 <?php 
 
 
-	/* 
-		PLEASE DO NOT DELETE MAYBE NEEDED TO TEST THANKS
-	require_once("../header.php");
+	 
+	//	PLEASE DO NOT DELETE MAYBE NEEDED TO TEST THANKS
+	/* require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
 	require_once("../Controllers/testCompController.php");
-/* var_dump(selectComponent());
 		echo "<br/>";
 		echo "<br/>"; 
-		
-	insertCountry('Deutschland'); */
+	
+	insertCity('London',insertCountry('England'));  */
 ?>
 <section>
 	<div class="container">

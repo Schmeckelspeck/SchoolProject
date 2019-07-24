@@ -22,6 +22,9 @@
 
     function insertCity($city_name,$lastContID)
     {
+        $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
+		mysqli_select_db($connection, $GLOBALS['testDb']);
+
         $sqlInsertCity=$connection ->prepare('INSERT INTO city (
             city_name,
             city_cont_id
@@ -31,13 +34,16 @@
         $sqlInsertCity ->bind_param("si",$cityName,$lastContID);
         $cityName=$city_name;
         $sqlInsertCity->execute();
-        $getLastCityID=mysqli_insert_id($sqlInsertCity);
-
+        $getLastCityID=mysqli_insert_id($connection);
+        mysqli_close($connection);
         return $getLastCityID;
     }
         
     function insertSupl($supl_name,$supl_mail,$supl_phone,$supl_note,$supl_street,$supl_city_code,$supl_mobile,$supl_fax,$supl_State,$lastCityID)
     {
+        $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
+		mysqli_select_db($connection, $GLOBALS['testDb']);
+
         $sqlInsertSupl=$connection ->prepare('INSERT INTO supplier(
             supl_name,
             supl_mail,
@@ -63,8 +69,8 @@
             $suplState=$supl_street;
             $getLastCityID=$lastCityID;
             $sqlInsertSupl->execute();
-            $getLastSuplID=mysqli_insert_id($sqlInsertSupl);
-
+            $getLastSuplID=mysqli_insert_id($connection);
+            mysqli_close($connection);
             return $getLastSuplID;
     }
             
