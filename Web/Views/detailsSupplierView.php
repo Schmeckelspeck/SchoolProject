@@ -7,16 +7,12 @@
 ?>
 
 <?php 
-/**<input type='text' value='<?php echo($componentData['comp_description']) ?>'>
-                    <input type='text' value='<?php echo($componentData['coty_name']) ?>'>
-                    <input type='text' value='<?php echo($componentData['comp_manufacturer']) ?>' >
-                     */
 
 echo "<section>
     <div class='container'>
 
         <div class='row'>
-        <h2>Komponenten - Details</h2><br><br><br>
+        <h2>Lieferanten - Details</h2><br><br><br>
         </div>
 
         <div class='row'>    
