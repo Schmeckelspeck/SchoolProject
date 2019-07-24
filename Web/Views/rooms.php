@@ -3,8 +3,8 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/BEZEICHNUNGController.php");
-	require_once("../Controllers/ComponentsController.php");
+	//require_once("../Controllers/BEZEICHNUNGController.php");
+	require_once("../Controllers/roomController.php");
 
 ?>
 
@@ -50,8 +50,6 @@
 
 
 <br>
-<?php echo "<br>Hier folgt die Variable \$data aus dem Controller:".$data; ?>
-
 <?php
 	// Das hier muss in jeder View eingetragen werden.
 	require_once("../footer.php");
