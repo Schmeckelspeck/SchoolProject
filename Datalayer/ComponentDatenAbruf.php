@@ -3,10 +3,7 @@
 ?>
 
 <?php
-$testIp = "192.100.100.12";
-$username = "hasi";
-$password = "1234";
-$testDb = "testDatabase";
+
 	function GetSpecificComponent($id)
 	{
 		$sqlStatement = 
