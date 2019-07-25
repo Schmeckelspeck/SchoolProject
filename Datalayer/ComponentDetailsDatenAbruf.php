@@ -13,7 +13,7 @@
 */
 
 	// This function returns a specific component, filtered by the component's id.
-	function GetSpecificComponent($id, $alsoGetTypeName)
+	function GetSpecificComponent( $id )
 	{
 		$sqlStatement = 
 			"SELECT
@@ -27,13 +27,12 @@
 				room_number,
 				comp_coty_id,
 				coty_name,
-				comp_id,"
-				.$alsoGetTypeName == true ? "component_type.coty_name," : ""
-				."FROM component
-				LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
-				LEFT JOIN room ON room.room_id = component.comp_room_id
-				LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
-				WHERE comp_id = ".DefuseInputs($id).";";
+				comp_id,
+			FROM component
+			LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
+			LEFT JOIN room ON room.room_id = component.comp_room_id
+			LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
+			WHERE comp_id = ".DefuseInputs($id).";";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
@@ -116,33 +115,6 @@ function getSoftwareInAllRooms($component_id)
 
 	return $result;
 
-}
-
-function getComponentAndTypeName($component_id)
-{
-	$sqlStatement = 
-		"SELECT
-			comp_description,
-			comp_note,
-			comp_manufacturer,
-			comp_warranty_length,
-			supl_name,
-			room_id,
-			room_description,
-			room_number,
-			comp_coty_id,
-			coty_name,
-			comp_id,
-			component_type.coty_name
-		FROM component
-		LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
-		LEFT JOIN room ON room.room_id = component.comp_room_id
-		LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
-		WHERE comp_id = ".DefuseInputs($component_id).";";
-
-	$result = ExecuteReaderAssoc($sqlStatement);
-
-	return $result;
 }
 
 /*
@@ -262,6 +234,8 @@ function assignSoftwareToRoom($softwareId, $roomId)
 	/**
 	 * @param {Object} $componentChanges
 	 */
+
+
 	function UpdateComponentDataChanges($componentChanges)
 	{
 		$sqlStatement = 
@@ -281,6 +255,26 @@ function assignSoftwareToRoom($softwareId, $roomId)
 
 		return $result;
 
+	}
+
+	function ChangeComponentRoom($componentChanges,$discardRoom_id)
+	{
+		$sqlStatement = 
+			"UPDATE component 
+			SET
+				comp_description = $componentChanges->comp_description,
+				comp_manufacturer = $componentChanges->comp_manufacturer,
+				comp_warranty_length = $componentChanges->comp_warranty_length,
+				comp_purchase_date = $componentChanges->comp_purchase_date,
+				comp_note = $componentChanges->comp_note,
+				comp_supl_id = $componentChanges->comp_supl_id,
+				comp_room_id = $discardRoom_id,
+				comp_coty_id = $componentChanges->comp_coty_id, 
+			WHERE comp_id = $componentChanges->comp_id;";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
 	}
 
 	/*
