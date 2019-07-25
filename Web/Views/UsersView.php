@@ -42,10 +42,8 @@
 		<thead>
 			<tr>
 			<th scope='col'>#</th>
-			<th scope='col'>Bezeichnung</th>
-			<th scope='col'>Gewährleistungsdauer</th>
-			<th scope='col'>Typ</th>
-			<th scope='col'>Raum</th>
+			<th scope='col'>Benutzername</th>
+			<th scope='col'>Rolle</th>
 			</tr>
 		</thead>";
 		echo "<tbody>";
@@ -54,8 +52,8 @@
 		{
 			echo "<tr>";
 			echo "<th scope='row'>".$user['user_id']."</th>";
-			echo "<td><a href='Layout.php?view=1&idComponent=".$user['user_id']."'>".$user['user_name']."</a></td>";
-			echo "<td>".$user['user_usro_name']."</td>";
+			echo "<td><a href='Layout.php?view=6&idUser=".$user['user_id']."'>".$user['user_name']."</a></td>";
+			echo "<td>".$user['usro_name']."</td>";
 			echo "</tr>";
 			
 		}
@@ -81,20 +79,7 @@
 ?>
 <?php
 
-	// Hallo: Ich habe hier etwas geändert.
-	// Vorher war einfach der input-Button da, jetzt wird er über echo erzeugt.
-	// Die Logik hier soll sein: Wenn der User die Rolle "Admin" hat, nur dann darf er überhaupt zu "CreateComponent" wechseln.
-	// Ansonsten soll dieser Button erst gar nicht sichtbar sein.
-	// Bitte anpassen, falls das eleganter geht.
-	if(isset($_SESSION['user_role']))
-	{
-		if($_SESSION['user_role'] === 'Admin')
-		{
-			echo"<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />";
-		}
-	}
-	
-	?>
+?>
 
 <?php
 	// Das hier muss in jeder View eingetragen werden.

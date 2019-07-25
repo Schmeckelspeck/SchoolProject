@@ -41,6 +41,12 @@
 					case 4:
 						require_once("ComponentDetailsView.php"); 
 						break;
+					case 5:
+						require_once("UsersView.php"); 
+						break;
+					case 6:
+						require_once("UserDetailsView.php"); 
+						break;
 					default:
 						require_once("ComponentsView.php");
 						break; 

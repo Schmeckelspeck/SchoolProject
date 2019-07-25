@@ -25,6 +25,7 @@
         {
             if(isset($_POST['txtUsername']) && $_POST['txtUsername'] !== "" && isset($_POST['txtPassword']) && $_POST['txtPassword'] !== "")
             {
+                echo "Insert";
                 InsertNewUser
                 (
                     $_POST['txtUsername'],
@@ -39,6 +40,7 @@
         }
         else
         {
+            echo "Update";
             UpdateUserData
             (
                 $_GET['idUser'],
