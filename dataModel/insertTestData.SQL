@@ -152,7 +152,6 @@ INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('10','Antalya
 
 INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('1','Deutschland');
 INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('2','England');
-
 INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('3','Frankreich');
 INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('4','Italien');
 INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('5','China');
