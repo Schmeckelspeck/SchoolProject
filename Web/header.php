@@ -1,7 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_role'])) {
+if(!isset($_SESSION['user_role']) && $_GET["login"] == 1) {
     echo "Der Nutzer ist nicht eingeloggt!";
+    $loginURL = "loginView.php";
+    header('Location: '.$loginURL);
+    // header("Location: LoginView.php");
+    // header('Location: http://www.example.com/');
 }
 ?>
 
