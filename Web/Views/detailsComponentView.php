@@ -86,9 +86,6 @@
 								echo "1,94m";
 								echo "</td>";
 								echo "</tr>";
-							foreach($componentAttributes as $attribute){
-								
-							}
 						?>
 						</tbody>
 					
@@ -113,13 +110,12 @@
 							<select>
 							
 								<?php 
-								//var_dump($componentData);
+								var_dump($componentData);
 								foreach($componentData as $Data)
 								{
 									
 									echo"<option>";
-									var_dump($Data["comp_note"]);
-									$Data["comp_note"];
+									echo $Data["comp_id"];
 									
 									echo"</option>";
 									
