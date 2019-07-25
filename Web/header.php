@@ -1,9 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION['user_role'])) {
-    echo "Der Nutzer ist nicht eingeloggt!";
-}
-?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 5.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

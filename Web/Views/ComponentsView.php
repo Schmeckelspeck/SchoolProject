@@ -11,20 +11,28 @@
 	echo 
 	"
 	<div class='input-group-prepend'>
-	<form method='post'>	
+	<form action='Layout.php?view=0' method='post'>	
 		<div class='row'>
 			<div class=''>
 				
-				<select class='form-control'>";
+				<select class='form-control' name='selectField'>";
 
 					foreach($allComponentsFilterOptions as $attribute)
 					{
-						echo "<option value='".key($attribute)."'> $attribute</option>";
+						foreach($allFilterOptionsKeys as $key)
+						{
+							if($allComponentsFilterOptions[$key] === $attribute)
+							{
+								echo "<option value='".$key."' > $attribute</option>";
+								
+							}
+												
+						}
 					}
 				echo "</select>
 			</div>
 			<div class=''>
-				<input type='text' class='form-control' style='width: 15rem;' aria-label='Text input with dropdown button'>
+				<input type='text' class='form-control' style='width: 15rem;' aria-label='Text input with dropdown button' name='filterField'>
 			</div>
 			<div class=''>
 				<input class='btn btn-dark' type='submit' value='Suchen'>

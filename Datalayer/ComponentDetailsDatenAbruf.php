@@ -82,16 +82,15 @@
 		comp_note,
 		comp_manufacturer,
 		comp_warranty_length,
-		supl_name,
-		room_id,
-		room_description,
-		room_number,
 		comp_coty_id,
 		coty_name,
 		comp_id,
-		coty
+		coty_id
 	FROM component
-	INNER JOIN compo;";
+	LEFT JOIN component_type on component.comp_coty_id=component_type.coty_id
+	WHERE LOWER(component_type.coty_name) = LOWER('".$coty_name."');";
+	
+	
 		
 		$result = ExecuteReaderAssoc($sqlStatement);
 		

@@ -12,6 +12,7 @@
 	
 	insertCity('London',insertCountry('England'));  */
 	require_once("../Controllers/ComponentDetailsController.php");
+	
 ?>
 <section>
 	<div class="container">
@@ -33,7 +34,7 @@
 
 					<div class="col">
 						<input type="text" value="<?php echo($componentData['comp_description']) ?>">
-						<input type="text" value="<?php echo($componentData["comp_note"]) ?>">
+						<input type="text" value="<?php echo($componentData["coty_name"]) ?>">
 						<input type="text"  value="<?php echo($componentData['comp_manufacturer']) ?>" >
 					</div>
 
@@ -85,16 +86,15 @@
 								echo "1,94m";
 								echo "</td>";
 								echo "</tr>";
-							foreach($componentAttributes as $attribute){
-								
-							}
 						?>
 						</tbody>
 					
 						</table>
 					</div>
 					<div class="col-6">
-						<textarea style="width:100%"></textarea>
+						<textarea style="width:100%">
+						<?php echo($componentData["comp_note"]) ?>
+						</textarea>
 					</div>
 
 					<br><br>
@@ -107,6 +107,24 @@
 						</div>
 						<div class="col">
 							<button type="button" class="btn btn-dark">Löschen</button>
+						</div>
+						<div class="col">
+							<select>
+							
+								<?php 
+								var_dump($allComponentOfSpecType);
+								foreach($allComponentOfSpecType as $Data)
+								{
+									
+									echo"<option>";
+									echo $Data['comp_description']." - ".$Data['comp_manufacturer'];
+									
+									echo"</option>";
+									
+									
+								}
+								?>
+							</select>
 						</div>
 					</div>
 				</div>

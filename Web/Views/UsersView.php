@@ -7,33 +7,6 @@
 ?>
 
 <?php 
-	echo 
-	"
-	<div class='input-group-prepend'>
-	<form method='post'>	
-		<div class='row'>
-			<div class=''>
-				
-				<select class='form-control'>";
-
-					foreach($allComponentsFilterOptions as $attribute)
-					{
-						echo "<option value='".key($attribute)."'> $attribute</option>";
-					}
-				echo "</select>
-			</div>
-			<div class=''>
-				<input type='text' class='form-control' style='width: 15rem;' aria-label='Text input with dropdown button'>
-			</div>
-			<div class=''>
-				<input class='btn btn-dark' type='submit' value='Suchen'>
-			</div>
-			<div>
-				<input class='btn btn-dark' type='submit' style=' margin-left: 66px;' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
-			</div>
-		</div>
-	</form>  
-	</div>";
 
 	echo "<div class='row'>";
 	if(sizeof($allUsers > 0) && $allUsers != NULL)
