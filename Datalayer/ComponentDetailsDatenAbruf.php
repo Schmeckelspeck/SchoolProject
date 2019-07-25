@@ -54,7 +54,10 @@
 		return $result;
 	}
 
-	function UpdateComponentDataChanges($id, $description, $type, $attribut, $warranty_end, $note, $supplier, $room_id)
+	/**
+	 * @param {Object} $componentChanges
+	 */
+	function UpdateComponentDataChanges($componentChanges)
 	{
 		$sqlStatement = "";
 	}
@@ -121,7 +124,6 @@
 				$componentData->comp_supl_id,
 				$componentData->comp_room_id,
 				$componentData->comp_coty_id,
-				-- $componentData->/* einer zuviel? ID? */
 			);";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
@@ -139,19 +141,65 @@
 	function postComponentAttributes( $componentAttributes )
 	{
 		$sqlStatement =	
-		"INSERT INTO comp_coat (
-			coca_value,
-			coca_comp_id,
-			coca_coat_id
-		) VALUES (
-			$componentAttributes->coca_value,
-			$componentAttributes->coca_comp_id,
-			$componentAttributes->coca_coat_id
-		);";
+			"INSERT INTO comp_coat (
+				coca_value,
+				coca_comp_id,
+				coca_coat_id
+			) VALUES (
+				$componentAttributes->coca_value,
+				$componentAttributes->coca_comp_id,
+				$componentAttributes->coca_coat_id
+			);";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
 		return $result;
+	}
+
+	/**
+	 * assign Software to a specific Room so that all Components in that room are able to use that software
+	 * 
+	 * @param {Integer} $softwareId - the id of the software to be assigned
+	 * @param {Integer} $roomId - the id of the room 
+	 * 
+	 * 
+	 * @returns
+	 */
+	function assignSoftwareToRoom($softwareId, $roomId)
+	{
+		$sqlStatement =	
+			"INSERT INTO comp_room_software (
+				crso_comp_id, 
+				crso_room_id
+			) VALUES (
+				$softwareId,
+				$roomId
+			);";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+
+	/**
+	 * @returns a table of all the softwares used in all the rooms
+	 */
+	function getSoftwareInAllRooms($component_id)
+	{
+		$sqlStatement = 
+			"SELECT	room_id, room_number, comp_id, comp_description, coca_id, coca_value,
+			FROM component
+			INNER JOIN comp_coat ON comp_id = coca_comp_id,
+			INNER JOIN component_attribute ON coca_coat_id = coat_id,
+			INNER JOIN room ON comp_room_id = room_id
+			WHERE coat_name = 'licencekey' 
+			/*AND comp_id = $component_id*/
+			;";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+
 	}
 
 ?>
