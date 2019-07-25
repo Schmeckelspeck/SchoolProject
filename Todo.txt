@@ -1,5 +1,6 @@
 *** TODO ***
 -- LETZTER TAG --
+(*) Passwort-Spalte ergänzen in Datenbank
 (*) Anbinden der InsertFunctions an den Code.
 (*) Anbinden der Insert-Functions an die Oberfläche.
 	(-) Übergabe der Parameter.

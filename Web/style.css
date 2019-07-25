@@ -1,3 +1,8 @@
+:root {
+    --lcb-width: 25%;
+    --lcb-height: 33%;
+  }
+
 h1 {
     background-color: sandybrown;
 }
@@ -7,8 +12,10 @@ h1 {
 }
 
 .login-controls-box {
-    top: 25%;
-    left: 25%;
+    top: calc(50% - var(--lcb-width)/2);
+    left: calc(50% - var(--lcb-height)/2);
     display: block;
     position: absolute;
+    width: var(--lcb-width);
+    height: var(--lcb-height);
 }
