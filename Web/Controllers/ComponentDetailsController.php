@@ -11,7 +11,7 @@
 		
 
 		$allComponentOfSpecType = getAllComponentsOfSpecificType($componentData['coty_name']);
-		var_dump($allComponentOfSpecType);
+		//var_dump($allComponentOfSpecType);
 		
 		// This array contains all attributes linked to this component.
 		$componentAttributes = GetComponentAttributes($componentData['comp_id']);
