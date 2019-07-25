@@ -20,7 +20,7 @@ INSERT INTO city(city_name, city_cont_id) VALUES ('Rom',4);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Peking',5);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Moskau',6);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Oslo',7);
-INSERT INTO city(city_name, city_cont_id) VALUES ('Zürich',8);
+INSERT INTO city(city_name, city_cont_id) VALUES ('Zuerich',8);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Los Angeles', 9);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Antalya',10);
 
@@ -49,7 +49,7 @@ INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, s
 VALUES ('BSIO - Best skjermen in Oslo','skjermen@bsio.com','0047 9821376','Lieferant für Bildschirme','Stenersgata','0105','01677372638','0047 9821377','A',7);
 
 INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, supl_city_code, supl_mobile, supl_fax, supl_state, supl_city_id)
-VALUES ('Zügig in Zürich','zügirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A',8);
+VALUES ('Zuegig in Zuerich','zuegirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A',8);
 
 INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, supl_city_code, supl_mobile, supl_fax, supl_state, supl_city_id) 
 VALUES ('NOL - No Lost Angles','neverloseangles@angles.com','0213 2378829','Beamer Lieferant','Bellevue Ave','13','01749766834','0213 2378830','A',9);
