@@ -1,4 +1,0 @@
-Architektur
-Das Projekt ist grundlegend zweigeteilt. Einerseits findet sich die Datenschicht, welche Funktionalität bezogen auf den Umgang mit Daten umfasst. Andererseits die Weboberfläche, welche die Views mit Controllern bietet. 
-
-Web ist als MVC-Projekt aufgebaut. Durch diese Gliederung wird langfristig die Skalierbarkeit erleichtert und die Wartbarkeit ermöglicht.
