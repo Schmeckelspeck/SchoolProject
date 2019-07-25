@@ -3,22 +3,16 @@
 	require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
-	require_once("../Controllers/BEZEICHNUNGController.php");
-	require_once("../Controllers/ComponentsController.php");
-
+	require_once("../Controllers/supplierDetailsController.php");
 ?>
 
 <?php 
-/**<input type='text' value='<?php echo($componentData['comp_description']) ?>'>
-                    <input type='text' value='<?php echo($componentData['coty_name']) ?>'>
-                    <input type='text' value='<?php echo($componentData['comp_manufacturer']) ?>' >
-                     */
 
 echo "<section>
     <div class='container'>
 
         <div class='row'>
-        <h2>Komponenten - Details</h2><br><br><br>
+        <h2>Lieferanten - Details</h2><br><br><br>
         </div>
 
         <div class='row'>    

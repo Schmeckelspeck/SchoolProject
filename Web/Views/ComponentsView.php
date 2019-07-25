@@ -8,7 +8,6 @@
 
 
 	<?php 
-
 		echo "<div class='input-group-append style='float: right;'>
 		<select>";
 
@@ -66,7 +65,23 @@
 		echo "</div>";
 		
 	?>
-	<input type="submit" name="btnCreateNewComponent" value="Neue Komponente anlegen" />
+	<?php
+
+	// Hallo: Ich habe hier etwas geändert.
+	// Vorher war einfach der input-Button da, jetzt wird er über echo erzeugt.
+	// Die Logik hier soll sein: Wenn der User die Rolle "Admin" hat, nur dann darf er überhaupt zu "CreateComponent" wechseln.
+	// Ansonsten soll dieser Button erst gar nicht sichtbar sein.
+	// Bitte anpassen, falls das eleganter geht.
+	if(isset($_SESSION['user_role']))
+	{
+		if($_SESSION['user_role'] === 'Admin')
+		{
+			echo"<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />";
+		}
+	}
+	
+	?>
+	<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
 
 
 <?php

@@ -4,6 +4,7 @@
 
 <?php
 
+	// This function returns a specific component, filtered by the component's id.
 	function GetSpecificComponent($id)
 	{
 		$sqlStatement = 
@@ -13,8 +14,10 @@
 			comp_manufacturer,
 			comp_warranty_length,
 			supl_name,
+			room_id,
 			room_description,
 			room_number,
+			comp_coty_id,
 			coty_name,
 			comp_id
 		FROM component
@@ -31,21 +34,22 @@
 	function GetComponentAttributes($id)
 	{
 		$sqlStatement = 
-		"SELECT  
+		"SELECT
+			coat_id, 
 			coat_name 
 		FROM component_attribute
 		LEFT JOIN comp_coat ON comp_coat.coca_id = component_attribute.coca_coat_id
 		LEFT JOIN component ON component.comp_id = coca_comp_id
-		WHERE component.comp_id = ".DefuseInputs($id).";"; // Hier den Platzhalter;
+		WHERE component.comp_id = ".DefuseInputs($id).";";
 
-		$result = ExecuteReaderAssoc($sqlStatement); // Hier die Parameter reinsetzen;
+		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
 
 	function GetAllComponentAttributes()
 	{
 		$sqlStatement = 
-		"SELECT coat_name FROM component_attribute;";
+		"SELECT coat_id, coat_name FROM component_attribute;";
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
@@ -71,9 +75,11 @@
 	/**
 	 * when choosing a Type get the attributes for it an return them as an array
 	 * 
+	 * @param {String} $coty_id - the id of a Component-Type
+	 * 
 	 * @returns an array of attributes for the given type
 	 */
-	function getAttributesForType ($coty_id)
+	function getAttributesForType( $coty_id )
 	{
 
 		$sqlStatement =	"SELECT coat_id, coat_name
@@ -86,4 +92,66 @@
 
 		return $result;
 	}
+
+	/**
+	 * creates a new Component with the given data
+	 * 
+	 * @param {Object} $componentData - contains all the information about the Component that are neccessary to create a Component
+	 * 
+	 * @returns the created Component
+	 */
+	function postComponent( $componentData )
+	{
+		$sqlStatement =	
+			"INSERT INTO component (	
+				comp_description,
+				comp_manufacturer,
+				comp_warranty_length,
+				comp_purchase_date,
+				comp_note,
+				comp_supl_id,
+				comp_room_id,
+				comp_coty_id,
+			)	VALUES	(
+				$componentData->comp_description,
+				$componentData->comp_manufacturer,
+				$componentData->comp_warranty_length,
+				$componentData->comp_purchase_date,
+				$componentData->comp_note,
+				$componentData->comp_supl_id,
+				$componentData->comp_room_id,
+				$componentData->comp_coty_id,
+				-- $componentData->/* einer zuviel? ID? */
+			);";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+	
+	/**
+	 * creates a new Component with the given data
+	 * 
+	 * @param {Object} $componentAttributes - contains all the information about the Component-Attributes that are neccessary to create a Component-attribute
+	 * 
+	 * @returns the created Component
+	 */
+	function postComponentAttributes( $componentAttributes )
+	{
+		$sqlStatement =	
+		"INSERT INTO comp_coat (
+			coca_value,
+			coca_comp_id,
+			coca_coat_id
+		) VALUES (
+			$componentAttributes->coca_value,
+			$componentAttributes->coca_comp_id,
+			$componentAttributes->coca_coat_id
+		);";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+
 ?>
