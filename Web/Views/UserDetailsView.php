@@ -8,7 +8,7 @@
 
 <form method="POST">
 	Benutzername <input type="text" name="txtUsername" value="<?php echo $userName; ?>" <?php if(isset($_GET['idUser'])){echo "disabled";} ?>/><br>
-	Passwort <input type="password" name="txtPassword" value="<?php echo $userPassword; ?>"/><br>
+	<div <?php if(isset($_GET['idUser'])){echo "hidden";} ?>>Passwort <input type="password" name="txtPassword" value="<?php echo $userPassword; ?>" /></div><br>
 	<?php 
 		echo "Rolle <div class='input-group-append style='float: right;'>
 			<select name='ddRole'>";

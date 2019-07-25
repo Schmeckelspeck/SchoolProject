@@ -54,13 +54,14 @@
         ExecuteWriter($sqlStatement);
     }
 
-    function UpdateUserData($userPassword, $userRoleId)
+    function UpdateUserData($userId, $userRoleId)
     {
+        echo "da";
         $sqlStatement = 
         "UPDATE user
-        SET 
-            user_password = '".GetSha256($userPassword)."',
-            user_usro_id = '".$userRoleId."';";
+        SET
+            user_usro_id = '".$userRoleId."'
+        WHERE user_id = ".$userId.";";
 
         echo $sqlStatement;
         ExecuteWriter($sqlStatement);
