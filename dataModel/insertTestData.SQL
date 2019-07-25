@@ -178,3 +178,14 @@ INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 15);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 21);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 22);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 23);
+
+INSERT INTO user_role(usro_name)
+VALUES  ('Admin'),
+        ('Azubi'),
+        ('Verwaltung');
+
+INSERT INTO user(user_name, user_usro_id, user_password)
+VALUES  ('testAdmin', 1, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62'),
+        ('testAzubi', 2, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62'),
+        ('testVerwaltung', 3, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62');
+
