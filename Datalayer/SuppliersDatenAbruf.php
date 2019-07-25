@@ -1,5 +1,5 @@
 <?php
-    require_once("../DatabaseConnection/DatabaseConnection.php");
+    require_once("DatabaseConnection/DatabaseConnection.php");
 
     // This function returns the options for the filter dropdown.
     function GetSupplierFilterOptions()

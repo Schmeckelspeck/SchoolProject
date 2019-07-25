@@ -1,5 +1,5 @@
 <?php
-	require_once("../DatabaseConnection/DatabaseConnection.php");
+	require_once("DatabaseConnection/DatabaseConnection.php");
 
 	// This function returns a specific component, filtered by the component's id.
 	function GetSpecificComponent($id)
