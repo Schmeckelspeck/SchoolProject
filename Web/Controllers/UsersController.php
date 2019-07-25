@@ -1,5 +1,5 @@
 <?php
-    require_once("../../Datalayer/User/UsersDatenAbruf.php");
+    require_once("../../Datalayer/UsersDatenAbruf.php");
 
     $allUsers = GetAllUsers();
     var_dump($allUsers);

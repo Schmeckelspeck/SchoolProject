@@ -1,5 +1,5 @@
 <?php
-    require_once("../../Datalayer/Supplier/SuppliersDatenAbruf.php");
+    require_once("../../Datalayer/SuppliersDatenAbruf.php");
 
     // filterArt, filterText
     $allSuppliers = GetSuppliers("","");
