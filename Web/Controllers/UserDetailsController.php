@@ -21,33 +21,33 @@
 
     if(isset($_POST['btnSubmitUserData']))
     {
-        if(isset($_GET['idUser']))
+        if(!isset($_GET['idUser']))
         {
             if(isset($_POST['txtUsername']) && $_POST['txtUsername'] !== "" && isset($_POST['txtPassword']) && $_POST['txtPassword'] !== "")
             {
-                // Input
+                InsertNewUser
+                (
+                    $_POST['txtUsername'],
+                    $_POST['txtPassword'],
+                    $_POST['ddRole']
+                );
             }
             else
             {
-                // InputWrong
+                // Input falsch
             }
         }
         else
         {
-            // Update
+            UpdateUserData
+            (
+                $_GET['idUser'],
+                $_POST['ddRole']
+            );
         }
     }
 
-    //InsertNewUser
-    //(
-    //    $_POST['txtUsername'],
-    //    $_POST['txtPassword'],
-    //    $_POST['ddRole']
-    //);
+    
 
-    //UpdateUserData
-    //(
-    //    $_GET['UserId'],
-    //    $_POST['ddRole']
-    //);
+
 ?>

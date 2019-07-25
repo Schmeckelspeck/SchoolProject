@@ -34,8 +34,6 @@
 
     function InsertNewUser($userName, $userPassword, $userRoleId)
     {
-        
-
         $sqlStatement = 
         "INSERT INTO user
         (
@@ -49,21 +47,16 @@
             '".GetSha256($userPassword)."',
             ".$userRoleId."
         );";
-
-        echo $sqlStatement;
         ExecuteWriter($sqlStatement);
     }
 
     function UpdateUserData($userId, $userRoleId)
     {
-        echo "da";
         $sqlStatement = 
         "UPDATE user
         SET
             user_usro_id = '".$userRoleId."'
         WHERE user_id = ".$userId.";";
-
-        echo $sqlStatement;
         ExecuteWriter($sqlStatement);
     }
 ?>
