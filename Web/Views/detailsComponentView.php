@@ -108,16 +108,16 @@
 						<div class="col">
 							<button type="button" class="btn btn-dark">Löschen</button>
 						</div>
-						<div>
+						<div class="col">
 							<select>
 							
 								<?php 
-								var_dump($componentData);
-								foreach($componentData as $Data)
+								var_dump($allComponentOfSpecType);
+								foreach($allComponentOfSpecType as $Data)
 								{
 									
 									echo"<option>";
-									echo $Data["comp_id"];
+									echo $Data['comp_description']." - ".$Data['comp_manufacturer'];
 									
 									echo"</option>";
 									
