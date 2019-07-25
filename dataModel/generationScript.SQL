@@ -1,6 +1,6 @@
 ﻿/*
 Created: 22/07/2019
-Modified: 23/07/2019
+Modified: 25/07/2019
 Model: MySQL 8.0
 Database: MySQL 8.0
 */
@@ -174,6 +174,7 @@ CREATE TABLE `user`
   `user_id` Int NOT NULL AUTO_INCREMENT,
   `user_name` Varchar(45) NOT NULL,
   `user_state` Varchar(1),
+  `user_password` Varchar(255) NOT NULL,
   `user_usro_id` Int,
   PRIMARY KEY (`user_id`)
 )

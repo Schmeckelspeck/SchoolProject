@@ -1,8 +1,16 @@
-<?php
-	// Das hier muss in jeder View eingetragen werden.
-	require_once("../header.php");
+<?php 
+
+
+	 
+	//	PLEASE DO NOT DELETE MAYBE NEEDED TO TEST THANKS
+	/* require_once("../header.php");
 
 	// Das hier muss jeweils bei der View angepasst werden.
+	require_once("../Controllers/testCompController.php");
+		echo "<br/>";
+		echo "<br/>"; 
+	
+	insertCity('London',insertCountry('England'));  */
 	require_once("../Controllers/ComponentDetailsController.php");
 ?>
 <section>

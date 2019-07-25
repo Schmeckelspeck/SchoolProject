@@ -75,9 +75,11 @@
 	/**
 	 * when choosing a Type get the attributes for it an return them as an array
 	 * 
+	 * @param {String} $coty_id - the id of a Component-Type
+	 * 
 	 * @returns an array of attributes for the given type
 	 */
-	function getAttributesForType ($coty_id)
+	function getAttributesForType( $coty_id )
 	{
 
 		$sqlStatement =	"SELECT coat_id, coat_name
@@ -91,7 +93,14 @@
 		return $result;
 	}
 
-	function postComponent($componentData)
+	/**
+	 * creates a new Component with the given data
+	 * 
+	 * @param {Object} $componentData - contains all the information about the Component that are neccessary to create a Component
+	 * 
+	 * @returns the created Component
+	 */
+	function postComponent( $componentData )
 	{
 		$sqlStatement =	
 			"INSERT INTO component (	
@@ -112,15 +121,22 @@
 				$componentData->comp_supl_id,
 				$componentData->comp_room_id,
 				$componentData->comp_coty_id,
-				-- $componentData->/* einer zuviel? */
+				-- $componentData->/* einer zuviel? ID? */
 			);";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
 		return $result;
 	}
-
-	function postComponentAttributes($componentAttributes)
+	
+	/**
+	 * creates a new Component with the given data
+	 * 
+	 * @param {Object} $componentAttributes - contains all the information about the Component-Attributes that are neccessary to create a Component-attribute
+	 * 
+	 * @returns the created Component
+	 */
+	function postComponentAttributes( $componentAttributes )
 	{
 		$sqlStatement =	
 		"INSERT INTO comp_coat (
