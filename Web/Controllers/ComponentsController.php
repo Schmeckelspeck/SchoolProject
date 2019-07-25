@@ -3,8 +3,10 @@
 ?>
 
 <?php
-	// filterText, filterArt, hier die Filtersuche reingeben
+	// filterArt, filterText
 	$allComponents = GetComponents("","");
-	var_dump($allComponents);
+	// This variable contains all components filtering options.
 	$allComponentsFilterOptions = GetFilterOptions();
+	var_dump($allComponents);
+	var_dump($allComponentsFilterOptions);
 ?>

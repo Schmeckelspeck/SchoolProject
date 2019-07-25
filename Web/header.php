@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_role'])) {
+    echo "Der Nutzer ist nicht eingeloggt!";
+}
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 5.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -11,9 +17,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-
-
 <body>
+
 <section id="header">
 <div class="container-fluid">
 <div class="row">

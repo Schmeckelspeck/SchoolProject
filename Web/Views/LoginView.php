@@ -1,20 +1,12 @@
-<?php
-	// Das hier muss in jeder View eingetragen werden.
-	require_once("../header.php");
-
-	// Das hier muss jeweils bei der View angepasst werden.
+<?php 
 	require_once("../Controllers/LoginController.php");
+    require_once("../header.php");
 ?>
 
-<form method="POST">
-	<div>
-		Benutzername: <input type="text" name="txtUsername" /><br>
-		Passwort: <input  type="text" name="txtPassword" />
-		<input type="submit" name="btnCredentialsSubmit" value="Absenden"/>
+<form action="?login=1" method="POST">
+	<div class="login-controls-box">
+		Benutzername<br><input type="text" size="40" maxlength="250" name="txtUsername"><br><br>
+		Passwort<br><input type="password" size="40"  maxlength="250" name="txtPassword"><br>
+		<input type="submit" name="btnLogin" value="Abschicken">
 	</div>
-</form>
-
-<?php
-	// Das hier muss in jeder View eingetragen werden.
-	require_once("../footer.php");
-?>
+</form> 

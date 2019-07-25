@@ -11,6 +11,7 @@
 		echo "<br/>"; 
 	
 	insertCity('London',insertCountry('England'));  */
+	require_once("../Controllers/ComponentDetailsController.php");
 ?>
 <section>
 	<div class="container">
@@ -71,6 +72,7 @@
 						
 						<tbody>
 						<?php
+							// var_dump($allComponents);
 							$attributeOne = "fisch";
 							$attributeTwo = "blubb";
 							// foreach($allComponents as $attribute){

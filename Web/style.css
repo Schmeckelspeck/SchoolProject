@@ -5,3 +5,10 @@ h1 {
 #header{
     background-color: white;
 }
+
+.login-controls-box {
+    top: 25%;
+    left: 25%;
+    display: block;
+    position: absolute;
+}
