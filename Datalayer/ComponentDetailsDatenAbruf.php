@@ -57,6 +57,7 @@
 	{
 		$sqlStatement = 
 		"SELECT coat_id, coat_name FROM component_attribute;";
+
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
