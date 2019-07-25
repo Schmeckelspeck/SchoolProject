@@ -138,7 +138,7 @@ function getSoftwareInAllRooms($component_id)
 function postComponent( $componentData )
 {
 	$sqlStatement =	
-	"INSERT INTO component (	
+		"INSERT INTO component (	
 				comp_description,
 				comp_manufacturer,
 				comp_warranty_length,
@@ -158,9 +158,16 @@ function postComponent( $componentData )
 				$componentData->comp_coty_id,
 			);";
 
-$result = ExecuteReaderAssoc($sqlStatement);
+	$result = ExecuteReaderAssoc($sqlStatement);
 
-return $result;
+	return $result;
+}
+
+function createMultipleComponentsOfSameSort( $data, $amount )
+{
+	for ($count=0; $count < $amount; $count++) { 
+		postComponent($data);
+	}
 }
 
 /**
