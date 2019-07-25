@@ -28,21 +28,35 @@ echo "<section>
                     <label>Mobil</label><br>
                     <label>Fax</label><br>
                     <label>Mail</label>
-                </div>
+                </div>";
 
+        if($id == "empty"){
+            echo "  <div class='col'>
+                    <input type='text' name='firma' value=''><br>
+                    <input type='text' name='strasse' value=''><br>
+                    <input type='text' name='plz' value=''><br>
+                    <input type='text' name='stadt' value=''><br>
+                    <input type='text' name='telefon' value=''><br>
+                    <input type='text' name='mobil' value=''><br>
+                    <input type='text' name='fax' value=''><br>
+                    <input type='text' name='mail' value=''>    
+                </div>";
+        }
+        else{
+            echo "  <div class='col'>
+                    <input type='text' name='firma' value=''><br>
+                    <input type='text' name='strasse' value=''><br>
+                    <input type='text' name='plz' value=''><br>
+                    <input type='text' name='stadt' value=''><br>
+                    <input type='text' name='telefon' value=''><br>
+                    <input type='text' name='mobil' value=''><br>
+                    <input type='text' name='fax' value=''><br>
+                    <input type='text' name='mail' value=''>    
+                </div>";
+        }
+        
 
-                <div class='col'>
-                    <input type='text' name='firma'><br>
-                    <input type='text' name='strasse'><br>
-                    <input type='text' name='plz'><br>
-                    <input type='text' name='stadt'><br>
-                    <input type='text' name='telefon'><br>
-                    <input type='text' name='mobil'><br>
-                    <input type='text' name='fax'><br>
-                    <input type='text' name='mail'>    
-                </div>
-
-            </div>
+        echo "</div>
             <br><br>
             <div class='row' >
                 
