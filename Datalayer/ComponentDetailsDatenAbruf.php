@@ -27,13 +27,12 @@
 				room_number,
 				comp_coty_id,
 				coty_name,
-				comp_id,"
-				.$alsoGetTypeName == true ? "component_type.coty_name," : ""
-				."FROM component
-				LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
-				LEFT JOIN room ON room.room_id = component.comp_room_id
-				LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
-				WHERE comp_id = ".DefuseInputs($id).";";
+				comp_id,
+			FROM component
+			LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
+			LEFT JOIN room ON room.room_id = component.comp_room_id
+			LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
+			WHERE comp_id = ".DefuseInputs($id).";";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
@@ -116,33 +115,6 @@ function getSoftwareInAllRooms($component_id)
 
 	return $result;
 
-}
-
-function getComponentAndTypeName($component_id)
-{
-	$sqlStatement = 
-		"SELECT
-			comp_description,
-			comp_note,
-			comp_manufacturer,
-			comp_warranty_length,
-			supl_name,
-			room_id,
-			room_description,
-			room_number,
-			comp_coty_id,
-			coty_name,
-			comp_id,
-			component_type.coty_name
-		FROM component
-		LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
-		LEFT JOIN room ON room.room_id = component.comp_room_id
-		LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
-		WHERE comp_id = ".DefuseInputs($component_id).";";
-
-	$result = ExecuteReaderAssoc($sqlStatement);
-
-	return $result;
 }
 
 /*
