@@ -12,6 +12,7 @@
 	
 	insertCity('London',insertCountry('England'));  */
 	require_once("../Controllers/ComponentDetailsController.php");
+	
 ?>
 <section>
 	<div class="container">
@@ -107,6 +108,25 @@
 						</div>
 						<div class="col">
 							<button type="button" class="btn btn-dark">Löschen</button>
+						</div>
+						<div>
+							<select>
+							
+								<?php 
+								//var_dump($componentData);
+								foreach($componentData as $Data)
+								{
+									
+									echo"<option>";
+									var_dump($Data["comp_note"]);
+									$Data["comp_note"];
+									
+									echo"</option>";
+									
+									
+								}
+								?>
+							</select>
 						</div>
 					</div>
 				</div>
