@@ -15,10 +15,11 @@
 			
 			foreach($allRoleOptions as $role)
 			{
+				
 				echo "<option value=".$role['usro_id'];
 				if($role['usro_id'] === $userRole)
 				{
-					echo "selected";
+					echo " selected='selected'";
 				}
 				echo ">".$role['usro_name']."</option>";
 			}

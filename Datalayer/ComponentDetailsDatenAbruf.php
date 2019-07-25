@@ -27,7 +27,7 @@
 				room_number,
 				comp_coty_id,
 				coty_name,
-				comp_id,
+				comp_id
 			FROM component
 			LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
 			LEFT JOIN room ON room.room_id = component.comp_room_id
@@ -69,6 +69,30 @@
 	{
 		
 		$sqlStatement = "SELECT coty_id, coty_name FROM component_type;";
+		
+		$result = ExecuteReaderAssoc($sqlStatement);
+		
+		return $result;
+	}
+
+	function getAllComponentsOfSpecificType($coty_name)
+	{
+		$sqlStatement = "SELECT
+			comp_description,
+			comp_note,
+			comp_manufacturer,
+			comp_warranty_length,
+			supl_name,
+			room_id,
+			room_description,
+			room_number,
+			comp_coty_id,
+			coty_name,
+			comp_id,
+			coty_id
+		FROM component
+		INNER JOIN component_type on component.comp_id=component_type.coty_id
+		WHERE component_type.coty_name =".DefuseInput($coty_name).";";
 		
 		$result = ExecuteReaderAssoc($sqlStatement);
 		
