@@ -5,6 +5,7 @@
     {
         $sqlStatement = 
         "SELECT
+            user_id,
             user_name,
             usro_name
         FROM user
