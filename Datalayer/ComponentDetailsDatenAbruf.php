@@ -13,27 +13,27 @@
 */
 
 	// This function returns a specific component, filtered by the component's id.
-	function GetSpecificComponent($id)
+	function GetSpecificComponent($id, $alsoGetTypeName)
 	{
 		$sqlStatement = 
-		"SELECT
-			comp_description,
-			comp_note,
-			comp_manufacturer,
-			comp_warranty_length,
-			supl_name,
-			room_id,
-			room_description,
-			room_number,
-			comp_coty_id,
-			coty_name,
-			comp_id
-		FROM component
-		LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
-		LEFT JOIN room ON room.room_id = component.comp_room_id
-		LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
-		WHERE
-			comp_id = ".DefuseInputs($id);
+			"SELECT
+				comp_description,
+				comp_note,
+				comp_manufacturer,
+				comp_warranty_length,
+				supl_name,
+				room_id,
+				room_description,
+				room_number,
+				comp_coty_id,
+				coty_name,
+				comp_id,"
+				.$alsoGetTypeName == true ? "component_type.coty_name," : ""
+				."FROM component
+				LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
+				LEFT JOIN room ON room.room_id = component.comp_room_id
+				LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
+				WHERE comp_id = ".DefuseInputs($id).";";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
@@ -89,7 +89,7 @@
 			FROM component_attribute
 			INNER JOIN coty_coat ON coat_id = coco_coat_id
 			INNER JOIN component_type ON coco_coty_id = coty_id
-			WHERE coty_id = $coty_id;";
+			WHERE coty_id = ".DefuseInputs($coty_id).";";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
@@ -101,6 +101,7 @@
  */
 function getSoftwareInAllRooms($component_id)
 {
+
 	$sqlStatement = 
 	"SELECT	room_id, room_number, comp_id, comp_description, coca_id, coca_value,
 			FROM component
@@ -115,6 +116,33 @@ function getSoftwareInAllRooms($component_id)
 
 	return $result;
 
+}
+
+function getComponentAndTypeName($component_id)
+{
+	$sqlStatement = 
+		"SELECT
+			comp_description,
+			comp_note,
+			comp_manufacturer,
+			comp_warranty_length,
+			supl_name,
+			room_id,
+			room_description,
+			room_number,
+			comp_coty_id,
+			coty_name,
+			comp_id,
+			component_type.coty_name
+		FROM component
+		LEFT JOIN component_type ON component_type.coty_id = component.comp_coty_id
+		LEFT JOIN room ON room.room_id = component.comp_room_id
+		LEFT JOIN supplier ON supplier.supl_id = component.comp_supl_id
+		WHERE comp_id = ".DefuseInputs($component_id).";";
+
+	$result = ExecuteReaderAssoc($sqlStatement);
+
+	return $result;
 }
 
 /*
