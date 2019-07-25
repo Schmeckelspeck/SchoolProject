@@ -29,7 +29,7 @@
 				<input class='btn btn-dark' type='submit' value='Suchen'>
 			</div>
 			<div>
-				<input class='btn btn-dark' type='submit' style=' margin-left: 66px;' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
+			<a href="http://localhost/Web/Views/Layout.php?view=6">Neuen Benutzer anlegen</a>
 			</div>
 		</div>
 	</form>  
