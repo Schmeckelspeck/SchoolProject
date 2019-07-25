@@ -1,6 +1,8 @@
 -- insert rooms testdata (with note values)
 INSERT INTO room(room_number, room_description, room_note)
-VALUES  ('r215', 'Unterrichtsraum', 'Hier gibt es nur eine RJ45-Buchse'),
+VALUES  ('Ausgemustert', 'Ausgemustert', 'Ausgemustert'),
+        ('Lagerraum', 'Lagerraum', 'Lagerraum'),
+        ('r215', 'Unterrichtsraum', 'Hier gibt es nur eine RJ45-Buchse'),
         ('r315','Unterrichtsraum','Die Projektionsfläche ist sehr klein'),
         ('r123','Lehrerzimmer','Die Kaffemaschiene ist kaputt'),
         ('r222','Computerraum','Hier gibt es nur 5 Steckdosen'),
@@ -13,4 +15,88 @@ VALUES  ('r017','Computerraum'),
         ('r100','Sekretariat'),
         ('r333','Unterrichtsraum'),
         ('r201','Computerraum');
+
+-- insert component types
+INSERT INTO component_type(coty_name)
+VALUES  ('Software'),
+        ('Switches'),
+        ('Router'),
+        ('Accesspoints'),
+        ('Drucker'),
+        ('Beamer'),
+        ('Visualizer');
+
+-- insert components (with note values)
+INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id, comp_note)
+VALUES  ('Windows 10', 'Microsoft', 12, '20190415 12:00:00 AM', 2, 2, 1, 'Lizenz 1'),
+        ('Windows 10', 'Microsoft', 12, '20190220 12:00:00 AM', 3, 2, 1, 'Lizenz 2'),
+        ('Beamer 001', 'Epson', 24, '20190111 12:00:00 AM', 5, 6, 6, 'An der Halterung fehlt eine Schraube'),
+        ('Drucker 022', 'Siemens', 6, '20190330 12:00:00 AM', 1, 5, 5, 'Druckt sehr langsam'),
+        ('Switch 012', 'D-Link', 6, '20190401 12:00:00 AM', 3, 8, 2, 'Erster Port kaputt');
+
+-- insert components (without note values)
+INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id)
+VALUES  ('Windows 7', 'Microsoft', 12, '20190504 12:00:00 AM', 4, 4, 1),
+        ('Switch 002', 'D-Link', 24, '20190711 12:00:00 AM', 5, 3, 2),
+        ('Router 005', 'bintec elmeg', 36, '20190608 12:00:00 AM', 2, 2, 3),
+        ('Beamer 005', 'Acer', 6, '20190212 12:00:00 AM', 2, 5, 6),
+        ('Drucker 555', 'Samsung', 12, '20190408 12:00:00 AM', 5, 1, 5);
+ 
+--City Inserts:
+
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('1','Berlin','1');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('2','London','2');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('3','Paris','3');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('4','Rom','4');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('5','Peking','5');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('6','Moskau','6');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('7','Oslo','7');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('8','Zürich','8');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('9','Los Angeles','9');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('10','Antalya','10');
+
+--Country Inserts:
+
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('1','Deutschland');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('2','England');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('3','Frankreich');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('4','Italien');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('5','China');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('6','Russland');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('7','Norwegen');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('8','Schweiz');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('9','USA');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('10','Türkei');
+
+--Supplier Inserts:
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('1','Siemens AG Berlin','AGBerlin@siemens.com','0049 2839675','Stammlieferant','Rigaer Straße 200','10115','01763462986','030 2839676','A','1')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('2','Lon Don','mailToLonDon@outlook.com','0044 9382756','Monitorlieferant','Litchfield St.','49252','01749766892','044 321454','A','2')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('3','Croissant','SantCroiss@croissant.com','00331 293817','Liefert unter anderem PC´s und Peripheriegeräte','Avenue de l’Opéra','75009','01519283718','00331 123455','A','3')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('4','ROMan´s Electricity','electricityFromRom@gmx.com','0039 4563728','Kabellieferant','Via Frattina','09039','01763462946','0039 987654','A','4')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('5','PCKing','PCfromPeking@pcking.com','0086 348975','PC Hardware Lieferant','Baizhifang W St','315010 ','01519283321','0086 348976','A','5')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('6','M.O.S.K.A.U','mightneedmoskau@moskauV2.com','007 7483745','Komponentenlieferant','Chlebny-Gasse','121069','01763462943','007 7483746','A','6')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('7','BSIO - Best skjermen in Oslo','skjermen@bsio.com','0047 9821376','Lieferant für Bildschirme','Stenersgata','0105','01677372638','0047 9821377','A','7')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('8','Zügig in Zürich','zügirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A','8')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('9','NOL - No Lost Angles','neverloseangles@angles.com','0213 2378829','Beamer Lieferant','Bellevue Ave','13','01749766834','0213 2378830','A','9')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('10','Antalya Electrowaves','wavesforyou@antalyaEW.com','0090 2812387','WLAN Lieferant','Sakarya Blv.','54000','01519285578','0090 2812388','A','10')
 

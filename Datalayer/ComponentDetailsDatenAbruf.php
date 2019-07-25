@@ -1,6 +1,17 @@
 <?php
 	require_once("DatabaseConnection/DatabaseConnection.php");
 
+	/*
+ 
+   GGGG  EEEEEEE TTTTTTT 
+  GG  GG EE        TTT   
+ GG      EEEEE     TTT   
+ GG   GG EE        TTT   
+  GGGGGG EEEEEEE   TTT   
+                         
+ 
+*/
+
 	// This function returns a specific component, filtered by the component's id.
 	function GetSpecificComponent($id)
 	{
@@ -51,15 +62,7 @@
 		$result = ExecuteReaderAssoc($sqlStatement);
 		return $result;
 	}
-
-	/**
-	 * @param {Object} $componentChanges
-	 */
-	function UpdateComponentDataChanges($componentChanges)
-	{
-		$sqlStatement = "";
-	}
-
+	
 	/**
 	 * @returns an array of the types which can be chosen
 	 */
@@ -67,12 +70,12 @@
 	{
 		
 		$sqlStatement = "SELECT coty_id, coty_name FROM component_type;";
-
+		
 		$result = ExecuteReaderAssoc($sqlStatement);
-
+		
 		return $result;
 	}
-
+	
 	/**
 	 * when choosing a Type get the attributes for it an return them as an array
 	 * 
@@ -82,7 +85,7 @@
 	 */
 	function getAttributesForType( $coty_id )
 	{
-
+		
 		$sqlStatement =	"SELECT coat_id, coat_name
 			FROM component_attribute
 			INNER JOIN coty_coat ON coat_id = coco_coat_id
@@ -94,17 +97,49 @@
 		return $result;
 	}
 
-	/**
-	 * creates a new Component with the given data
-	 * 
-	 * @param {Object} $componentData - contains all the information about the Component that are neccessary to create a Component
-	 * 
-	 * @returns the created Component
-	 */
-	function postComponent( $componentData )
-	{
-		$sqlStatement =	
-			"INSERT INTO component (	
+/**
+ * @returns a table of all the softwares used in all the rooms
+ */
+function getSoftwareInAllRooms($component_id)
+{
+	$sqlStatement = 
+	"SELECT	room_id, room_number, comp_id, comp_description, coca_id, coca_value,
+			FROM component
+			INNER JOIN comp_coat ON comp_id = coca_comp_id,
+			INNER JOIN component_attribute ON coca_coat_id = coat_id,
+			INNER JOIN room ON comp_room_id = room_id
+			WHERE coat_name = 'licencekey' 
+			/*AND comp_id = $component_id*/
+			;";
+
+	$result = ExecuteReaderAssoc($sqlStatement);
+
+	return $result;
+
+}
+
+/*
+ 
+ PPPPPP   OOOOO   SSSSS  TTTTTTT 
+ PP   PP OO   OO SS        TTT   
+ PPPPPP  OO   OO  SSSSS    TTT   
+ PP      OO   OO      SS   TTT   
+ PP       OOOO0   SSSSS    TTT   
+                                 
+ 
+*/
+
+/**
+ * creates a new Component with the given data
+ * 
+ * @param {Object} $componentData - contains all the information about the Component that are neccessary to create a Component
+ * 
+ * @returns the created Component
+ */
+function postComponent( $componentData )
+{
+	$sqlStatement =	
+		"INSERT INTO component (	
 				comp_description,
 				comp_manufacturer,
 				comp_warranty_length,
@@ -124,22 +159,29 @@
 				$componentData->comp_coty_id,
 			);";
 
-		$result = ExecuteReaderAssoc($sqlStatement);
+	$result = ExecuteReaderAssoc($sqlStatement);
 
-		return $result;
+	return $result;
+}
+
+function createMultipleComponentsOfSameSort( $data, $amount )
+{
+	for ($count=0; $count < $amount; $count++) { 
+		postComponent($data);
 	}
-	
-	/**
-	 * creates a new Component with the given data
-	 * 
-	 * @param {Object} $componentAttributes - contains all the information about the Component-Attributes that are neccessary to create a Component-attribute
-	 * 
-	 * @returns the created Component
-	 */
+}
+
+/**
+ * creates a new Component with the given data
+ * 
+ * @param {Object} $componentAttributes - contains all the information about the Component-Attributes that are neccessary to create a Component-attribute
+ * 
+ * @returns the created Component
+*/
 	function postComponentAttributes( $componentAttributes )
 	{
 		$sqlStatement =	
-			"INSERT INTO comp_coat (
+		"INSERT INTO comp_coat (
 				coca_value,
 				coca_comp_id,
 				coca_coat_id
@@ -149,24 +191,24 @@
 				$componentAttributes->coca_coat_id
 			);";
 
-		$result = ExecuteReaderAssoc($sqlStatement);
+$result = ExecuteReaderAssoc($sqlStatement);
 
-		return $result;
-	}
+return $result;
+}
 
-	/**
-	 * assign Software to a specific Room so that all Components in that room are able to use that software
-	 * 
-	 * @param {Integer} $softwareId - the id of the software to be assigned
-	 * @param {Integer} $roomId - the id of the room 
-	 * 
-	 * 
-	 * @returns
-	 */
-	function assignSoftwareToRoom($softwareId, $roomId)
-	{
-		$sqlStatement =	
-			"INSERT INTO comp_room_software (
+/**
+ * assign Software to a specific Room so that all Components in that room are able to use that software
+ * 
+ * @param {Integer} $softwareId - the id of the software to be assigned
+ * @param {Integer} $roomId - the id of the room 
+ * 
+ * 
+ * @returns
+ */
+function assignSoftwareToRoom($softwareId, $roomId)
+{
+	$sqlStatement =	
+	"INSERT INTO comp_room_software (
 				crso_comp_id, 
 				crso_room_id
 			) VALUES (
@@ -174,30 +216,57 @@
 				$roomId
 			);";
 
-		$result = ExecuteReaderAssoc($sqlStatement);
+	$result = ExecuteReaderAssoc($sqlStatement);
 
-		return $result;
-	}
+	return $result;
+}
+
+/*
+ 
+ UU   UU PPPPPP  DDDDD     AAA   TTTTTTT EEEEEEE 
+ UU   UU PP   PP DD  DD   AAAAA    TTT   EE      
+ UU   UU PPPPPP  DD   DD AA   AA   TTT   EEEEE   
+ UU   UU PP      DD   DD AAAAAAA   TTT   EE      
+  UUUUU  PP      DDDDDD  AA   AA   TTT   EEEEEEE 
+                                                 
+ 
+*/
 
 	/**
-	 * @returns a table of all the softwares used in all the rooms
+	 * @param {Object} $componentChanges
 	 */
-	function getSoftwareInAllRooms($component_id)
+	function UpdateComponentDataChanges($componentChanges)
 	{
 		$sqlStatement = 
-			"SELECT	room_id, room_number, comp_id, comp_description, coca_id, coca_value,
-			FROM component
-			INNER JOIN comp_coat ON comp_id = coca_comp_id,
-			INNER JOIN component_attribute ON coca_coat_id = coat_id,
-			INNER JOIN room ON comp_room_id = room_id
-			WHERE coat_name = 'licencekey' 
-			/*AND comp_id = $component_id*/
-			;";
+			"UPDATE component 
+			SET
+				comp_description = $componentChanges->comp_description,
+				comp_manufacturer = $componentChanges->comp_manufacturer,
+				comp_warranty_length = $componentChanges->comp_warranty_length,
+				comp_purchase_date = $componentChanges->comp_purchase_date,
+				comp_note = $componentChanges->comp_note,
+				comp_supl_id = $componentChanges->comp_supl_id,
+				comp_room_id = $componentChanges->comp_room_id,
+				comp_coty_id = $componentChanges->comp_coty_id, 
+			WHERE comp_id = $componentChanges->comp_id;";
 
 		$result = ExecuteReaderAssoc($sqlStatement);
 
 		return $result;
 
 	}
+
+	/*
+ 
+ DDDDD   EEEEEEE LL      EEEEEEE TTTTTTT EEEEEEE 
+ DD  DD  EE      LL      EE        TTT   EE      
+ DD   DD EEEEE   LL      EEEEE     TTT   EEEEE   
+ DD   DD EE      LL      EE        TTT   EE      
+ DDDDDD  EEEEEEE LLLLLLL EEEEEEE   TTT   EEEEEEE 
+                                                 
+ 
+*/
+
+
 
 ?>
