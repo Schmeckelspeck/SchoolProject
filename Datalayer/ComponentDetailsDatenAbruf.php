@@ -236,7 +236,23 @@ function assignSoftwareToRoom($softwareId, $roomId)
 	 */
 	function UpdateComponentDataChanges($componentChanges)
 	{
-		$sqlStatement = "";
+		$sqlStatement = 
+			"UPDATE component 
+			SET
+				comp_description = $componentChanges->comp_description,
+				comp_manufacturer = $componentChanges->comp_manufacturer,
+				comp_warranty_length = $componentChanges->comp_warranty_length,
+				comp_purchase_date = $componentChanges->comp_purchase_date,
+				comp_note = $componentChanges->comp_note,
+				comp_supl_id = $componentChanges->comp_supl_id,
+				comp_room_id = $componentChanges->comp_room_id,
+				comp_coty_id = $componentChanges->comp_coty_id, 
+			WHERE comp_id = $componentChanges->comp_id;";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+
 	}
 
 	/*
