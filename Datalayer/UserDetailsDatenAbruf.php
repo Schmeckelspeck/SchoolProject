@@ -1,5 +1,6 @@
 <?php
     require_once("DatabaseConnection/DatabaseConnection.php");
+    require_once("Utils/HashGenerator.php");
 
     function GetRoleOptions()
     {
@@ -29,5 +30,39 @@
         $dataRows = ExecuteReaderAssoc($sqlStatement);
     
         return $dataRows;
+    }
+
+    function InsertNewUser($userName, $userPassword, $userRoleId)
+    {
+        
+
+        $sqlStatement = 
+        "INSERT INTO user
+        (
+            user_name, 
+            user_password,
+            user_usro_id
+        )
+        VALUES
+        (
+            '".DefuseInputs($userName)."',
+            '".GetSha256($userPassword)."',
+            ".$userRoleId."
+        );";
+
+        echo $sqlStatement;
+        ExecuteWriter($sqlStatement);
+    }
+
+    function UpdateUserData($userPassword, $userRoleId)
+    {
+        $sqlStatement = 
+        "UPDATE user
+        SET 
+            user_password = '".GetSha256($userPassword)."',
+            user_usro_id = '".$userRoleId."';";
+
+        echo $sqlStatement;
+        ExecuteWriter($sqlStatement);
     }
 ?>

@@ -72,9 +72,8 @@
 	// This function can be used to insert data into the database.
 	function ExecuteWriter($sqlStatement)
 	{
-		//$connection = mysqli_connect("192.100.100.12", "hasi", "1234");
-		$connection = mysqli_connect($testIp, $username, $password);
-		mysqli_select_db($connection, $db);
+		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']);
+		mysqli_select_db($connection, $GLOBALS['testDb']);
 		mysqli_query($connection, $sqlStatement);
 		$last_ID=mysqli_insert_id($connection);
 		mysqli_close($connection);
