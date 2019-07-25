@@ -178,3 +178,52 @@ INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 15);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 21);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 22);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 23);
+
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('10',1,16);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('AHWK-123A-SDD2-AD22-CCAE',1,17);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Bundle',1,18);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('65',1,19);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('10',2,16);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('KSGW-JWIS-1825-4720-FH23',2,17);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Multi user',2,18);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('500',2,19);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('7',6,16);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('1234-WWWW-KLSO-LOLO-KJAO',6,17);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Multi user',6,18);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('34',6,19);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('748394',3,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('50000',3,13);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('HDMI',3,14);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('203948',9,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('30000',9,13);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('HDMI/Displayport',9,14);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('182734',4,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Laserdrucker',4,10);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Farbe',4,11);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('A4',4,12);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('USB/Lan',4,15);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('283748',10,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('Laserdrucker',10,10);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('S/W',10,11);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('A3',10,12);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('USB/LAN/WiFi',10,15);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('102993',5,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('24',5,7);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('1Gb/s',5,8);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('107778',7,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('48',7,7);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('10Gb/s',7,8);
+
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('102938',8,1);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('16',8,7);
+INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('192.168.0.1-192.168.0.255',8,8);
+
