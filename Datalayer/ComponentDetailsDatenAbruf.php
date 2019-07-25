@@ -78,20 +78,21 @@
 	function getAllComponentsOfSpecificType($coty_name)
 	{
 		$sqlStatement = "SELECT
-		comp_description,
-		comp_note,
-		comp_manufacturer,
-		comp_warranty_length,
-		supl_name,
-		room_id,
-		room_description,
-		room_number,
-		comp_coty_id,
-		coty_name,
-		comp_id,
-		coty
-	FROM component
-	INNER JOIN compo;";
+			comp_description,
+			comp_note,
+			comp_manufacturer,
+			comp_warranty_length,
+			supl_name,
+			room_id,
+			room_description,
+			room_number,
+			comp_coty_id,
+			coty_name,
+			comp_id,
+			coty_id
+		FROM component
+		INNER JOIN component_type on component.comp_id=component_type.coty_id
+		WHERE component_type.coty_name =".DefuseInput($coty_name).";";
 		
 		$result = ExecuteReaderAssoc($sqlStatement);
 		
