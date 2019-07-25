@@ -1,5 +1,5 @@
 <?php
-    require_once("../../Datalayer/Room/roomDatenAbruf.php");
+    require_once("../../Datalayer/roomDatenAbruf.php");
 
     // filterArt, filterText
     $allRooms = GetRooms("","");
