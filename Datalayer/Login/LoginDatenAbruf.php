@@ -1,6 +1,6 @@
 <?php
-    require_once("DatabaseConnection/DatabaseConnection.php");
-    require_once("Utils/HashGenerator.php");
+    require_once("../DatabaseConnection/DatabaseConnection.php");
+    require_once("../Utils/HashGenerator.php");
 
     // This function delivers username and password.
     // Keep in mind that passwords need to be saved as hash values in the database.
