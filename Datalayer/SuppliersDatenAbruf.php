@@ -12,7 +12,8 @@
             'supl_name'=>'Bezeichnung',
             'supl_phone'=>'Festnetz',
             'supl_street'=>'Straße',
-            'cont_name'=>'Land'
+            'cont_name'=>'Land',
+            'city_name'=>'Ort'
         );
     }
 
@@ -33,7 +34,8 @@
             supl_name,
             supl_phone,
             supl_street,
-            cont_name
+            cont_name,
+            city_name
         FROM supplier
         LEFT JOIN city ON city.city_id = supplier.supl_city_id
         LEFT JOIN country ON city.city_cont_id = country.cont_id";
