@@ -18,7 +18,6 @@
     }
 
     $allRoleOptions = GetRoleOptions();
-    var_dump($specificUser);
 
     if(isset($_POST['btnSubmitUserData']))
     {
@@ -26,6 +25,7 @@
         {
             if(isset($_POST['txtUsername']) && $_POST['txtUsername'] !== "" && isset($_POST['txtPassword']) && $_POST['txtPassword'] !== "")
             {
+                echo "Insert";
                 InsertNewUser
                 (
                     $_POST['txtUsername'],
@@ -35,16 +35,21 @@
             }
             else
             {
-                echo "DEBUG: Eingabeparameter nicht korrekt.";
+                // Input falsch
             }
         }
-        else(isset($_GET['idUser']))
+        else
         {
+            echo "Update";
             UpdateUserData
             (
-                $_GET['UserId'],
+                $_GET['idUser'],
                 $_POST['ddRole']
             );
-        } 
+        }
     }
+
+    
+
+
 ?>

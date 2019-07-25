@@ -34,8 +34,7 @@
 
     function InsertNewUser($userName, $userPassword, $userRoleId)
     {
-        
-
+        echo $userName.$userPassword.$userRoleId;
         $sqlStatement = 
         "INSERT INTO user
         (
@@ -56,14 +55,11 @@
 
     function UpdateUserData($userId, $userRoleId)
     {
-        echo "da";
         $sqlStatement = 
         "UPDATE user
         SET
             user_usro_id = '".$userRoleId."'
         WHERE user_id = ".$userId.";";
-
-        echo $sqlStatement;
         ExecuteWriter($sqlStatement);
     }
 ?>

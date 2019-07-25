@@ -48,6 +48,15 @@
 		return $dataRows;
 	}
 
+	function GetAllComponentAttributes()
+	{
+		$sqlStatement = 
+		"SELECT
+			coca_coat_id,
+		FROM comp_coat
+		INNER JOIN component_attribute ON component_attribute.coat_id = comp_coat.coca_coat_id;";
+
+	}
 /***
  * ------------------------------------------
 --GET data

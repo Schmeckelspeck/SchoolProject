@@ -227,3 +227,14 @@ INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('102938',8,1
 INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('16',8,7);
 INSERT INTO comp_coat(coca_value, coca_comp_id, coca_coat_id)VALUES('192.168.0.1-192.168.0.255',8,8);
 
+
+INSERT INTO user_role(usro_name)
+VALUES  ('Admin'),
+        ('Azubi'),
+        ('Verwaltung');
+
+INSERT INTO user(user_name, user_usro_id, user_password)
+VALUES  ('testAdmin', 1, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62'),
+        ('testAzubi', 2, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62'),
+        ('testVerwaltung', 3, 'bb7208bc9b5d7c04f1236a82a0093a5e33f40423d5ba8d4266f7092c3ba43b62');
+
