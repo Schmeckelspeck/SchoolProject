@@ -134,4 +134,62 @@ INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 21);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 22);
 INSERT INTO coty_coat(coco_coty_id, coco_coat_id)VALUES(8, 23);
 
+ 
+--City Inserts:
+
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('1','Berlin','1');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('2','London','2');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('3','Paris','3');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('4','Rom','4');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('5','Peking','5');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('6','Moskau','6');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('7','Oslo','7');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('8','Zürich','8');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('9','Los Angeles','9');
+INSERT INTO `city`(`city_id`, `city_name`, `city_cont_id`) VALUES ('10','Antalya','10');
+
+--Country Inserts:
+
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('1','Deutschland');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('2','England');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('3','Frankreich');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('4','Italien');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('5','China');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('6','Russland');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('7','Norwegen');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('8','Schweiz');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('9','USA');
+INSERT INTO `country`(`cont_id`, `cont_name`) VALUES ('10','Türkei');
+
+--Supplier Inserts:
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('1','Siemens AG Berlin','AGBerlin@siemens.com','0049 2839675','Stammlieferant','Rigaer Straße 200','10115','01763462986','030 2839676','A','1')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('2','Lon Don','mailToLonDon@outlook.com','0044 9382756','Monitorlieferant','Litchfield St.','49252','01749766892','044 321454','A','2')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('3','Croissant','SantCroiss@croissant.com','00331 293817','Liefert unter anderem PC´s und Peripheriegeräte','Avenue de l’Opéra','75009','01519283718','00331 123455','A','3')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('4','ROMan´s Electricity','electricityFromRom@gmx.com','0039 4563728','Kabellieferant','Via Frattina','09039','01763462946','0039 987654','A','4')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('5','PCKing','PCfromPeking@pcking.com','0086 348975','PC Hardware Lieferant','Baizhifang W St','315010 ','01519283321','0086 348976','A','5')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('6','M.O.S.K.A.U','mightneedmoskau@moskauV2.com','007 7483745','Komponentenlieferant','Chlebny-Gasse','121069','01763462943','007 7483746','A','6')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('7','BSIO - Best skjermen in Oslo','skjermen@bsio.com','0047 9821376','Lieferant für Bildschirme','Stenersgata','0105','01677372638','0047 9821377','A','7')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`)
+VALUES ('8','Zügig in Zürich','zügirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A','8')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('9','NOL - No Lost Angles','neverloseangles@angles.com','0213 2378829','Beamer Lieferant','Bellevue Ave','13','01749766834','0213 2378830','A','9')
+
+INSERT INTO `supplier`(`supl_id`, `supl_name`, `supl_mail`, `supl_phone`, `supl_note`, `supl_street`, `supl_city_code`, `supl_mobile`, `supl_fax`, `supl_state`, `supl_city_id`) 
+VALUES ('10','Antalya Electrowaves','wavesforyou@antalyaEW.com','0090 2812387','WLAN Lieferant','Sakarya Blv.','54000','01519285578','0090 2812388','A','10')
 

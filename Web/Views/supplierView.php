@@ -24,18 +24,24 @@
 		</thead>";
 		echo "<tbody>";
 
-		foreach($allComponents as $component)
+		foreach($allSuppliers as $supplier)
 		{
 
 			//
 			//Hier müssen noch die Attribute angepasst werden
 
 			echo "<tr>";
-			echo "<th scope='row'>".$component['comp_id']."</th>";
-			echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-			echo "<td>".$component['comp_warranty_length']."</td>";
-			echo "<td>".$component['coty_name']."</td>";
-			echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
+			echo "<th scope='row'><a href='Layout.php?view=4&idComponent=".$supplier["supl_id"]."'>".$supplier['supl_name']."</th>";			
+			echo "<th>".$supplier["supl_street"]."</th>";
+			echo "<th>".$supplier["supl_city_code"]."</th>";
+			echo "<th>".$supplier["supl_mobile"]."</th>";
+			echo "<th>".$supplier["supl_mail"]."</th>";
+			
+
+			// echo "<td><a href='ComponentView.php?idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
+			// echo "<td>".$component['comp_warranty_length']."</td>";
+			// echo "<td>".$component['coty_name']."</td>";
+			// echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
 			echo "</tr>";
 			
 		}
