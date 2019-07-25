@@ -27,5 +27,6 @@
 		  </div>";
 	?>
 	<input type="submit" name="btnSubmitUserData" value="Speichern"/>
+	<a href="http://localhost/Web/Views/Layout.php?view=6">Neuen Benutzer anlegen</a>
 </form>
 <!--Hier die Daten aus $specificUser zur Bearbeitung hin.-->
