@@ -4,7 +4,9 @@
 
 	// Das hier muss jeweils bei der View angepasst werden.
 	require_once("../Controllers/supplierController.php");
-	require_once("../Controllers/ComponentsController.php");
+
+	// Der macht hier keinen Sinn, wir brauchen den für supplier
+	// require_once("../Controllers/ComponentsController.php");
 
 ?>
 

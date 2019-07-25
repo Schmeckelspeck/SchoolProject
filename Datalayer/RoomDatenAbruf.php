@@ -7,17 +7,15 @@
 function GetRoomsFilterOptions()
 {
     return array(
-        'room_desc',
-        'room_number',
-        'room_note'
+        'room_desc'=>'Bezeichnung',
+        'room_number'=>'Raumnummer',
+        'room_note'=>'Beschreibung'
     );
 }
 
-function GetRooms($filterText, $filterArt) // $filterText, $filterArt
+// This function returns all rooms and takes the two parameters filterText and filterArt.
+function GetRooms($filterArt, $filterText) // $filterText, $filterArt
 {
-    $connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
-    mysqli_select_db($connection, $GLOBALS['testDb']);
-
     $sqlStatement = 
     "SELECT 
         room_id,
@@ -32,22 +30,7 @@ function GetRooms($filterText, $filterArt) // $filterText, $filterArt
     }
     $sqlStatement = $sqlStatement.";";
 
-    $dataRows = array();
-
-    $result = mysqli_query($connection, $sqlStatement);
-    
-    if($result)
-    {
-        while($data = mysqli_fetch_assoc($result))
-        {
-            array_push($dataRows, $data);
-        }
-        mysqli_close($connection);
-    }
-    else
-    {
-        $dataRows = array();
-    }
+    $dataRows = ExecuteReaderAssoc($sqlStatement);
     
     return $dataRows;
 }

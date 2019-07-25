@@ -1,6 +1,7 @@
 <?php
     require_once("../../Datalayer/roomDatenAbruf.php");
 
-    // statt String leer dann Inhalt der Filterbox.
+    // filterArt, filterText
     $allRooms = GetRooms("","");
+    var_dump($allRooms);
 ?>

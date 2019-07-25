@@ -9,7 +9,6 @@
 ?>
 
 <?php 
-		
 		if(sizeof($allRooms > 0) && $allRooms != NULL)
 		{
 			echo "<table class='table'>

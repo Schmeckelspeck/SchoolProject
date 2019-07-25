@@ -3,9 +3,6 @@
 ?>
 
 <?php
-
-	
-
 	function GetSpecificData()
 	{
 		$sqlStatement = "SELECT SQLSTATEMENT FROM DATABASE";

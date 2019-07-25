@@ -3,24 +3,23 @@
 ?>
 
 <?php
+	// On the view for components, the user can limit the search result based on filtering options.
+	// This function returns the filtering options for the dropdown-menu.
 	function GetFilterOptions()
 	{
 		$filterOptions = array(
-			'comp_description',
-			'comp_warranty_length',
-			'coty_name',
-			'room_description',
-			'room_number'
+			'comp_description'=>'Beschreibung',
+			'comp_warranty_length'=>'Gewährleistungsdauer (in Monaten)',
+			'coty_name'=>'Typ',
+			'room_description'=>'Raum',
+			'room_number'=>'Raumnummer'
 		);
 		return $filterOptions;
 	}
 
 	// Pass filter parameters to this function. It will return the filtered selection.
-	function GetComponents($filterText, $filterArt) // $filterText, $filterArt
+	function GetComponents($filterArt, $filterText) // $filterText, $filterArt
 	{
-		$connection = mysqli_connect($GLOBALS['testIp'], $GLOBALS['username'], $GLOBALS['password']); // nur für einen lokalen Test
-		mysqli_select_db($connection, $GLOBALS['testDb']);
-
 		$sqlStatement = 
 		"SELECT 
 			comp_id,
@@ -40,22 +39,8 @@
 
 		$sqlStatement = $sqlStatement.";";
 		
-		$dataRows = array();
+		$dataRows = ExecuteReaderAssoc($sqlStatement);
 
-		$result = mysqli_query($connection, $sqlStatement);
-
-		if($result)
-		{
-			while($data = mysqli_fetch_assoc($result))
-			{
-				array_push($dataRows, $data);
-			}
-			mysqli_close($connection);
-		}
-		else
-		{
-			$dataRows = array();
-		}
 		return $dataRows;
 	}
 
