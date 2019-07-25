@@ -106,7 +106,7 @@
 						<div class="col">
 							<button type="button" class="btn btn-dark">Löschen</button>
 						</div>
-						<div>
+						<div class="col">
 							<select>
 							
 								<?php 
@@ -115,7 +115,7 @@
 								{
 									
 									echo"<option>";
-									echo $Data;
+									echo $Data['comp_description']." - ".$Data['comp_manufacturer'];
 									
 									echo"</option>";
 									
