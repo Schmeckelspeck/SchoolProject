@@ -33,20 +33,20 @@
 
 					<div class="col">
 						<input type="text" value="<?php echo($componentData['comp_description']) ?>">
-						<input type="text" value="<?php echo($componentData['coty_name']) ?>">
+						<input type="text" value="<?php echo($componentData["comp_note"]) ?>">
 						<input type="text"  value="<?php echo($componentData['comp_manufacturer']) ?>" >
 					</div>
 
 					<div class="col">
 						<label>Lieferant :</label><br>
 						<label>Raum :</label><br>
-						<label>Gewähreistungsdauer :</label><br>
+						<label>Gewähreistungsdauer in Monaten :</label><br>
 					</div>
 					
 					<div class="col">
-						<input type="text" name="lastname">
-						<input type="text" name="lastname">
-						<input type="text" name="lastname">
+						<input type="text"  value="<?php echo($componentData["supl_name"]) ?>" >
+						<input type="text"  value="<?php echo($componentData["room_number"]) ?>" >
+						<input type="text"  value="<?php echo($componentData["comp_warranty_length"]) ?>" >
 					</div>
 				</div>
 				<br><br>
@@ -75,37 +75,22 @@
 							// var_dump($allComponents);
 							$attributeOne = "fisch";
 							$attributeTwo = "blubb";
-							// foreach($allComponents as $attribute){
-								// echo "<tr>";
-								// echo "<td>";
-								// echo $attributeOne;
-								// echo "</td>"
-								// echo "<td>";
-								// echo $attributeTwo;
-								// echo "</td>"
-								// echo "</tr>";
-							// }
+							echo "<tr>";
+								echo "<td>";
+								// echo key($attribute);
+								echo "Höhe";
+								echo "</td>";
+								echo "<td>";
+								// echo $attribute;
+								echo "1,94m";
+								echo "</td>";
+								echo "</tr>";
+							foreach($componentAttributes as $attribute){
+								
+							}
 						?>
 						</tbody>
-						
-						
-						<tbody>
-							<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-							<td>Otto</td>
-							</tr>
-							<tr>
-							<th scope="row">2</th>
-							<td>Jacob</td>
-							<td>Thornton</td>
-							</tr>
-							<tr>
-							<th scope="row">3</th>
-							<td>Larry</td>
-							<td>the Bird</td>
-							</tr>
-						</tbody>
+					
 						</table>
 					</div>
 					<div class="col-6">
@@ -113,7 +98,7 @@
 					</div>
 
 					<br><br>
-					<div class="row">
+					<div class="row mx-auto">
 						<div class="col" >
 							<button type="button" class="btn btn-dark">Speichern</button>
 						</div>
