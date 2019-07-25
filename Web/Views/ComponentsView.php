@@ -7,65 +7,82 @@
 ?>
 
 
-	<?php 
-		echo "<div class='input-group-append style='float: right;'>
-		<select>";
-
-		foreach($allComponentsFilterOptions as $attribute)
-		{
-			echo "<option value='att'> $attribute</option>";
-		}
-		echo "</select>
-		<input type='text' class='form-control' aria-label='Text input with dropdown button'>
-	  	</div>";
-
-		echo "<div class='row'>";
-		if(sizeof($allComponents > 0) && $allComponents != NULL)
-		{
-			echo "<table class='table'>
-			<thead>
-				<tr>
-				<th scope='col'>#</th>
-				<th scope='col'>Bezeichnung</th>
-				<th scope='col'>Gewährleistungsdauer</th>
-				<th scope='col'>Typ</th>
-				<th scope='col'>Raum</th>
-				</tr>
-			</thead>";
-			echo "<tbody>";
-
-			foreach($allComponents as $component)
-			{
-				echo "<tr>";
-				echo "<th scope='row'>".$component['comp_id']."</th>";
-				echo "<td><a href='Layout.php?view=1&idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
-				echo "<td>".$component['comp_warranty_length']."</td>";
-				echo "<td>".$component['coty_name']."</td>";
-				echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
-				echo "</tr>";
+<?php 
+	echo 
+	"
+	<div class='input-group-prepend'>
+	<form method='post'>	
+		<div class='row'>
+			<div class=''>
 				
-			}
-			echo "</tbody>";
-			echo "</table>";
-		}
-		else
+				<select class='form-control'>";
+
+					foreach($allComponentsFilterOptions as $attribute)
+					{
+						echo "<option value='".key($attribute)."'> $attribute</option>";
+					}
+				echo "</select>
+			</div>
+			<div class=''>
+				<input type='text' class='form-control' style='width: 15rem;' aria-label='Text input with dropdown button'>
+			</div>
+			<div class=''>
+				<input class='btn btn-dark' type='submit' value='Suchen'>
+			</div>
+			<div>
+				<input class='btn btn-dark' type='submit' style=' margin-left: 66px;' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
+			</div>
+		</div>
+	</form>  
+	</div>";
+
+	echo "<div class='row'>";
+	if(sizeof($allComponents > 0) && $allComponents != NULL)
+	{
+		echo "<table class='table'>
+		<thead>
+			<tr>
+			<th scope='col'>#</th>
+			<th scope='col'>Bezeichnung</th>
+			<th scope='col'>Gewährleistungsdauer</th>
+			<th scope='col'>Typ</th>
+			<th scope='col'>Raum</th>
+			</tr>
+		</thead>";
+		echo "<tbody>";
+
+		foreach($allComponents as $component)
 		{
-			echo "<table class='table'>
-			<thead>
-				<tr>
-				<th scope='col'>#</th>
-				<th scope='col'>Bezeichnung</th>
-				<th scope='col'>Gewährleistungsdauer</th>
-				<th scope='col'>Typ</th>
-				<th scope='col'>Raum</th>
-				</tr>
-			</thead>";
-			echo "<tbody>";
+			echo "<tr>";
+			echo "<th scope='row'>".$component['comp_id']."</th>";
+			echo "<td><a href='Layout.php?view=1&idComponent=".$component['comp_id']."'>".$component['comp_description']."</a></td>";
+			echo "<td>".$component['comp_warranty_length']."</td>";
+			echo "<td>".$component['coty_name']."</td>";
+			echo "<td>".$component['room_description']." (Raum-Nr.: ".$component['room_number'].")</td>";
+			echo "</tr>";
+			
 		}
-		echo "</div>";
-		
-	?>
-	<?php
+		echo "</tbody>";
+		echo "</table>";
+	}
+	else
+	{
+		echo "<table class='table'>
+		<thead>
+			<tr>
+			<th scope='col'>#</th>
+			<th scope='col'>Bezeichnung</th>
+			<th scope='col'>Gewährleistungsdauer</th>
+			<th scope='col'>Typ</th>
+			<th scope='col'>Raum</th>
+			</tr>
+		</thead>";
+		echo "<tbody>";
+	}
+	echo "</div>";
+	
+?>
+<?php
 
 	// Hallo: Ich habe hier etwas geändert.
 	// Vorher war einfach der input-Button da, jetzt wird er über echo erzeugt.
@@ -81,8 +98,6 @@
 	}
 	
 	?>
-	<input type='submit' name='btnCreateNewComponent' value='Neue Komponente anlegen' />
-
 
 <?php
 	// Das hier muss in jeder View eingetragen werden.
