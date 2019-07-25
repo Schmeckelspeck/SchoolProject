@@ -1,5 +1,6 @@
 <?php
-	require_once("../../Datalayer/ComponentDetailsDatenAbruf.php");
+	require_once("../../Datalayer/Component/ComponentDetailsDatenAbruf.php");
+	
 ?>
 
 <?php

@@ -9,7 +9,8 @@
 ?>
 
 <?php 
-		if(sizeof($allRooms > 0) && $allRooms != NULL)
+		
+		if($allRooms != NULL && sizeof($allRooms > 0))
 		{
 			echo "<table class='table'>
 			<thead>
@@ -45,6 +46,7 @@
 
 
 <br>
+
 <?php
 	// Das hier muss in jeder View eingetragen werden.
 	require_once("../footer.php");
