@@ -90,4 +90,52 @@
 
 		return $result;
 	}
+
+	function postComponent($componentData)
+	{
+		$sqlStatement =	
+			"INSERT INTO component (	
+				comp_description,
+				comp_manufacturer,
+				comp_warranty_length,
+				comp_purchase_date,
+				comp_note,
+				comp_supl_id,
+				comp_room_id,
+				comp_coty_id,
+			)	VALUES	(
+				$componentData->comp_description,
+				$componentData->comp_manufacturer,
+				$componentData->comp_warranty_length,
+				$componentData->comp_purchase_date,
+				$componentData->comp_note,
+				$componentData->comp_supl_id,
+				$componentData->comp_room_id,
+				$componentData->comp_coty_id,
+				-- $componentData->/* einer zuviel? */
+			);";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+
+	function postComponentAttributes($componentAttributes)
+	{
+		$sqlStatement =	
+		"INSERT INTO comp_coat (
+			coca_value,
+			coca_comp_id,
+			coca_coat_id
+		) VALUES (
+			$componentAttributes->coca_value,
+			$componentAttributes->coca_comp_id,
+			$componentAttributes->coca_coat_id
+		);";
+
+		$result = ExecuteReaderAssoc($sqlStatement);
+
+		return $result;
+	}
+
 ?>
