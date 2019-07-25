@@ -1,6 +1,6 @@
 <?php
-    require_once("../DatabaseConnection/DatabaseConnection.php");
-    require_once("../Utils/HashGenerator.php");
+    require_once("DatabaseConnection/DatabaseConnection.php");
+    require_once("Utils/HashGenerator.php");
 
     function GetRoleOptions()
     {
