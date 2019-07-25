@@ -17,6 +17,7 @@
 		$allComponents = GetComponents("","");
 	}
 	// This variable contains all components filtering options.
-	var_dump($allComponents);
-	var_dump($allComponentsFilterOptions);
+	$allComponentsFilterOptions = GetFilterOptions();
+	// var_dump($allComponents);
+	// var_dump($allComponentsFilterOptions);
 ?>
