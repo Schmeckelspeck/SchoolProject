@@ -110,12 +110,12 @@
 							<select>
 							
 								<?php 
-								var_dump($componentData);
-								foreach($componentData as $Data)
+								var_dump($allComponentOfSpecType);
+								foreach($allComponentOfSpecType as $Data)
 								{
 									
 									echo"<option>";
-									echo $Data["comp_id"];
+									echo $Data;
 									
 									echo"</option>";
 									
