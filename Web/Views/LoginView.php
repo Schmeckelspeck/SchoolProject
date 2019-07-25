@@ -1,7 +1,6 @@
 <?php 
 	require_once("../Controllers/LoginController.php");
 	require_once("../header.php");
-	echo $_SESSION['user_role'];
 ?>
 
 <form action="Layout.php" method="POST">
