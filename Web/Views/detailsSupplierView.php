@@ -44,14 +44,14 @@ echo "<section>
         }
         else{
             echo "  <div class='col'>
-                    <input type='text' name='firma' value=''><br>
-                    <input type='text' name='strasse' value=''><br>
-                    <input type='text' name='plz' value=''><br>
-                    <input type='text' name='stadt' value=''><br>
-                    <input type='text' name='telefon' value=''><br>
-                    <input type='text' name='mobil' value=''><br>
-                    <input type='text' name='fax' value=''><br>
-                    <input type='text' name='mail' value=''>    
+                    <input type='text' name='firma' value='".$supplier["supl_name"]."'><br>
+                    <input type='text' name='strasse' value='".$supplier["supl_street"]."'><br>
+                    <input type='text' name='plz' value='".$supplier["supl_city_code"]."'><br>
+                    <input type='text' name='stadt' value='".$supplier["city_name"]."'><br>
+                    <input type='text' name='telefon' value='".$supplier["supl_phone"]."'><br>
+                    <input type='text' name='mobil' value='".$supplier["supl_mobile"]."'><br>
+                    <input type='text' name='fax' value='".$supplier["supl_fax"]."'><br>
+                    <input type='text' name='mail' value='".$supplier ["supl_mail"]."'>    
                 </div>";
         }
         
