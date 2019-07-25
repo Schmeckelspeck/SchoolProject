@@ -86,18 +86,18 @@ VALUES  ('Software'),
         ('Monitor');
 
 INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id, comp_note)
-VALUES  ('Windows 10', 'Microsoft', 12, '20190415 12:00:00 AM', 2, 2, 1, 'Lizenz 1'),
-        ('Windows 10', 'Microsoft', 12, '20190220 12:00:00 AM', 3, 2, 1, 'Lizenz 2'),
-        ('Beamer 001', 'Epson', 24, '20190111 12:00:00 AM', 5, 6, 6, 'An der Halterung fehlt eine Schraube'),
-        ('Drucker 022', 'Siemens', 6, '20190330 12:00:00 AM', 1, 5, 5, 'Druckt sehr langsam'),
-        ('Switch 012', 'D-Link', 6, '20190401 12:00:00 AM', 3, 8, 2, 'Erster Port kaputt');
+VALUES  ('Windows 10', 'Microsoft', 12, '2019-04-15 12:00:00 AM', 2, 2, 1, 'Lizenz 1'),
+        ('Windows 10', 'Microsoft', 12, '2019-02-20 12:00:00 AM', 3, 2, 1, 'Lizenz 2'),
+        ('Beamer 001', 'Epson', 24, '2019-01-11 12:00:00 AM', 5, 6, 6, 'An der Halterung fehlt eine Schraube'),
+        ('Drucker 022', 'Siemens', 6, '2019-03-30 12:00:00 AM', 1, 5, 5, 'Druckt sehr langsam'),
+        ('Switch 012', 'D-Link', 6, '2019-04-01 12:00:00 AM', 3, 8, 2, 'Erster Port kaputt');
 
 INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id)
-VALUES  ('Windows 7', 'Microsoft', 12, '20190504 12:00:00 AM', 4, 2, 1),
-        ('Switch 002', 'D-Link', 24, '20190711 12:00:00 AM', 5, 3, 2),
-        ('Router 005', 'bintec elmeg', 36, '20190608 12:00:00 AM', 2, 2, 3),
-        ('Beamer 005', 'Acer', 6, '20190212 12:00:00 AM', 2, 5, 6),
-        ('Drucker 555', 'Samsung', 12, '20190408 12:00:00 AM', 5, 1, 5);
+VALUES  ('Windows 7', 'Microsoft', 12, '2019-05-04 12:00:00 AM', 4, 2, 1),
+        ('Switch 002', 'D-Link', 24, '2019-07-11 12:00:00 AM', 5, 3, 2),
+        ('Router 005', 'bintec elmeg', 36, '2019-06-08 12:00:00 AM', 2, 2, 3),
+        ('Beamer 005', 'Acer', 6, '2019-02-12 12:00:00 AM', 2, 5, 6),
+        ('Drucker 555', 'Samsung', 12, '2019-04-08 12:00:00 AM', 5, 1, 5);
 
 INSERT INTO component_attribute(coat_name, coat_state)VALUES('Seriennummer','A');
 INSERT INTO component_attribute(coat_name, coat_state)VALUES('RAM','A');
