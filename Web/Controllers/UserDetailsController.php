@@ -1,5 +1,5 @@
 <?php
-    require_once("../../Datalayer/UserDetailsDatenAbruf.php");
+    require_once("../../Datalayer/User/UserDetailsDatenAbruf.php");
 
     $specificUser = GetSpecificUser($_GET['idUser']);
 
