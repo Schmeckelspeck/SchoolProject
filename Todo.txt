@@ -1,37 +1,9 @@
 *** TODO ***
-* Kann kontinuierlich erweitert werden
-Software
-========
-
-Front-End
-=========
-- Mockups entwerfen
-	* Handgezeichnete Skizzen der Views.
-- Views entwerfen
-	* HTML entwerfen
-- Controller entwerfen
-	* <?php if(isset($_POST['buttonName'])) ... ?>
-	* z.B. $allComponents = GetComponents(); ...
-- Styles entwerfen (css)
-	* .example{...} ...
-- Dokus schreiben
-
-Back-End
-========
-- Zugriffs-SQL-Statements entwerfen, Beispiele
-	* SELECT komponenteninfo FROM tbl_komponenten ...
-	* UPDATE tbl_komponente SET raum_id = 12345;...
-	* INSERT ...
-	* DELETE ...
-	* .
-	* .
-	* .
-- SQL-Statements in php-Funktionen überführen
-- Datenbankzugriff.php implementieren
-	* query($connection) ...
-	* Vorschlag: ExecuteReader-Funktion, die die Daten als Array of Row-Arrays rausgibt.
-- Datenbank entwerfen
-	* CREATE TABLE ...
-- Dokus schreiben
-- Apache
-	* Root der Url auf den Ordner Views beschränken
+-- LETZTER TAG --
+(*) Anbinden der InsertFunctions an den Code.
+(*) Anbinden der Insert-Functions an die OberflÃ¤che.
+	(-) Ãœbergabe der Parameter.
+(*) Form um alle Inputs ziehen
+(*) Controls/Textinputs und Buttons mit geeignetem Namen versehen.
+(*) Login-als default Page einrichten und anhand von Session-Variable prÃ¼fen, ob der User den internen Bereich sehen darf oder nicht
+(*) Buttons und Links in AbhÃ¤ngigkeit von der Session-Variable sichtbar machen oder nicht.

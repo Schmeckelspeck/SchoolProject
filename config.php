@@ -6,14 +6,17 @@
 	with the right connection data.
 	*/
 
-	/*$CONFIG_APACHEIP = "192.168.20.5";
+	/*
+	$CONFIG_APACHEIP = "192.168.20.5";
 	$CONFIG_USERNAME = "hasi";
 	$CONFIG_PASSWORD = "1234";
-	$CONFIG_DATABASENAME = "testDatabase";*/
-
+	$CONFIG_DATABASENAME = "testDatabase";
+	*/
 	/* Test */
+	
 	$CONFIG_DATABASENAME = "testDatabase";
 	$CONFIG_APACHEIP = "127.0.0.1";
 	$CONFIG_USERNAME = "root";
 	$CONFIG_PASSWORD = "";
+	
 ?>

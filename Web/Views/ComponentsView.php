@@ -8,7 +8,6 @@
 
 
 	<?php 
-
 		echo "<div class='input-group-append style='float: right;'>
 		<select>";
 
