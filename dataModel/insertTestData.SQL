@@ -20,7 +20,7 @@ INSERT INTO city(city_name, city_cont_id) VALUES ('Rom',4);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Peking',5);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Moskau',6);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Oslo',7);
-INSERT INTO city(city_name, city_cont_id) VALUES ('Zürich',8);
+INSERT INTO city(city_name, city_cont_id) VALUES ('Zuerich',8);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Los Angeles', 9);
 INSERT INTO city(city_name, city_cont_id) VALUES ('Antalya',10);
 
@@ -49,7 +49,7 @@ INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, s
 VALUES ('BSIO - Best skjermen in Oslo','skjermen@bsio.com','0047 9821376','Lieferant für Bildschirme','Stenersgata','0105','01677372638','0047 9821377','A',7);
 
 INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, supl_city_code, supl_mobile, supl_fax, supl_state, supl_city_id)
-VALUES ('Zügig in Zürich','zügirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A',8);
+VALUES ('Zuegig in Zuerich','zuegirich@outlook.com','0041 2312342','Lieferant für jegliche Art von Kabeln','Turnerstrasse','8006','01519283354','0041 2312343','A',8);
 
 INSERT INTO supplier(supl_name, supl_mail, supl_phone, supl_note, supl_street, supl_city_code, supl_mobile, supl_fax, supl_state, supl_city_id) 
 VALUES ('NOL - No Lost Angles','neverloseangles@angles.com','0213 2378829','Beamer Lieferant','Bellevue Ave','13','01749766834','0213 2378830','A',9);
@@ -86,18 +86,18 @@ VALUES  ('Software'),
         ('Monitor');
 
 INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id, comp_note)
-VALUES  ('Windows 10', 'Microsoft', 12, '20190415 12:00:00 AM', 2, 2, 1, 'Lizenz 1'),
-        ('Windows 10', 'Microsoft', 12, '20190220 12:00:00 AM', 3, 2, 1, 'Lizenz 2'),
-        ('Beamer 001', 'Epson', 24, '20190111 12:00:00 AM', 5, 6, 6, 'An der Halterung fehlt eine Schraube'),
-        ('Drucker 022', 'Siemens', 6, '20190330 12:00:00 AM', 1, 5, 5, 'Druckt sehr langsam'),
-        ('Switch 012', 'D-Link', 6, '20190401 12:00:00 AM', 3, 8, 2, 'Erster Port kaputt');
+VALUES  ('Windows 10', 'Microsoft', 12, '2019-04-15 12:00:00 AM', 2, 2, 1, 'Lizenz 1'),
+        ('Windows 10', 'Microsoft', 12, '2019-02-20 12:00:00 AM', 3, 2, 1, 'Lizenz 2'),
+        ('Beamer 001', 'Epson', 24, '2019-01-11 12:00:00 AM', 5, 6, 6, 'An der Halterung fehlt eine Schraube'),
+        ('Drucker 022', 'Siemens', 6, '2019-03-30 12:00:00 AM', 1, 5, 5, 'Druckt sehr langsam'),
+        ('Switch 012', 'D-Link', 6, '2019-04-01 12:00:00 AM', 3, 8, 2, 'Erster Port kaputt');
 
 INSERT INTO component(comp_description, comp_manufacturer, comp_warranty_length, comp_purchase_date, comp_supl_id, comp_room_id, comp_coty_id)
-VALUES  ('Windows 7', 'Microsoft', 12, '20190504 12:00:00 AM', 4, 2, 1),
-        ('Switch 002', 'D-Link', 24, '20190711 12:00:00 AM', 5, 3, 2),
-        ('Router 005', 'bintec elmeg', 36, '20190608 12:00:00 AM', 2, 2, 3),
-        ('Beamer 005', 'Acer', 6, '20190212 12:00:00 AM', 2, 5, 6),
-        ('Drucker 555', 'Samsung', 12, '20190408 12:00:00 AM', 5, 1, 5);
+VALUES  ('Windows 7', 'Microsoft', 12, '2019-05-04 12:00:00 AM', 4, 2, 1),
+        ('Switch 002', 'D-Link', 24, '2019-07-11 12:00:00 AM', 5, 3, 2),
+        ('Router 005', 'bintec elmeg', 36, '2019-06-08 12:00:00 AM', 2, 2, 3),
+        ('Beamer 005', 'Acer', 6, '2019-02-12 12:00:00 AM', 2, 5, 6),
+        ('Drucker 555', 'Samsung', 12, '2019-04-08 12:00:00 AM', 5, 1, 5);
 
 INSERT INTO component_attribute(coat_name, coat_state)VALUES('Seriennummer','A');
 INSERT INTO component_attribute(coat_name, coat_state)VALUES('RAM','A');

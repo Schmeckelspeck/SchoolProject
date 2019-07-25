@@ -34,7 +34,7 @@
 
 					<div class="col">
 						<input type="text" value="<?php echo($componentData['comp_description']) ?>">
-						<input type="text" value="<?php echo($componentData["comp_note"]) ?>">
+						<input type="text" value="<?php echo($componentData["coty_name"]) ?>">
 						<input type="text"  value="<?php echo($componentData['comp_manufacturer']) ?>" >
 					</div>
 
@@ -92,7 +92,9 @@
 						</table>
 					</div>
 					<div class="col-6">
-						<textarea style="width:100%"></textarea>
+						<textarea style="width:100%">
+						<?php echo($componentData["comp_note"]) ?>
+						</textarea>
 					</div>
 
 					<br><br>
